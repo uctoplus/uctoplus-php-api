@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **string** |  | [optional] [readonly] 
 **name** | **string** |  | 
 **street** | **string** |  | 
 **city** | **string** |  | 

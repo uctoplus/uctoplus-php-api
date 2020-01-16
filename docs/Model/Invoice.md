@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
 **invoice_number** | [**OneOfStringInvoiceCounter**](OneOfStringInvoiceCounter.md) |  | 
 **invoice_type** | **string** | * &#x60;INVOICE&#x60; - Invocie * &#x60;PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;DODACI_LIST&#x60; - Dodací list * &#x60;PRICE_QUOTATION&#x60; - Price Quotation | 
-**reciever** | [**OneOfAddressLong**](OneOfAddressLong.md) | If filled new Address in Contact List will be created! | 
+**reciever** | [**OneOfAddressString**](OneOfAddressString.md) | If filled new Address in Contact List will be created! | 
 **delivery_address** | [**\Uctoplus\API\Models\DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
 **internal_description** | **string** |  | [optional] 
 **variable_symbol** | **string** |  | [optional] 
@@ -30,13 +30,13 @@ Name | Type | Description | Notes
 **payment_type** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | 
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional] 
 **items** | [**AnyOfInvoiceItemLinkedInvoiceItem[]**](AnyOfInvoiceItemLinkedInvoiceItem.md) | Items in invoice | 
-**prenesenie_dph** | **bool** |  | [optional] [default to false]
+**reverse_charge** | **bool** |  | [optional] [default to false]
 **discount** | **float** |  | [optional] [default to 0.0]
 **payment** | [**OneOfPayment**](OneOfPayment.md) |  | [optional] 
-**file** | [**OneOfFile**](OneOfFile.md) |  | [optional] 
-**moje_uctoplus_url** | **string** |  | [optional] 
-**moje_uctoplus_add_url** | **string** |  | [optional] 
-**summary** | [**OneOfSummary**](OneOfSummary.md) |  | [optional] 
+**file** | [**OneOfFile**](OneOfFile.md) |  | [optional] [readonly] 
+**moje_uctoplus_url** | **string** |  | [optional] [readonly] 
+**moje_uctoplus_add_url** | **string** |  | [optional] [readonly] 
+**summary** | [**OneOfSummary**](OneOfSummary.md) |  | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

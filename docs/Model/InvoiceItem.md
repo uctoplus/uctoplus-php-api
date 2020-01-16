@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
 **name** | **string** |  | 
 **description** | **string** | Description of item. Markdown language allowed. | [optional] 
 **quantity** | **float** |  | 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
 **invoice_number** | **string** |  | 
 **invoice_type** | **string** | * &#x60;TYPE_INVOICE&#x60; - Invocie * &#x60;TYPE_PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;TYPE_VAT_PROOF&#x60; - VAT Proof | 
 **description** | **string** |  | [optional] 
-**sender** | [**OneOfAddressLong**](OneOfAddressLong.md) |  | 
+**sender** | [**OneOfAddressString**](OneOfAddressString.md) |  | 
 **variable_symbol** | **string** |  | [optional] 
 **konstantny_symbol** | **string** |  | [optional] 
 **specificky_symbol** | **string** |  | [optional] 

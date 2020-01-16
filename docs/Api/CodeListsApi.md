@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getCountries**](CodeListsApi.md#getCountries) | **GET** /dial/global/countries | getCountries
 [**getCurrencies**](CodeListsApi.md#getCurrencies) | **GET** /dial/global/currencies | getCurrencies
 [**getDeliveryTypes**](CodeListsApi.md#getDeliveryTypes) | **GET** /dial/delivery-types | getDeliveryTypes
+[**getInvoiceCounter**](CodeListsApi.md#getInvoiceCounter) | **GET** /dial/invoice-counters/{counter} | getInvoiceCounter
 [**getInvoiceCounters**](CodeListsApi.md#getInvoiceCounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
 [**getLogos**](CodeListsApi.md#getLogos) | **GET** /dial/logos | getLogos
 [**getPaymentTypes**](CodeListsApi.md#getPaymentTypes) | **GET** /dial/payment-types | getPaymentTypes
@@ -177,6 +178,69 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\Uctoplus\API\Models\DeliveryType[]**](../Model/DeliveryType.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getInvoiceCounter
+
+> \Uctoplus\API\Models\InvoiceCounter getInvoiceCounter($counter)
+
+getInvoiceCounter
+
+Return Invoice Counter by ID.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-key
+$config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+
+$apiInstance = new Uctoplus\API\Api\CodeListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$counter = 56; // int | ID of Invoice Counter
+
+try {
+    $result = $apiInstance->getInvoiceCounter($counter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CodeListsApi->getInvoiceCounter: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **counter** | **int**| ID of Invoice Counter |
+
+### Return type
+
+[**\Uctoplus\API\Models\InvoiceCounter**](../Model/InvoiceCounter.md)
 
 ### Authorization
 
