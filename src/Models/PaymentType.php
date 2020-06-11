@@ -36,7 +36,6 @@ use \Uctoplus\API\ObjectSerializer;
  * PaymentType Class Doc Comment
  *
  * @category Class
- * @description ID from [Moje Účto+](http://moje.uctoplus.sk/)
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +58,8 @@ class PaymentType implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'name' => 'string'
+        'name' => 'string',
+        'invoice_description' => 'string'
     ];
 
     /**
@@ -69,7 +69,8 @@ class PaymentType implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'name' => null
+        'name' => null,
+        'invoice_description' => null
     ];
 
     /**
@@ -100,7 +101,8 @@ class PaymentType implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name'
+        'name' => 'name',
+        'invoice_description' => 'invoiceDescription'
     ];
 
     /**
@@ -110,7 +112,8 @@ class PaymentType implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName'
+        'name' => 'setName',
+        'invoice_description' => 'setInvoiceDescription'
     ];
 
     /**
@@ -120,7 +123,8 @@ class PaymentType implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName'
+        'name' => 'getName',
+        'invoice_description' => 'getInvoiceDescription'
     ];
 
     /**
@@ -185,6 +189,7 @@ class PaymentType implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['invoice_description'] = isset($data['invoice_description']) ? $data['invoice_description'] : null;
     }
 
     /**
@@ -255,6 +260,30 @@ class PaymentType implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_description
+     *
+     * @return string|null
+     */
+    public function getInvoiceDescription()
+    {
+        return $this->container['invoice_description'];
+    }
+
+    /**
+     * Sets invoice_description
+     *
+     * @param string|null $invoice_description invoice_description
+     *
+     * @return $this
+     */
+    public function setInvoiceDescription($invoice_description)
+    {
+        $this->container['invoice_description'] = $invoice_description;
 
         return $this;
     }

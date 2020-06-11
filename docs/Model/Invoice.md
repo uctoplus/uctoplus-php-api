@@ -27,11 +27,12 @@ Name | Type | Description | Notes
 **signature_version** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
 **template_id** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
 **delivery_type** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
-**payment_type** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | 
+**payment_type** | [**OneOfPaymentTypeString**](OneOfPaymentTypeString.md) | If filled new PaymentType it will be created! | 
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional] 
 **items** | [**AnyOfInvoiceItemLinkedInvoiceItem[]**](AnyOfInvoiceItemLinkedInvoiceItem.md) | Items in invoice | 
 **reverse_charge** | **bool** |  | [optional] [default to false]
 **discount** | **float** |  | [optional] [default to 0.0]
+**discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
 **payment** | [**OneOfPayment**](OneOfPayment.md) |  | [optional] 
 **file** | [**OneOfFile**](OneOfFile.md) |  | [optional] [readonly] 
 **moje_uctoplus_url** | **string** |  | [optional] [readonly] 

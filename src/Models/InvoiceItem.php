@@ -64,7 +64,8 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         'price_without_tax' => 'float',
         'tax_percentage' => 'float',
         'type' => 'string',
-        'discount' => 'float'
+        'discount' => 'float',
+        'discount_type' => 'float'
     ];
 
     /**
@@ -80,7 +81,8 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         'price_without_tax' => null,
         'tax_percentage' => null,
         'type' => null,
-        'discount' => null
+        'discount' => null,
+        'discount_type' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         'price_without_tax' => 'priceWithoutTax',
         'tax_percentage' => 'taxPercentage',
         'type' => 'type',
-        'discount' => 'discount'
+        'discount' => 'discount',
+        'discount_type' => 'discountType'
     ];
 
     /**
@@ -133,7 +136,8 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         'price_without_tax' => 'setPriceWithoutTax',
         'tax_percentage' => 'setTaxPercentage',
         'type' => 'setType',
-        'discount' => 'setDiscount'
+        'discount' => 'setDiscount',
+        'discount_type' => 'setDiscountType'
     ];
 
     /**
@@ -149,7 +153,8 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         'price_without_tax' => 'getPriceWithoutTax',
         'tax_percentage' => 'getTaxPercentage',
         'type' => 'getType',
-        'discount' => 'getDiscount'
+        'discount' => 'getDiscount',
+        'discount_type' => 'getDiscountType'
     ];
 
     /**
@@ -220,6 +225,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess
         $this->container['tax_percentage'] = isset($data['tax_percentage']) ? $data['tax_percentage'] : 0.0;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : 0.0;
+        $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : 0;
     }
 
     /**
@@ -446,6 +452,30 @@ class InvoiceItem implements ModelInterface, ArrayAccess
     public function setDiscount($discount)
     {
         $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount_type
+     *
+     * @return float|null
+     */
+    public function getDiscountType()
+    {
+        return $this->container['discount_type'];
+    }
+
+    /**
+     * Sets discount_type
+     *
+     * @param float|null $discount_type 0 - none 1 - percentage of price, 2 - amount of price
+     *
+     * @return $this
+     */
+    public function setDiscountType($discount_type)
+    {
+        $this->container['discount_type'] = $discount_type;
 
         return $this;
     }

@@ -80,11 +80,12 @@ class Invoice implements ModelInterface, ArrayAccess
         'signature_version' => 'int',
         'template_id' => 'int',
         'delivery_type' => 'int',
-        'payment_type' => 'int',
+        'payment_type' => 'OneOfPaymentTypeString',
         'currency2' => '\Uctoplus\API\Models\InvoiceCurrency2',
         'items' => 'AnyOfInvoiceItemLinkedInvoiceItem[]',
         'reverse_charge' => 'bool',
         'discount' => 'float',
+        'discount_type' => 'float',
         'payment' => 'OneOfPayment',
         'file' => 'OneOfFile',
         'moje_uctoplus_url' => 'string',
@@ -126,6 +127,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'items' => null,
         'reverse_charge' => null,
         'discount' => null,
+        'discount_type' => null,
         'payment' => null,
         'file' => null,
         'moje_uctoplus_url' => null,
@@ -188,6 +190,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'items' => 'items',
         'reverse_charge' => 'reverseCharge',
         'discount' => 'discount',
+        'discount_type' => 'discountType',
         'payment' => 'payment',
         'file' => 'file',
         'moje_uctoplus_url' => 'mojeUctoplusUrl',
@@ -229,6 +232,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'items' => 'setItems',
         'reverse_charge' => 'setReverseCharge',
         'discount' => 'setDiscount',
+        'discount_type' => 'setDiscountType',
         'payment' => 'setPayment',
         'file' => 'setFile',
         'moje_uctoplus_url' => 'setMojeUctoplusUrl',
@@ -270,6 +274,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'items' => 'getItems',
         'reverse_charge' => 'getReverseCharge',
         'discount' => 'getDiscount',
+        'discount_type' => 'getDiscountType',
         'payment' => 'getPayment',
         'file' => 'getFile',
         'moje_uctoplus_url' => 'getMojeUctoplusUrl',
@@ -384,6 +389,7 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
         $this->container['reverse_charge'] = isset($data['reverse_charge']) ? $data['reverse_charge'] : false;
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : 0.0;
+        $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : 0;
         $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
         $this->container['file'] = isset($data['file']) ? $data['file'] : null;
         $this->container['moje_uctoplus_url'] = isset($data['moje_uctoplus_url']) ? $data['moje_uctoplus_url'] : null;
@@ -1014,7 +1020,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets payment_type
      *
-     * @return int
+     * @return OneOfPaymentTypeString
      */
     public function getPaymentType()
     {
@@ -1024,7 +1030,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment_type
      *
-     * @param int $payment_type ID from [Moje Účto+](http://moje.uctoplus.sk/)
+     * @param OneOfPaymentTypeString $payment_type If filled new PaymentType it will be created!
      *
      * @return $this
      */
@@ -1084,33 +1090,7 @@ class Invoice implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets prenesenie_dph
-     *
-     * @return bool|null
-     *
-     * @deprecated
-     */
-    public function getPrenesenieDph()
-    {
-        return $this->getReverseCharge();
-    }
-
-    /**
-     * Sets prenesenie_dph
-     *
-     * @param bool|null $prenesenie_dph prenesenie_dph
-     *
-     * @return $this
-     *
-     * @deprecated
-     */
-    public function setPrenesenieDph($prenesenie_dph)
-    {
-        return $this->setReverseCharge($prenesenie_dph);
-    }
-
-    /**
-     * Gets prenesenie_dph
+     * Gets reverse_charge
      *
      * @return bool|null
      */
@@ -1153,6 +1133,30 @@ class Invoice implements ModelInterface, ArrayAccess
     public function setDiscount($discount)
     {
         $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount_type
+     *
+     * @return float|null
+     */
+    public function getDiscountType()
+    {
+        return $this->container['discount_type'];
+    }
+
+    /**
+     * Sets discount_type
+     *
+     * @param float|null $discount_type 0 - none 1 - percentage of price
+     *
+     * @return $this
+     */
+    public function setDiscountType($discount_type)
+    {
+        $this->container['discount_type'] = $discount_type;
 
         return $this;
     }

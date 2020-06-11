@@ -1,5 +1,6 @@
 {
     "name": "uctoplus/uctoplus-php-api",
+    "version": "2.2",
     "description": "Moje Účto+ API is avaliable in test mode at `https://dev.uctoplus.eu/api/v2`.  Production enviroment is located at `https://moje.uctoplus.sk/api/v2`.  All comunication with API is encoded in UTF-8. This REST API is based on Open API v3 standard.",
     "keywords": [
         "uctoplus",
