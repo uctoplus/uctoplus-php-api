@@ -1,6 +1,6 @@
 <?php
 /**
- * Issuer
+ * InlineResponse2001
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Issuer Class Doc Comment
+ * InlineResponse2001 Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Issuer implements ModelInterface, ArrayAccess
+class InlineResponse2001 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Issuer implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Issuer';
+    protected static $openAPIModelName = 'inline_response_200_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class Issuer implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'phone' => 'string',
-        'web' => 'string',
-        'email' => 'string'
+        'status' => 'bool',
+        'model' => '\Uctoplus\API\Models\Address'
     ];
 
     /**
@@ -69,10 +67,8 @@ class Issuer implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'phone' => null,
-        'web' => null,
-        'email' => null
+        'status' => null,
+        'model' => null
     ];
 
     /**
@@ -102,10 +98,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'phone' => 'phone',
-        'web' => 'web',
-        'email' => 'email'
+        'status' => 'status',
+        'model' => 'model'
     ];
 
     /**
@@ -114,10 +108,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'phone' => 'setPhone',
-        'web' => 'setWeb',
-        'email' => 'setEmail'
+        'status' => 'setStatus',
+        'model' => 'setModel'
     ];
 
     /**
@@ -126,10 +118,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'phone' => 'getPhone',
-        'web' => 'getWeb',
-        'email' => 'getEmail'
+        'status' => 'getStatus',
+        'model' => 'getModel'
     ];
 
     /**
@@ -192,10 +182,8 @@ class Issuer implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['web'] = isset($data['web']) ? $data['web'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : true;
+        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
     }
 
     /**
@@ -207,8 +195,11 @@ class Issuer implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['model'] === null) {
+            $invalidProperties[] = "'model' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,97 +217,49 @@ class Issuer implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets status
      *
-     * @return string
+     * @return bool
      */
-    public function getName()
+    public function getStatus()
     {
-        return $this->container['name'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets name
+     * Sets status
      *
-     * @param string $name name
+     * @param bool $status status
      *
      * @return $this
      */
-    public function setName($name)
+    public function setStatus($status)
     {
-        $this->container['name'] = $name;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets phone
+     * Gets model
      *
-     * @return string|null
+     * @return \Uctoplus\API\Models\Address
      */
-    public function getPhone()
+    public function getModel()
     {
-        return $this->container['phone'];
+        return $this->container['model'];
     }
 
     /**
-     * Sets phone
+     * Sets model
      *
-     * @param string|null $phone phone
+     * @param \Uctoplus\API\Models\Address $model model
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setModel($model)
     {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets web
-     *
-     * @return string|null
-     */
-    public function getWeb()
-    {
-        return $this->container['web'];
-    }
-
-    /**
-     * Sets web
-     *
-     * @param string|null $web web
-     *
-     * @return $this
-     */
-    public function setWeb($web)
-    {
-        $this->container['web'] = $web;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
+        $this->container['model'] = $model;
 
         return $this;
     }

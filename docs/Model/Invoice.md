@@ -23,13 +23,14 @@ Name | Type | Description | Notes
 **note2** | **string** | Markdown language allowed. | [optional] 
 **note3** | **string** | Markdown language allowed. | [optional] 
 **theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional] 
-**logo_version** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
-**signature_version** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
-**template_id** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
-**delivery_type** | **int** | ID from [Moje Účto+](http://moje.uctoplus.sk/) | [optional] 
+**logo_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
+**signature_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
+**template_id** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
+**delivery_type** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
 **payment_type** | [**OneOfPaymentTypeString**](OneOfPaymentTypeString.md) | If filled new PaymentType it will be created! | 
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional] 
 **items** | [**AnyOfInvoiceItemLinkedInvoiceItem[]**](AnyOfInvoiceItemLinkedInvoiceItem.md) | Items in invoice | 
+**tags** | [**OneOfTag[]**](OneOfTag.md) | Tags | [optional] 
 **reverse_charge** | **bool** |  | [optional] [default to false]
 **discount** | **float** |  | [optional] [default to 0.0]
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]

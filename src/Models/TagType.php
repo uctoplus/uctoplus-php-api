@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme
+ * TagType
  *
  * PHP version 5
  *
@@ -31,21 +31,22 @@ namespace Uctoplus\API\Models;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Theme Class Doc Comment
+ * TagType Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Theme
+class TagType
 {
     /**
      * Possible values of this enum
      */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
+    const NONE = 'none';
+    const JOB = 'job';
+    const WORK = 'work';
+    const DEPARTMENT = 'department';
     
     /**
      * Gets allowable values of the enum
@@ -54,9 +55,10 @@ class Theme
     public static function getAllowableEnumValues()
     {
         return [
-            self::1,
-            self::2,
-            self::3,
+            self::NONE,
+            self::JOB,
+            self::WORK,
+            self::DEPARTMENT,
         ];
     }
 }

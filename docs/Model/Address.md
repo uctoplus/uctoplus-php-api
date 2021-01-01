@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **sk_ico** | **int** |  | [optional] 
 **sk_dic** | **int** |  | [optional] 
 **vat** | **string** |  | [optional] 
-**internal_id** | **int** | Internal system ID, contact address can be paired with ID in your system and internal_id in Moje Účto+ | [optional] 
+**internal_id** | **string** | Internal system ID, contact address can be paired with ID in your system and internal_id in Účto+ In case Address has Internal ID system is trying to mach it with existing entry (with Internal ID) in Účto+ | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -1,6 +1,6 @@
 # Uctoplus\API\InvoiceApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2*
+All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## addInvoice
 
-> \Uctoplus\API\Models\Response addInvoice($invoice)
+> \Uctoplus\API\Models\InlineResponse200 addInvoice($invoice)
 
 addInvoice
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\Response**](../Model/Response.md)
+[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## addPaymentToInvoice
 
-> \Uctoplus\API\Models\Response addPaymentToInvoice($id, $payment)
+> \Uctoplus\API\Models\InlineResponse200 addPaymentToInvoice($id, $payment)
 
 addPaymentToInvoice
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\Response**](../Model/Response.md)
+[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## getInvoice
 
-> \Uctoplus\API\Models\Response getInvoice($id)
+> \Uctoplus\API\Models\InlineResponse200 getInvoice($id)
 
 getInvoice
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\Response**](../Model/Response.md)
+[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 

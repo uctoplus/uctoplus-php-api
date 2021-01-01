@@ -1,6 +1,6 @@
 # Uctoplus\API\CodeListsApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2*
+All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getLogos**](CodeListsApi.md#getLogos) | **GET** /dial/logos | getLogos
 [**getPaymentTypes**](CodeListsApi.md#getPaymentTypes) | **GET** /dial/payment-types | getPaymentTypes
 [**getSignatures**](CodeListsApi.md#getSignatures) | **GET** /dial/signatures | getSignatures
-[**getTemplates**](CodeListsApi.md#getTemplates) | **GET** /dial/templates | getTemplates
+[**getTemplates**](CodeListsApi.md#getTemplates) | **GET** /dial/invoice/templates | getTemplates
 
 
 
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 
 ## getInvoiceCounter
 
-> \Uctoplus\API\Models\InvoiceCounter getInvoiceCounter($counter)
+> \Uctoplus\API\Models\InlineResponse2002 getInvoiceCounter($counter)
 
 getInvoiceCounter
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\InvoiceCounter**](../Model/InvoiceCounter.md)
+[**\Uctoplus\API\Models\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

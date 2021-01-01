@@ -1,6 +1,6 @@
 <?php
 /**
- * Issuer
+ * Tag
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Issuer Class Doc Comment
+ * Tag Class Doc Comment
  *
  * @category Class
+ * @description One line summary. If not provided Invoice number is used.
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Issuer implements ModelInterface, ArrayAccess
+class Tag implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class Issuer implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Issuer';
+    protected static $openAPIModelName = 'Tag';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +58,8 @@ class Issuer implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'phone' => 'string',
-        'web' => 'string',
-        'email' => 'string'
+        'tag_name' => 'string',
+        'tag_type' => '\Uctoplus\API\Models\TagType'
     ];
 
     /**
@@ -69,10 +68,8 @@ class Issuer implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'phone' => null,
-        'web' => null,
-        'email' => null
+        'tag_name' => null,
+        'tag_type' => null
     ];
 
     /**
@@ -102,10 +99,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'phone' => 'phone',
-        'web' => 'web',
-        'email' => 'email'
+        'tag_name' => 'tagName',
+        'tag_type' => 'tagType'
     ];
 
     /**
@@ -114,10 +109,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'phone' => 'setPhone',
-        'web' => 'setWeb',
-        'email' => 'setEmail'
+        'tag_name' => 'setTagName',
+        'tag_type' => 'setTagType'
     ];
 
     /**
@@ -126,10 +119,8 @@ class Issuer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'phone' => 'getPhone',
-        'web' => 'getWeb',
-        'email' => 'getEmail'
+        'tag_name' => 'getTagName',
+        'tag_type' => 'getTagType'
     ];
 
     /**
@@ -192,10 +183,8 @@ class Issuer implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['web'] = isset($data['web']) ? $data['web'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['tag_name'] = isset($data['tag_name']) ? $data['tag_name'] : null;
+        $this->container['tag_type'] = isset($data['tag_type']) ? $data['tag_type'] : null;
     }
 
     /**
@@ -207,8 +196,8 @@ class Issuer implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['tag_name'] === null) {
+            $invalidProperties[] = "'tag_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,97 +215,49 @@ class Issuer implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets tag_name
      *
      * @return string
      */
-    public function getName()
+    public function getTagName()
     {
-        return $this->container['name'];
+        return $this->container['tag_name'];
     }
 
     /**
-     * Sets name
+     * Sets tag_name
      *
-     * @param string $name name
+     * @param string $tag_name tag_name
      *
      * @return $this
      */
-    public function setName($name)
+    public function setTagName($tag_name)
     {
-        $this->container['name'] = $name;
+        $this->container['tag_name'] = $tag_name;
 
         return $this;
     }
 
     /**
-     * Gets phone
+     * Gets tag_type
      *
-     * @return string|null
+     * @return \Uctoplus\API\Models\TagType|null
      */
-    public function getPhone()
+    public function getTagType()
     {
-        return $this->container['phone'];
+        return $this->container['tag_type'];
     }
 
     /**
-     * Sets phone
+     * Sets tag_type
      *
-     * @param string|null $phone phone
+     * @param \Uctoplus\API\Models\TagType|null $tag_type tag_type
      *
      * @return $this
      */
-    public function setPhone($phone)
+    public function setTagType($tag_type)
     {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets web
-     *
-     * @return string|null
-     */
-    public function getWeb()
-    {
-        return $this->container['web'];
-    }
-
-    /**
-     * Sets web
-     *
-     * @param string|null $web web
-     *
-     * @return $this
-     */
-    public function setWeb($web)
-    {
-        $this->container['web'] = $web;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
+        $this->container['tag_type'] = $tag_type;
 
         return $this;
     }

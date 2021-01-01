@@ -1,13 +1,11 @@
-# # InvoiceCounter
+# # Tag
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**name** | **string** |  | [optional] 
-**format** | **string** |  | [optional] 
-**invoice_type** | **string** |  | [optional] 
+**tag_name** | **string** |  | 
+**tag_type** | [**\Uctoplus\API\Models\TagType**](TagType.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

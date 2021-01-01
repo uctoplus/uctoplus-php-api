@@ -1,6 +1,6 @@
 # Uctoplus\API\AddressListApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2*
+All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## addAddress
 
-> \Uctoplus\API\Models\Response addAddress($address)
+> \Uctoplus\API\Models\InlineResponse2001 addAddress($address)
 
 addAddress
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\Response**](../Model/Response.md)
+[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## getAddressById
 
-> \Uctoplus\API\Models\Address getAddressById($id)
+> \Uctoplus\API\Models\InlineResponse2001 getAddressById($id)
 
 getAddressById.
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Uctoplus\API\Models\Address**](../Model/Address.md)
+[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ## getAddressByInternalId
 
-> \Uctoplus\API\Models\Address getAddressByInternalId($id)
+> \Uctoplus\API\Models\InlineResponse2001 getAddressByInternalId($id)
 
 getAddressByInternalId.
 
@@ -164,7 +164,7 @@ $apiInstance = new Uctoplus\API\Api\AddressListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | Get Address by Internal Id
+$id = 'id_example'; // string | Get Address by Internal Id
 
 try {
     $result = $apiInstance->getAddressByInternalId($id);
@@ -180,11 +180,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Get Address by Internal Id |
+ **id** | **string**| Get Address by Internal Id |
 
 ### Return type
 
-[**\Uctoplus\API\Models\Address**](../Model/Address.md)
+[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
