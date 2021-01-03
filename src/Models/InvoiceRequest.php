@@ -57,7 +57,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'invoice_number' => 'OneOfStringInvoiceCounter',
         'invoice_type' => '\Uctoplus\API\Models\InvoiceType',
         'reciever' => 'OneOfAddressString',
@@ -96,7 +95,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => 'int64',
         'invoice_number' => null,
         'invoice_type' => null,
         'reciever' => null,
@@ -156,7 +154,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'invoice_number' => 'invoiceNumber',
         'invoice_type' => 'invoiceType',
         'reciever' => 'reciever',
@@ -195,7 +192,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'invoice_number' => 'setInvoiceNumber',
         'invoice_type' => 'setInvoiceType',
         'reciever' => 'setReciever',
@@ -234,7 +230,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'invoice_number' => 'getInvoiceNumber',
         'invoice_type' => 'getInvoiceType',
         'reciever' => 'getReciever',
@@ -327,7 +322,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
         $this->container['invoice_type'] = isset($data['invoice_type']) ? $data['invoice_type'] : null;
         $this->container['reciever'] = isset($data['reciever']) ? $data['reciever'] : null;
@@ -410,30 +404,6 @@ class InvoiceRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets invoice_number

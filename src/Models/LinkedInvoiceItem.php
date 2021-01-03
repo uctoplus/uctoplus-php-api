@@ -59,7 +59,7 @@ class LinkedInvoiceItem implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'invoice_id' => 'int',
+        'invoice_id' => 'string',
         'summary' => 'string',
         'description' => 'string'
     ];
@@ -71,7 +71,7 @@ class LinkedInvoiceItem implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'invoice_id' => 'int64',
+        'invoice_id' => null,
         'summary' => null,
         'description' => null
     ];
@@ -253,7 +253,7 @@ class LinkedInvoiceItem implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_id
      *
-     * @return int
+     * @return string
      */
     public function getInvoiceId()
     {
@@ -263,7 +263,7 @@ class LinkedInvoiceItem implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_id
      *
-     * @param int $invoice_id Only `PROFORMA_INVOICE` can be used as a link.
+     * @param string $invoice_id Only `PROFORMA_INVOICE` can be used as a link.
      *
      * @return $this
      */

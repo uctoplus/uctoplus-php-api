@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [readonly] 
 **invoice_number** | [**OneOfStringInvoiceCounter**](OneOfStringInvoiceCounter.md) |  | 
 **invoice_type** | [**\Uctoplus\API\Models\InvoiceType**](InvoiceType.md) |  | 
 **reciever** | [**OneOfAddressString**](OneOfAddressString.md) | If filled new Address in Contact List will be created! | 

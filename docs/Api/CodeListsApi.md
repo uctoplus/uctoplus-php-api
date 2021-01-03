@@ -283,7 +283,7 @@ $apiInstance = new Uctoplus\API\Api\CodeListsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_type = 'invoice_type_example'; // string | * `INVOICE` - Invocie * `PROFORMA_INVOICE` - Proforma Invoice * `DODACI_LIST` - Dodací list * `VAT_PROOF` - VAT Proof * `PRICE_QUOTATION` - Price Quotation
+$invoice_type = new \Uctoplus\API\Models\\Uctoplus\API\Models\InvoiceType(); // \Uctoplus\API\Models\InvoiceType | * `INVOICE` - Invocie * `PROFORMA_INVOICE` - Proforma Invoice * `DODACI_LIST` - Dodací list * `VAT_PROOF` - VAT Proof * `PRICE_QUOTATION` - Price Quotation
 
 try {
     $result = $apiInstance->getInvoiceCounters($invoice_type);
@@ -299,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_type** | **string**| * &#x60;INVOICE&#x60; - Invocie * &#x60;PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;DODACI_LIST&#x60; - Dodací list * &#x60;VAT_PROOF&#x60; - VAT Proof * &#x60;PRICE_QUOTATION&#x60; - Price Quotation |
+ **invoice_type** | [**\Uctoplus\API\Models\InvoiceType**](../Model/.md)| * &#x60;INVOICE&#x60; - Invocie * &#x60;PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;DODACI_LIST&#x60; - Dodací list * &#x60;VAT_PROOF&#x60; - VAT Proof * &#x60;PRICE_QUOTATION&#x60; - Price Quotation |
 
 ### Return type
 

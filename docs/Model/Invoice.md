@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [readonly] 
+**id** | **string** |  | [optional] [readonly] 
 **invoice_number** | **string** |  | [optional] 
 **invoice_type** | [**\Uctoplus\API\Models\InvoiceType**](InvoiceType.md) |  | [optional] 
 **reciever** | [**\Uctoplus\API\Models\Address**](Address.md) |  | [optional] 
@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **note1** | **string** | Markdown language allowed. | [optional] 
 **note2** | **string** | Markdown language allowed. | [optional] 
 **note3** | **string** | Markdown language allowed. | [optional] 
-**theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional] 
 **logo_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
 **signature_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 
 **template_id** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional] 

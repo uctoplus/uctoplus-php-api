@@ -57,7 +57,7 @@ class Invoice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'id' => 'string',
         'invoice_number' => 'string',
         'invoice_type' => '\Uctoplus\API\Models\InvoiceType',
         'reciever' => '\Uctoplus\API\Models\Address',
@@ -75,7 +75,6 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => 'string',
         'note2' => 'string',
         'note3' => 'string',
-        'theme' => '\Uctoplus\API\Models\Theme',
         'logo_version' => 'int',
         'signature_version' => 'int',
         'template_id' => 'int',
@@ -100,7 +99,7 @@ class Invoice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => 'int64',
+        'id' => null,
         'invoice_number' => null,
         'invoice_type' => null,
         'reciever' => null,
@@ -118,7 +117,6 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => null,
         'note2' => null,
         'note3' => null,
-        'theme' => null,
         'logo_version' => null,
         'signature_version' => null,
         'template_id' => null,
@@ -182,7 +180,6 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => 'note1',
         'note2' => 'note2',
         'note3' => 'note3',
-        'theme' => 'theme',
         'logo_version' => 'logoVersion',
         'signature_version' => 'signatureVersion',
         'template_id' => 'templateId',
@@ -225,7 +222,6 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => 'setNote1',
         'note2' => 'setNote2',
         'note3' => 'setNote3',
-        'theme' => 'setTheme',
         'logo_version' => 'setLogoVersion',
         'signature_version' => 'setSignatureVersion',
         'template_id' => 'setTemplateId',
@@ -268,7 +264,6 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => 'getNote1',
         'note2' => 'getNote2',
         'note3' => 'getNote3',
-        'theme' => 'getTheme',
         'logo_version' => 'getLogoVersion',
         'signature_version' => 'getSignatureVersion',
         'template_id' => 'getTemplateId',
@@ -388,7 +383,6 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['note1'] = isset($data['note1']) ? $data['note1'] : null;
         $this->container['note2'] = isset($data['note2']) ? $data['note2'] : null;
         $this->container['note3'] = isset($data['note3']) ? $data['note3'] : null;
-        $this->container['theme'] = isset($data['theme']) ? $data['theme'] : null;
         $this->container['logo_version'] = isset($data['logo_version']) ? $data['logo_version'] : null;
         $this->container['signature_version'] = isset($data['signature_version']) ? $data['signature_version'] : null;
         $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
@@ -434,7 +428,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -444,7 +438,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return $this
      */
@@ -859,30 +853,6 @@ class Invoice implements ModelInterface, ArrayAccess
     public function setNote3($note3)
     {
         $this->container['note3'] = $note3;
-
-        return $this;
-    }
-
-    /**
-     * Gets theme
-     *
-     * @return \Uctoplus\API\Models\Theme|null
-     */
-    public function getTheme()
-    {
-        return $this->container['theme'];
-    }
-
-    /**
-     * Sets theme
-     *
-     * @param \Uctoplus\API\Models\Theme|null $theme theme
-     *
-     * @return $this
-     */
-    public function setTheme($theme)
-    {
-        $this->container['theme'] = $theme;
 
         return $this;
     }
