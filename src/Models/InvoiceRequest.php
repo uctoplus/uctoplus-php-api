@@ -1,6 +1,6 @@
 <?php
 /**
- * Invoice
+ * InvoiceRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Invoice Class Doc Comment
+ * InvoiceRequest Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Invoice implements ModelInterface, ArrayAccess
+class InvoiceRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Invoice implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Invoice';
+    protected static $openAPIModelName = 'InvoiceRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,10 @@ class Invoice implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'invoice_number' => 'string',
+        'invoice_number' => 'OneOfStringInvoiceCounter',
         'invoice_type' => '\Uctoplus\API\Models\InvoiceType',
-        'reciever' => '\Uctoplus\API\Models\Address',
-        'delivery_address' => '\Uctoplus\API\Models\DeliveryAddress',
+        'reciever' => 'OneOfAddressString',
+        'delivery_address' => 'OneOfDeliveryAddress',
         'internal_description' => 'string',
         'variable_symbol' => 'string',
         'konstantny_symbol' => 'string',
@@ -80,18 +80,14 @@ class Invoice implements ModelInterface, ArrayAccess
         'signature_version' => 'int',
         'template_id' => 'int',
         'delivery_type' => 'int',
-        'payment_type' => '\Uctoplus\API\Models\PaymentType',
+        'payment_type' => 'OneOfPaymentTypeString',
         'currency2' => '\Uctoplus\API\Models\InvoiceCurrency2',
-        'items' => '\Uctoplus\API\Models\InvoiceItem[]',
-        'tags' => '\Uctoplus\API\Models\Tag[]',
+        'items' => 'AnyOfInvoiceItemLinkedInvoiceItem[]',
+        'tags' => 'OneOfTag[]',
         'reverse_charge' => 'bool',
         'discount' => 'float',
         'discount_type' => 'float',
-        'payment' => '\Uctoplus\API\Models\Payment',
-        'file' => '\Uctoplus\API\Models\File',
-        'moje_uctoplus_url' => 'string',
-        'moje_uctoplus_add_url' => 'string',
-        'summary' => '\Uctoplus\API\Models\Summary'
+        'payment' => 'OneOfPayment'
     ];
 
     /**
@@ -130,11 +126,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'reverse_charge' => null,
         'discount' => null,
         'discount_type' => null,
-        'payment' => null,
-        'file' => null,
-        'moje_uctoplus_url' => null,
-        'moje_uctoplus_add_url' => null,
-        'summary' => null
+        'payment' => null
     ];
 
     /**
@@ -194,11 +186,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'reverse_charge' => 'reverseCharge',
         'discount' => 'discount',
         'discount_type' => 'discountType',
-        'payment' => 'payment',
-        'file' => 'file',
-        'moje_uctoplus_url' => 'mojeUctoplusUrl',
-        'moje_uctoplus_add_url' => 'mojeUctoplusAddUrl',
-        'summary' => 'summary'
+        'payment' => 'payment'
     ];
 
     /**
@@ -237,11 +225,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'reverse_charge' => 'setReverseCharge',
         'discount' => 'setDiscount',
         'discount_type' => 'setDiscountType',
-        'payment' => 'setPayment',
-        'file' => 'setFile',
-        'moje_uctoplus_url' => 'setMojeUctoplusUrl',
-        'moje_uctoplus_add_url' => 'setMojeUctoplusAddUrl',
-        'summary' => 'setSummary'
+        'payment' => 'setPayment'
     ];
 
     /**
@@ -280,11 +264,7 @@ class Invoice implements ModelInterface, ArrayAccess
         'reverse_charge' => 'getReverseCharge',
         'discount' => 'getDiscount',
         'discount_type' => 'getDiscountType',
-        'payment' => 'getPayment',
-        'file' => 'getFile',
-        'moje_uctoplus_url' => 'getMojeUctoplusUrl',
-        'moje_uctoplus_add_url' => 'getMojeUctoplusAddUrl',
-        'summary' => 'getSummary'
+        'payment' => 'getPayment'
     ];
 
     /**
@@ -378,10 +358,6 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : 0.0;
         $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : 0;
         $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
-        $this->container['file'] = isset($data['file']) ? $data['file'] : null;
-        $this->container['moje_uctoplus_url'] = isset($data['moje_uctoplus_url']) ? $data['moje_uctoplus_url'] : null;
-        $this->container['moje_uctoplus_add_url'] = isset($data['moje_uctoplus_add_url']) ? $data['moje_uctoplus_add_url'] : null;
-        $this->container['summary'] = isset($data['summary']) ? $data['summary'] : null;
     }
 
     /**
@@ -393,6 +369,33 @@ class Invoice implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['invoice_number'] === null) {
+            $invalidProperties[] = "'invoice_number' can't be null";
+        }
+        if ($this->container['invoice_type'] === null) {
+            $invalidProperties[] = "'invoice_type' can't be null";
+        }
+        if ($this->container['reciever'] === null) {
+            $invalidProperties[] = "'reciever' can't be null";
+        }
+        if ($this->container['date_issue'] === null) {
+            $invalidProperties[] = "'date_issue' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
+        if ($this->container['issuer'] === null) {
+            $invalidProperties[] = "'issuer' can't be null";
+        }
+        if ($this->container['language'] === null) {
+            $invalidProperties[] = "'language' can't be null";
+        }
+        if ($this->container['payment_type'] === null) {
+            $invalidProperties[] = "'payment_type' can't be null";
+        }
+        if ($this->container['items'] === null) {
+            $invalidProperties[] = "'items' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -435,7 +438,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_number
      *
-     * @return string|null
+     * @return OneOfStringInvoiceCounter
      */
     public function getInvoiceNumber()
     {
@@ -445,7 +448,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_number
      *
-     * @param string|null $invoice_number invoice_number
+     * @param OneOfStringInvoiceCounter $invoice_number invoice_number
      *
      * @return $this
      */
@@ -459,7 +462,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_type
      *
-     * @return \Uctoplus\API\Models\InvoiceType|null
+     * @return \Uctoplus\API\Models\InvoiceType
      */
     public function getInvoiceType()
     {
@@ -469,7 +472,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_type
      *
-     * @param \Uctoplus\API\Models\InvoiceType|null $invoice_type invoice_type
+     * @param \Uctoplus\API\Models\InvoiceType $invoice_type invoice_type
      *
      * @return $this
      */
@@ -483,7 +486,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets reciever
      *
-     * @return \Uctoplus\API\Models\Address|null
+     * @return OneOfAddressString
      */
     public function getReciever()
     {
@@ -493,7 +496,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets reciever
      *
-     * @param \Uctoplus\API\Models\Address|null $reciever reciever
+     * @param OneOfAddressString $reciever If filled new Address in Contact List will be created!
      *
      * @return $this
      */
@@ -507,7 +510,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_address
      *
-     * @return \Uctoplus\API\Models\DeliveryAddress|null
+     * @return OneOfDeliveryAddress|null
      */
     public function getDeliveryAddress()
     {
@@ -517,7 +520,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets delivery_address
      *
-     * @param \Uctoplus\API\Models\DeliveryAddress|null $delivery_address delivery_address
+     * @param OneOfDeliveryAddress|null $delivery_address delivery_address
      *
      * @return $this
      */
@@ -627,7 +630,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets date_issue
      *
-     * @return \DateTime|null
+     * @return \DateTime
      */
     public function getDateIssue()
     {
@@ -637,7 +640,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets date_issue
      *
-     * @param \DateTime|null $date_issue Date in format parsable by PHP DateTime Class (eg.: yyyy-mm-dd)
+     * @param \DateTime $date_issue Date in format parsable by PHP DateTime Class (eg.: yyyy-mm-dd)
      *
      * @return $this
      */
@@ -699,7 +702,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets currency
      *
-     * @return string|null
+     * @return string
      */
     public function getCurrency()
     {
@@ -709,7 +712,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string|null $currency Currency of invoice, format corresponds to [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
+     * @param string $currency Currency of invoice, format corresponds to [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
      *
      * @return $this
      */
@@ -723,7 +726,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets issuer
      *
-     * @return \Uctoplus\API\Models\Issuer|null
+     * @return \Uctoplus\API\Models\Issuer
      */
     public function getIssuer()
     {
@@ -733,7 +736,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets issuer
      *
-     * @param \Uctoplus\API\Models\Issuer|null $issuer issuer
+     * @param \Uctoplus\API\Models\Issuer $issuer issuer
      *
      * @return $this
      */
@@ -747,7 +750,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets language
      *
-     * @return \Uctoplus\API\Models\Language|null
+     * @return \Uctoplus\API\Models\Language
      */
     public function getLanguage()
     {
@@ -757,7 +760,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets language
      *
-     * @param \Uctoplus\API\Models\Language|null $language language
+     * @param \Uctoplus\API\Models\Language $language language
      *
      * @return $this
      */
@@ -963,7 +966,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets payment_type
      *
-     * @return \Uctoplus\API\Models\PaymentType|null
+     * @return OneOfPaymentTypeString
      */
     public function getPaymentType()
     {
@@ -973,7 +976,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment_type
      *
-     * @param \Uctoplus\API\Models\PaymentType|null $payment_type payment_type
+     * @param OneOfPaymentTypeString $payment_type If filled new PaymentType it will be created!
      *
      * @return $this
      */
@@ -1011,7 +1014,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets items
      *
-     * @return \Uctoplus\API\Models\InvoiceItem[]|null
+     * @return AnyOfInvoiceItemLinkedInvoiceItem[]
      */
     public function getItems()
     {
@@ -1021,7 +1024,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets items
      *
-     * @param \Uctoplus\API\Models\InvoiceItem[]|null $items Items in invoice
+     * @param AnyOfInvoiceItemLinkedInvoiceItem[] $items Items in invoice
      *
      * @return $this
      */
@@ -1035,7 +1038,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets tags
      *
-     * @return \Uctoplus\API\Models\Tag[]|null
+     * @return OneOfTag[]|null
      */
     public function getTags()
     {
@@ -1045,7 +1048,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets tags
      *
-     * @param \Uctoplus\API\Models\Tag[]|null $tags Tags
+     * @param OneOfTag[]|null $tags Tags
      *
      * @return $this
      */
@@ -1131,7 +1134,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets payment
      *
-     * @return \Uctoplus\API\Models\Payment|null
+     * @return OneOfPayment|null
      */
     public function getPayment()
     {
@@ -1141,109 +1144,13 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets payment
      *
-     * @param \Uctoplus\API\Models\Payment|null $payment payment
+     * @param OneOfPayment|null $payment payment
      *
      * @return $this
      */
     public function setPayment($payment)
     {
         $this->container['payment'] = $payment;
-
-        return $this;
-    }
-
-    /**
-     * Gets file
-     *
-     * @return \Uctoplus\API\Models\File|null
-     */
-    public function getFile()
-    {
-        return $this->container['file'];
-    }
-
-    /**
-     * Sets file
-     *
-     * @param \Uctoplus\API\Models\File|null $file file
-     *
-     * @return $this
-     */
-    public function setFile($file)
-    {
-        $this->container['file'] = $file;
-
-        return $this;
-    }
-
-    /**
-     * Gets moje_uctoplus_url
-     *
-     * @return string|null
-     */
-    public function getMojeUctoplusUrl()
-    {
-        return $this->container['moje_uctoplus_url'];
-    }
-
-    /**
-     * Sets moje_uctoplus_url
-     *
-     * @param string|null $moje_uctoplus_url moje_uctoplus_url
-     *
-     * @return $this
-     */
-    public function setMojeUctoplusUrl($moje_uctoplus_url)
-    {
-        $this->container['moje_uctoplus_url'] = $moje_uctoplus_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets moje_uctoplus_add_url
-     *
-     * @return string|null
-     */
-    public function getMojeUctoplusAddUrl()
-    {
-        return $this->container['moje_uctoplus_add_url'];
-    }
-
-    /**
-     * Sets moje_uctoplus_add_url
-     *
-     * @param string|null $moje_uctoplus_add_url moje_uctoplus_add_url
-     *
-     * @return $this
-     */
-    public function setMojeUctoplusAddUrl($moje_uctoplus_add_url)
-    {
-        $this->container['moje_uctoplus_add_url'] = $moje_uctoplus_add_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \Uctoplus\API\Models\Summary|null
-     */
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \Uctoplus\API\Models\Summary|null $summary summary
-     *
-     * @return $this
-     */
-    public function setSummary($summary)
-    {
-        $this->container['summary'] = $summary;
 
         return $this;
     }

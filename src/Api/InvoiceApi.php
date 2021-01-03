@@ -120,15 +120,15 @@ class InvoiceApi
      *
      * addInvoice
      *
-     * @param  \Uctoplus\API\Models\Invoice $invoice Invoice (required)
+     * @param  \Uctoplus\API\Models\InvoiceRequest $invoice_request Invoice (required)
      *
      * @throws \Uctoplus\API\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Uctoplus\API\Models\InlineResponse200|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR
      */
-    public function addInvoice($invoice)
+    public function addInvoice($invoice_request)
     {
-        list($response) = $this->addInvoiceWithHttpInfo($invoice);
+        list($response) = $this->addInvoiceWithHttpInfo($invoice_request);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class InvoiceApi
      *
      * addInvoice
      *
-     * @param  \Uctoplus\API\Models\Invoice $invoice Invoice (required)
+     * @param  \Uctoplus\API\Models\InvoiceRequest $invoice_request Invoice (required)
      *
      * @throws \Uctoplus\API\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Uctoplus\API\Models\InlineResponse200|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addInvoiceWithHttpInfo($invoice)
+    public function addInvoiceWithHttpInfo($invoice_request)
     {
-        $request = $this->addInvoiceRequest($invoice);
+        $request = $this->addInvoiceRequest($invoice_request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -325,14 +325,14 @@ class InvoiceApi
      *
      * addInvoice
      *
-     * @param  \Uctoplus\API\Models\Invoice $invoice Invoice (required)
+     * @param  \Uctoplus\API\Models\InvoiceRequest $invoice_request Invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addInvoiceAsync($invoice)
+    public function addInvoiceAsync($invoice_request)
     {
-        return $this->addInvoiceAsyncWithHttpInfo($invoice)
+        return $this->addInvoiceAsyncWithHttpInfo($invoice_request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -345,15 +345,15 @@ class InvoiceApi
      *
      * addInvoice
      *
-     * @param  \Uctoplus\API\Models\Invoice $invoice Invoice (required)
+     * @param  \Uctoplus\API\Models\InvoiceRequest $invoice_request Invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addInvoiceAsyncWithHttpInfo($invoice)
+    public function addInvoiceAsyncWithHttpInfo($invoice_request)
     {
         $returnType = '\Uctoplus\API\Models\InlineResponse200';
-        $request = $this->addInvoiceRequest($invoice);
+        $request = $this->addInvoiceRequest($invoice_request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -392,17 +392,17 @@ class InvoiceApi
     /**
      * Create request for operation 'addInvoice'
      *
-     * @param  \Uctoplus\API\Models\Invoice $invoice Invoice (required)
+     * @param  \Uctoplus\API\Models\InvoiceRequest $invoice_request Invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addInvoiceRequest($invoice)
+    protected function addInvoiceRequest($invoice_request)
     {
-        // verify the required parameter 'invoice' is set
-        if ($invoice === null || (is_array($invoice) && count($invoice) === 0)) {
+        // verify the required parameter 'invoice_request' is set
+        if ($invoice_request === null || (is_array($invoice_request) && count($invoice_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $invoice when calling addInvoice'
+                'Missing the required parameter $invoice_request when calling addInvoice'
             );
         }
 
@@ -418,8 +418,8 @@ class InvoiceApi
 
         // body params
         $_tempBody = null;
-        if (isset($invoice)) {
-            $_tempBody = $invoice;
+        if (isset($invoice_request)) {
+            $_tempBody = $invoice_request;
         }
 
         if ($multipart) {

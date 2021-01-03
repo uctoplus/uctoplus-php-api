@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## addInvoice
 
-> \Uctoplus\API\Models\InlineResponse200 addInvoice($invoice)
+> \Uctoplus\API\Models\InlineResponse200 addInvoice($invoice_request)
 
 addInvoice
 
@@ -37,10 +37,10 @@ $apiInstance = new Uctoplus\API\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice = new \Uctoplus\API\Models\Invoice(); // \Uctoplus\API\Models\Invoice | Invoice
+$invoice_request = new \Uctoplus\API\Models\InvoiceRequest(); // \Uctoplus\API\Models\InvoiceRequest | Invoice
 
 try {
-    $result = $apiInstance->addInvoice($invoice);
+    $result = $apiInstance->addInvoice($invoice_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->addInvoice: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**\Uctoplus\API\Models\Invoice**](../Model/Invoice.md)| Invoice |
+ **invoice_request** | [**\Uctoplus\API\Models\InvoiceRequest**](../Model/InvoiceRequest.md)| Invoice |
 
 ### Return type
 
