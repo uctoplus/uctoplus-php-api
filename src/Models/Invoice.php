@@ -328,7 +328,30 @@ class Invoice implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    
+    /**
+     * @var string
+     * @deprecated use Uctoplus\API\Models\InvoiceType::INVOICE
+     */
+    const INVOICE_TYPE_INVOICE = 'INVOICE';
+
+    /**
+     * @var string
+     * @deprecated use Uctoplus\API\Models\InvoiceType::PROFORMA_INVOICE
+     */
+    const INVOICE_TYPE_PROFORMA_INVOICE = 'PROFORMA_INVOICE';
+
+    /**
+     * @var string
+     * @deprecated use Uctoplus\API\Models\InvoiceType::DODACI_LIST
+     */
+    const INVOICE_TYPE_DODACI_LIST = 'DODACI_LIST';
+
+    /**
+     * @var string
+     * @deprecated use Uctoplus\API\Models\InvoiceType::PRICE_QUOTATION
+     */
+    const INVOICE_TYPE_PRICE_QUOTATION = 'PRICE_QUOTATION';
+
 
     
 
