@@ -75,10 +75,10 @@ class Invoice implements ModelInterface, ArrayAccess
         'note1' => 'string',
         'note2' => 'string',
         'note3' => 'string',
-        'logo_version' => 'int',
-        'signature_version' => 'int',
+        'logo_version' => '\Uctoplus\API\Models\Logo',
+        'signature_version' => '\Uctoplus\API\Models\Signature',
         'template_id' => 'int',
-        'delivery_type' => 'int',
+        'delivery_type' => '\Uctoplus\API\Models\DeliveryType',
         'payment_type' => '\Uctoplus\API\Models\PaymentType',
         'currency2' => '\Uctoplus\API\Models\InvoiceCurrency2',
         'items' => '\Uctoplus\API\Models\InvoiceItem[]',
@@ -323,30 +323,7 @@ class Invoice implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    /**
-     * @var string
-     * @deprecated use Uctoplus\API\Models\InvoiceType::INVOICE
-     */
-    const INVOICE_TYPE_INVOICE = 'INVOICE';
-
-    /**
-     * @var string
-     * @deprecated use Uctoplus\API\Models\InvoiceType::PROFORMA_INVOICE
-     */
-    const INVOICE_TYPE_PROFORMA_INVOICE = 'PROFORMA_INVOICE';
-
-    /**
-     * @var string
-     * @deprecated use Uctoplus\API\Models\InvoiceType::DODACI_LIST
-     */
-    const INVOICE_TYPE_DODACI_LIST = 'DODACI_LIST';
-
-    /**
-     * @var string
-     * @deprecated use Uctoplus\API\Models\InvoiceType::PRICE_QUOTATION
-     */
-    const INVOICE_TYPE_PRICE_QUOTATION = 'PRICE_QUOTATION';
-
+    
 
     
 
@@ -860,7 +837,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets logo_version
      *
-     * @return int|null
+     * @return \Uctoplus\API\Models\Logo|null
      */
     public function getLogoVersion()
     {
@@ -870,7 +847,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets logo_version
      *
-     * @param int|null $logo_version ID from [Účto+](https://moje.uctoplus.sk)
+     * @param \Uctoplus\API\Models\Logo|null $logo_version logo_version
      *
      * @return $this
      */
@@ -884,7 +861,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets signature_version
      *
-     * @return int|null
+     * @return \Uctoplus\API\Models\Signature|null
      */
     public function getSignatureVersion()
     {
@@ -894,7 +871,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets signature_version
      *
-     * @param int|null $signature_version ID from [Účto+](https://moje.uctoplus.sk)
+     * @param \Uctoplus\API\Models\Signature|null $signature_version signature_version
      *
      * @return $this
      */
@@ -932,7 +909,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_type
      *
-     * @return int|null
+     * @return \Uctoplus\API\Models\DeliveryType|null
      */
     public function getDeliveryType()
     {
@@ -942,7 +919,7 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets delivery_type
      *
-     * @param int|null $delivery_type ID from [Účto+](https://moje.uctoplus.sk)
+     * @param \Uctoplus\API\Models\DeliveryType|null $delivery_type delivery_type
      *
      * @return $this
      */
