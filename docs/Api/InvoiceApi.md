@@ -1,18 +1,19 @@
 # Uctoplus\API\InvoiceApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
+All URIs are relative to https://moje.uctoplus.sk/api/v2/production.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addInvoice**](InvoiceApi.md#addInvoice) | **POST** /invoice/add | addInvoice
-[**addPaymentToInvoice**](InvoiceApi.md#addPaymentToInvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice
-[**getInvoice**](InvoiceApi.md#getInvoice) | **GET** /invoice/{id}/get | getInvoice
+[**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /invoice/add | addInvoice
+[**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice
+[**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /invoice/{id}/get | getInvoice
 
 
+## `addInvoice()`
 
-## addInvoice
-
-> \Uctoplus\API\Models\InlineResponse200 addInvoice($invoice_request)
+```php
+addInvoice($invoice_request): \Uctoplus\API\Models\InlineResponse200
+```
 
 addInvoice
 
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->addInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +64,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `addPaymentToInvoice()`
 
-## addPaymentToInvoice
-
-> \Uctoplus\API\Models\InlineResponse200 addPaymentToInvoice($id, $payment)
+```php
+addPaymentToInvoice($id, $payment): \Uctoplus\API\Models\InlineResponse200
+```
 
 addPaymentToInvoice
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->addPaymentToInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,17 +128,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoice()`
 
-## getInvoice
-
-> \Uctoplus\API\Models\InlineResponse200 getInvoice($id)
+```php
+getInvoice($id): \Uctoplus\API\Models\InlineResponse200
+```
 
 getInvoice
 
@@ -173,11 +172,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->getInvoice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -194,9 +191,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

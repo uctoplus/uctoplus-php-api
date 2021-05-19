@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **bool** |  | [default to true]
-**model** | [**\Uctoplus\API\Models\Address**](Address.md) |  | 
+**model** | [**\Uctoplus\API\Models\Address**](Address.md) |  |
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

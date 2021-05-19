@@ -1,19 +1,20 @@
 # Uctoplus\API\AddressListApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
+All URIs are relative to https://moje.uctoplus.sk/api/v2/production.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAddress**](AddressListApi.md#addAddress) | **POST** /address-list/add | addAddress
-[**getAddressById**](AddressListApi.md#getAddressById) | **GET** /address-list/{id}/get | getAddressById.
-[**getAddressByInternalId**](AddressListApi.md#getAddressByInternalId) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId.
-[**getAddressList**](AddressListApi.md#getAddressList) | **GET** /address-list | getAddressList
+[**addAddress()**](AddressListApi.md#addAddress) | **POST** /address-list/add | addAddress
+[**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /address-list/{id}/get | getAddressById.
+[**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId.
+[**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /address-list | getAddressList
 
 
+## `addAddress()`
 
-## addAddress
-
-> \Uctoplus\API\Models\InlineResponse2001 addAddress($address)
+```php
+addAddress($address): \Uctoplus\API\Models\InlineResponse2001
+```
 
 addAddress
 
@@ -46,11 +47,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->addAddress: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,17 +65,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddressById()`
 
-## getAddressById
-
-> \Uctoplus\API\Models\InlineResponse2001 getAddressById($id)
+```php
+getAddressById($id): \Uctoplus\API\Models\InlineResponse2001
+```
 
 getAddressById.
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddressByInternalId()`
 
-## getAddressByInternalId
-
-> \Uctoplus\API\Models\InlineResponse2001 getAddressByInternalId($id)
+```php
+getAddressByInternalId($id): \Uctoplus\API\Models\InlineResponse2001
+```
 
 getAddressByInternalId.
 
@@ -172,11 +171,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressByInternalId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -193,16 +190,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddressList()`
 
-## getAddressList
-
-> \Uctoplus\API\Models\Address[] getAddressList()
+```php
+getAddressList(): \Uctoplus\API\Models\Address[]
+```
 
 getAddressList
 
@@ -234,7 +232,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressList: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -252,9 +249,8 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

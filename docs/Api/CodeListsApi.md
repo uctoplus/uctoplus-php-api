@@ -1,24 +1,25 @@
 # Uctoplus\API\CodeListsApi
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v2/production*
+All URIs are relative to https://moje.uctoplus.sk/api/v2/production.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCountries**](CodeListsApi.md#getCountries) | **GET** /dial/global/countries | getCountries
-[**getCurrencies**](CodeListsApi.md#getCurrencies) | **GET** /dial/global/currencies | getCurrencies
-[**getDeliveryTypes**](CodeListsApi.md#getDeliveryTypes) | **GET** /dial/delivery-types | getDeliveryTypes
-[**getInvoiceCounter**](CodeListsApi.md#getInvoiceCounter) | **GET** /dial/invoice-counters/{counter} | getInvoiceCounter
-[**getInvoiceCounters**](CodeListsApi.md#getInvoiceCounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-[**getLogos**](CodeListsApi.md#getLogos) | **GET** /dial/logos | getLogos
-[**getPaymentTypes**](CodeListsApi.md#getPaymentTypes) | **GET** /dial/payment-types | getPaymentTypes
-[**getSignatures**](CodeListsApi.md#getSignatures) | **GET** /dial/signatures | getSignatures
-[**getTemplates**](CodeListsApi.md#getTemplates) | **GET** /dial/invoice/templates | getTemplates
+[**getCountries()**](CodeListsApi.md#getCountries) | **GET** /dial/global/countries | getCountries
+[**getCurrencies()**](CodeListsApi.md#getCurrencies) | **GET** /dial/global/currencies | getCurrencies
+[**getDeliveryTypes()**](CodeListsApi.md#getDeliveryTypes) | **GET** /dial/delivery-types | getDeliveryTypes
+[**getInvoiceCounter()**](CodeListsApi.md#getInvoiceCounter) | **GET** /dial/invoice-counters/{counter} | getInvoiceCounter
+[**getInvoiceCounters()**](CodeListsApi.md#getInvoiceCounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
+[**getLogos()**](CodeListsApi.md#getLogos) | **GET** /dial/logos | getLogos
+[**getPaymentTypes()**](CodeListsApi.md#getPaymentTypes) | **GET** /dial/payment-types | getPaymentTypes
+[**getSignatures()**](CodeListsApi.md#getSignatures) | **GET** /dial/signatures | getSignatures
+[**getTemplates()**](CodeListsApi.md#getTemplates) | **GET** /dial/invoice/templates | getTemplates
 
 
+## `getCountries()`
 
-## getCountries
-
-> \Uctoplus\API\Models\Country[] getCountries()
+```php
+getCountries(): \Uctoplus\API\Models\Country[]
+```
 
 getCountries
 
@@ -50,7 +51,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getCountries: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -68,16 +68,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCurrencies()`
 
-## getCurrencies
-
-> \Uctoplus\API\Models\Currency[] getCurrencies()
+```php
+getCurrencies(): \Uctoplus\API\Models\Currency[]
+```
 
 getCurrencies
 
@@ -109,7 +110,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getCurrencies: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -127,16 +127,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getDeliveryTypes()`
 
-## getDeliveryTypes
-
-> \Uctoplus\API\Models\DeliveryType[] getDeliveryTypes()
+```php
+getDeliveryTypes(): \Uctoplus\API\Models\DeliveryType[]
+```
 
 getDeliveryTypes
 
@@ -168,7 +169,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getDeliveryTypes: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -186,16 +186,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoiceCounter()`
 
-## getInvoiceCounter
-
-> \Uctoplus\API\Models\InlineResponse2002 getInvoiceCounter($counter)
+```php
+getInvoiceCounter($counter): \Uctoplus\API\Models\InlineResponse2002
+```
 
 getInvoiceCounter
 
@@ -228,11 +229,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getInvoiceCounter: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -249,16 +248,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoiceCounters()`
 
-## getInvoiceCounters
-
-> \Uctoplus\API\Models\InvoiceCounter[] getInvoiceCounters($invoice_type)
+```php
+getInvoiceCounters($invoice_type): \Uctoplus\API\Models\InvoiceCounter[]
+```
 
 getInvoiceCounters
 
@@ -291,11 +291,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getInvoiceCounters: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -312,16 +310,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getLogos()`
 
-## getLogos
-
-> \Uctoplus\API\Models\Logo[] getLogos()
+```php
+getLogos(): \Uctoplus\API\Models\Logo[]
+```
 
 getLogos
 
@@ -353,7 +352,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getLogos: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -371,16 +369,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPaymentTypes()`
 
-## getPaymentTypes
-
-> \Uctoplus\API\Models\PaymentType[] getPaymentTypes()
+```php
+getPaymentTypes(): \Uctoplus\API\Models\PaymentType[]
+```
 
 getPaymentTypes
 
@@ -412,7 +411,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getPaymentTypes: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -430,16 +428,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSignatures()`
 
-## getSignatures
-
-> \Uctoplus\API\Models\Signature[] getSignatures()
+```php
+getSignatures(): \Uctoplus\API\Models\Signature[]
+```
 
 getSignatures
 
@@ -471,7 +470,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getSignatures: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -489,16 +487,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getTemplates()`
 
-## getTemplates
-
-> \Uctoplus\API\Models\InvoiceTemplate[] getTemplates()
+```php
+getTemplates(): \Uctoplus\API\Models\InvoiceTemplate[]
+```
 
 getTemplates
 
@@ -530,7 +529,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CodeListsApi->getTemplates: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -548,9 +546,8 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
