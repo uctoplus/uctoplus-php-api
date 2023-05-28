@@ -1,18 +1,18 @@
 # Uctoplus\API\InvoiceApi
 
-All URIs are relative to https://moje.uctoplus.sk/api/v2/production.
+All URIs are relative to https://moje.uctoplus.sk/api/v3/production, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /invoice/add | addInvoice
-[**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice
-[**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /invoice/{id}/get | getInvoice
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /invoice/add | addInvoice |
+| [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice |
+| [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /invoice/{id}/get | getInvoice |
 
 
 ## `addInvoice()`
 
 ```php
-addInvoice($invoice_request): \Uctoplus\API\Models\InlineResponse200
+addInvoice($invoice_request): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
 addInvoice
@@ -50,13 +50,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **invoice_request** | [**\Uctoplus\API\Models\InvoiceRequest**](../Model/InvoiceRequest.md)| Invoice |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **invoice_request** | [**\Uctoplus\API\Models\InvoiceRequest**](../Model/InvoiceRequest.md)| Invoice | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Uctoplus\API\Models\AddInvoice200Response**](../Model/AddInvoice200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ## `addPaymentToInvoice()`
 
 ```php
-addPaymentToInvoice($id, $payment): \Uctoplus\API\Models\InlineResponse200
+addPaymentToInvoice($id, $payment): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
 addPaymentToInvoice
@@ -113,14 +113,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Invoice identifier |
- **payment** | [**\Uctoplus\API\Models\Payment**](../Model/Payment.md)| Payment |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| Invoice identifier | |
+| **payment** | [**\Uctoplus\API\Models\Payment**](../Model/Payment.md)| Payment | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Uctoplus\API\Models\AddInvoice200Response**](../Model/AddInvoice200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 ## `getInvoice()`
 
 ```php
-getInvoice($id): \Uctoplus\API\Models\InlineResponse200
+getInvoice($id): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
 getInvoice
@@ -176,13 +176,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Invoice identifier |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Invoice identifier | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Uctoplus\API\Models\AddInvoice200Response**](../Model/AddInvoice200Response.md)
 
 ### Authorization
 

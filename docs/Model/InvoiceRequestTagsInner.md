@@ -1,10 +1,10 @@
-# # InlineResponse2001
+# # InvoiceRequestTagsInner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **bool** |  | [default to true]
-**model** | [**\Uctoplus\API\Models\Address**](Address.md) |  |
+**tag_name** | **string** |  |
+**tag_type** | [**\Uctoplus\API\Models\TagType**](TagType.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

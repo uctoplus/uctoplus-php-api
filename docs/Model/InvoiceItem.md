@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly]
 **name** | **string** |  |
-**description** | **string** | Description of item. Markdown language allowed. | [optional]
+**description** | **string** | Markdown language allowed. | [optional]
 **quantity** | **float** |  |
 **price_without_tax** | **float** |  |
 **tax_percentage** | **float** |  | [optional] [default to 0.0]

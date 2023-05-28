@@ -1,7 +1,7 @@
 {
     "name": "uctoplus/uctoplus-php-api",
-    "version": "2.3.5",
-    "description": "Moje Účto+ API is avaliable in test mode at `https://dev.uctoplus.eu/api/v2`.  Production enviroment is located at `https://moje.uctoplus.sk/api/v2`.  All comunication with API is encoded in UTF-8. This REST API is based on Open API v3 standard.",
+    "version": "dev-3.0.0",
+    "description": "Production enviroment is located at `https://moje.uctoplus.sk/api/v3/production`.  Sandbox enviroment is located at `https://moje.uctoplus.sk/api/v3/sandbox`.  All comunication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test enviroment please contact our helpdesk",
     "keywords": [
         "uctoplus",
         "uctoplus.sk",
@@ -20,15 +20,16 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": "^7.4 || ^8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
         "psr-4": { "Uctoplus\\API\\" : "src/" }

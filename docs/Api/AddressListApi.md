@@ -1,19 +1,19 @@
 # Uctoplus\API\AddressListApi
 
-All URIs are relative to https://moje.uctoplus.sk/api/v2/production.
+All URIs are relative to https://moje.uctoplus.sk/api/v3/production, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addAddress()**](AddressListApi.md#addAddress) | **POST** /address-list/add | addAddress
-[**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /address-list/{id}/get | getAddressById.
-[**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId.
-[**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /address-list | getAddressList
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addAddress()**](AddressListApi.md#addAddress) | **POST** /address-list/add | addAddress |
+| [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /address-list/{id}/get | getAddressById. |
+| [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId. |
+| [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /address-list | getAddressList |
 
 
 ## `addAddress()`
 
 ```php
-addAddress($address): \Uctoplus\API\Models\InlineResponse2001
+addAddress($address): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 addAddress
@@ -51,13 +51,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | [**\Uctoplus\API\Models\Address**](../Model/Address.md)| Address |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **address** | [**\Uctoplus\API\Models\Address**](../Model/Address.md)| Address | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Uctoplus\API\Models\AddAddress200Response**](../Model/AddAddress200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ## `getAddressById()`
 
 ```php
-getAddressById($id): \Uctoplus\API\Models\InlineResponse2001
+getAddressById($id): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 getAddressById.
@@ -113,13 +113,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Address identifier |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| Address identifier | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Uctoplus\API\Models\AddAddress200Response**](../Model/AddAddress200Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 ## `getAddressByInternalId()`
 
 ```php
-getAddressByInternalId($id): \Uctoplus\API\Models\InlineResponse2001
+getAddressByInternalId($id): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 getAddressByInternalId.
@@ -175,13 +175,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Get Address by Internal Id |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| Get Address by Internal Id | |
 
 ### Return type
 
-[**\Uctoplus\API\Models\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Uctoplus\API\Models\AddAddress200Response**](../Model/AddAddress200Response.md)
 
 ### Authorization
 
