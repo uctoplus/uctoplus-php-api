@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **variable_symbol** | **string** |  | [optional]
 **konstantny_symbol** | **string** |  | [optional]
 **specificky_symbol** | **string** |  | [optional]
+**e2e_reference** | **string** |  | [optional]
 **date_issue** | **\DateTime** | Date in format parsable by PHP DateTime Class (eg.: yyyy-mm-dd) |
 **date_delivery** | **\DateTime** | Date in format parsable by PHP DateTime Class (eg.: yyyy-mm-dd) | [optional]
 **date_due** | **\DateTime** | Date in format parsable by PHP DateTime Class (eg.: yyyy-mm-dd) | [optional]
