@@ -1,6 +1,6 @@
 <?php
 /**
- * SummaryTaxesInner
+ * SendRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * SummaryTaxesInner Class Doc Comment
+ * SendRequest Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class SendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Summary_taxes_inner';
+    protected static $openAPIModelName = 'SendRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vat_percentage' => 'float',
-        'base' => 'float',
-        'vat' => 'float',
-        'payed' => 'float',
-        'payed_vat' => 'float',
-        'roundup_base' => 'float',
-        'roundup_vat' => 'float'
+        'element' => '\Uctoplus\API\Models\Element',
+        'to' => 'string',
+        'subject' => 'string',
+        'body' => 'string'
     ];
 
     /**
@@ -75,13 +72,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'vat_percentage' => null,
-        'base' => null,
-        'vat' => null,
-        'payed' => null,
-        'payed_vat' => null,
-        'roundup_base' => null,
-        'roundup_vat' => null
+        'element' => null,
+        'to' => null,
+        'subject' => null,
+        'body' => null
     ];
 
     /**
@@ -90,13 +84,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'vat_percentage' => false,
-		'base' => false,
-		'vat' => false,
-		'payed' => false,
-		'payed_vat' => false,
-		'roundup_base' => false,
-		'roundup_vat' => false
+        'element' => false,
+		'to' => false,
+		'subject' => false,
+		'body' => false
     ];
 
     /**
@@ -185,13 +176,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'vat_percentage' => 'vat_percentage',
-        'base' => 'base',
-        'vat' => 'vat',
-        'payed' => 'payed',
-        'payed_vat' => 'payed_vat',
-        'roundup_base' => 'roundup_base',
-        'roundup_vat' => 'roundup_vat'
+        'element' => 'element',
+        'to' => 'to',
+        'subject' => 'subject',
+        'body' => 'body'
     ];
 
     /**
@@ -200,13 +188,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'vat_percentage' => 'setVatPercentage',
-        'base' => 'setBase',
-        'vat' => 'setVat',
-        'payed' => 'setPayed',
-        'payed_vat' => 'setPayedVat',
-        'roundup_base' => 'setRoundupBase',
-        'roundup_vat' => 'setRoundupVat'
+        'element' => 'setElement',
+        'to' => 'setTo',
+        'subject' => 'setSubject',
+        'body' => 'setBody'
     ];
 
     /**
@@ -215,13 +200,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'vat_percentage' => 'getVatPercentage',
-        'base' => 'getBase',
-        'vat' => 'getVat',
-        'payed' => 'getPayed',
-        'payed_vat' => 'getPayedVat',
-        'roundup_base' => 'getRoundupBase',
-        'roundup_vat' => 'getRoundupVat'
+        'element' => 'getElement',
+        'to' => 'getTo',
+        'subject' => 'getSubject',
+        'body' => 'getBody'
     ];
 
     /**
@@ -281,13 +263,10 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('vat_percentage', $data ?? [], null);
-        $this->setIfExists('base', $data ?? [], null);
-        $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('payed', $data ?? [], null);
-        $this->setIfExists('payed_vat', $data ?? [], null);
-        $this->setIfExists('roundup_base', $data ?? [], null);
-        $this->setIfExists('roundup_vat', $data ?? [], null);
+        $this->setIfExists('element', $data ?? [], null);
+        $this->setIfExists('to', $data ?? [], null);
+        $this->setIfExists('subject', $data ?? [], null);
+        $this->setIfExists('body', $data ?? [], null);
     }
 
     /**
@@ -333,190 +312,109 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets vat_percentage
+     * Gets element
      *
-     * @return float|null
+     * @return \Uctoplus\API\Models\Element|null
      */
-    public function getVatPercentage()
+    public function getElement()
     {
-        return $this->container['vat_percentage'];
+        return $this->container['element'];
     }
 
     /**
-     * Sets vat_percentage
+     * Sets element
      *
-     * @param float|null $vat_percentage vat_percentage
+     * @param \Uctoplus\API\Models\Element|null $element element
      *
      * @return self
      */
-    public function setVatPercentage($vat_percentage)
+    public function setElement($element)
     {
-        if (is_null($vat_percentage)) {
-            throw new \InvalidArgumentException('non-nullable vat_percentage cannot be null');
+        if (is_null($element)) {
+            throw new \InvalidArgumentException('non-nullable element cannot be null');
         }
-        $this->container['vat_percentage'] = $vat_percentage;
+        $this->container['element'] = $element;
 
         return $this;
     }
 
     /**
-     * Gets base
+     * Gets to
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBase()
+    public function getTo()
     {
-        return $this->container['base'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets base
+     * Sets to
      *
-     * @param float|null $base base
+     * @param string|null $to to
      *
      * @return self
      */
-    public function setBase($base)
+    public function setTo($to)
     {
-        if (is_null($base)) {
-            throw new \InvalidArgumentException('non-nullable base cannot be null');
+        if (is_null($to)) {
+            throw new \InvalidArgumentException('non-nullable to cannot be null');
         }
-        $this->container['base'] = $base;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets vat
+     * Gets subject
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getVat()
+    public function getSubject()
     {
-        return $this->container['vat'];
+        return $this->container['subject'];
     }
 
     /**
-     * Sets vat
+     * Sets subject
      *
-     * @param float|null $vat vat
+     * @param string|null $subject subject
      *
      * @return self
      */
-    public function setVat($vat)
+    public function setSubject($subject)
     {
-        if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+        if (is_null($subject)) {
+            throw new \InvalidArgumentException('non-nullable subject cannot be null');
         }
-        $this->container['vat'] = $vat;
+        $this->container['subject'] = $subject;
 
         return $this;
     }
 
     /**
-     * Gets payed
+     * Gets body
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getPayed()
+    public function getBody()
     {
-        return $this->container['payed'];
+        return $this->container['body'];
     }
 
     /**
-     * Sets payed
+     * Sets body
      *
-     * @param float|null $payed payed
+     * @param string|null $body body
      *
      * @return self
      */
-    public function setPayed($payed)
+    public function setBody($body)
     {
-        if (is_null($payed)) {
-            throw new \InvalidArgumentException('non-nullable payed cannot be null');
+        if (is_null($body)) {
+            throw new \InvalidArgumentException('non-nullable body cannot be null');
         }
-        $this->container['payed'] = $payed;
-
-        return $this;
-    }
-
-    /**
-     * Gets payed_vat
-     *
-     * @return float|null
-     */
-    public function getPayedVat()
-    {
-        return $this->container['payed_vat'];
-    }
-
-    /**
-     * Sets payed_vat
-     *
-     * @param float|null $payed_vat payed_vat
-     *
-     * @return self
-     */
-    public function setPayedVat($payed_vat)
-    {
-        if (is_null($payed_vat)) {
-            throw new \InvalidArgumentException('non-nullable payed_vat cannot be null');
-        }
-        $this->container['payed_vat'] = $payed_vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets roundup_base
-     *
-     * @return float|null
-     */
-    public function getRoundupBase()
-    {
-        return $this->container['roundup_base'];
-    }
-
-    /**
-     * Sets roundup_base
-     *
-     * @param float|null $roundup_base roundup_base
-     *
-     * @return self
-     */
-    public function setRoundupBase($roundup_base)
-    {
-        if (is_null($roundup_base)) {
-            throw new \InvalidArgumentException('non-nullable roundup_base cannot be null');
-        }
-        $this->container['roundup_base'] = $roundup_base;
-
-        return $this;
-    }
-
-    /**
-     * Gets roundup_vat
-     *
-     * @return float|null
-     */
-    public function getRoundupVat()
-    {
-        return $this->container['roundup_vat'];
-    }
-
-    /**
-     * Sets roundup_vat
-     *
-     * @param float|null $roundup_vat roundup_vat
-     *
-     * @return self
-     */
-    public function setRoundupVat($roundup_vat)
-    {
-        if (is_null($roundup_vat)) {
-            throw new \InvalidArgumentException('non-nullable roundup_vat cannot be null');
-        }
-        $this->container['roundup_vat'] = $roundup_vat;
+        $this->container['body'] = $body;
 
         return $this;
     }

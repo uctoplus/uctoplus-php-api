@@ -13,7 +13,7 @@ All URIs are relative to https://api.moje.uctoplus.sk/production, except if the 
 ## `addAddress()`
 
 ```php
-addAddress($address): \Uctoplus\API\Models\AddAddress200Response
+addAddress($address, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 addAddress
@@ -40,9 +40,10 @@ $apiInstance = new Uctoplus\API\Api\AddressListApi(
     $config
 );
 $address = new \Uctoplus\API\Models\Address(); // \Uctoplus\API\Models\Address | Address
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->addAddress($address);
+    $result = $apiInstance->addAddress($address, $except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->addAddress: ', $e->getMessage(), PHP_EOL;
@@ -54,6 +55,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | [**\Uctoplus\API\Models\Address**](../Model/Address.md)| Address | |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 
@@ -75,7 +77,7 @@ try {
 ## `getAddressById()`
 
 ```php
-getAddressById($id): \Uctoplus\API\Models\AddAddress200Response
+getAddressById($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 getAddressById.
@@ -102,9 +104,10 @@ $apiInstance = new Uctoplus\API\Api\AddressListApi(
     $config
 );
 $id = 56; // int | Address identifier
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->getAddressById($id);
+    $result = $apiInstance->getAddressById($id, $except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressById: ', $e->getMessage(), PHP_EOL;
@@ -116,6 +119,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Address identifier | |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 
@@ -137,7 +141,7 @@ try {
 ## `getAddressByInternalId()`
 
 ```php
-getAddressByInternalId($id): \Uctoplus\API\Models\AddAddress200Response
+getAddressByInternalId($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
 getAddressByInternalId.
@@ -164,9 +168,10 @@ $apiInstance = new Uctoplus\API\Api\AddressListApi(
     $config
 );
 $id = 'id_example'; // string | Get Address by Internal Id
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->getAddressByInternalId($id);
+    $result = $apiInstance->getAddressByInternalId($id, $except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressByInternalId: ', $e->getMessage(), PHP_EOL;
@@ -178,6 +183,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Get Address by Internal Id | |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 
@@ -199,7 +205,7 @@ try {
 ## `getAddressList()`
 
 ```php
-getAddressList(): \Uctoplus\API\Models\Address[]
+getAddressList($except): \Uctoplus\API\Models\Address[]
 ```
 
 getAddressList
@@ -225,9 +231,10 @@ $apiInstance = new Uctoplus\API\Api\AddressListApi(
     new GuzzleHttp\Client(),
     $config
 );
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->getAddressList();
+    $result = $apiInstance->getAddressList($except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressListApi->getAddressList: ', $e->getMessage(), PHP_EOL;
@@ -236,7 +243,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 

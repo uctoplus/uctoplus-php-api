@@ -11,7 +11,7 @@ All URIs are relative to https://api.moje.uctoplus.sk/production, except if the 
 ## `uploadFile()`
 
 ```php
-uploadFile($upload_file_request): \Uctoplus\API\Models\UploadFile200Response
+uploadFile($upload_file_request, $except): \Uctoplus\API\Models\UploadFile200Response
 ```
 
 Uploading files over RestAPI
@@ -38,9 +38,10 @@ $apiInstance = new Uctoplus\API\Api\UploadApi(
     $config
 );
 $upload_file_request = new \Uctoplus\API\Models\UploadFileRequest(); // \Uctoplus\API\Models\UploadFileRequest | Upload single file or upload separate files for pages and API will glue it together into one file.
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->uploadFile($upload_file_request);
+    $result = $apiInstance->uploadFile($upload_file_request, $except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UploadApi->uploadFile: ', $e->getMessage(), PHP_EOL;
@@ -52,6 +53,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **upload_file_request** | [**\Uctoplus\API\Models\UploadFileRequest**](../Model/UploadFileRequest.md)| Upload single file or upload separate files for pages and API will glue it together into one file. | |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 
@@ -73,7 +75,7 @@ try {
 ## `uploadedFilesIndex()`
 
 ```php
-uploadedFilesIndex($element_type, $from, $to): \Uctoplus\API\Models\File[]
+uploadedFilesIndex($element_type, $from, $to, $except): \Uctoplus\API\Models\File[]
 ```
 
 uploadFile
@@ -102,9 +104,10 @@ $apiInstance = new Uctoplus\API\Api\UploadApi(
 $element_type = new \Uctoplus\API\Models\ElementType(); // ElementType
 $from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
-    $result = $apiInstance->uploadedFilesIndex($element_type, $from, $to);
+    $result = $apiInstance->uploadedFilesIndex($element_type, $from, $to, $except);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UploadApi->uploadedFilesIndex: ', $e->getMessage(), PHP_EOL;
@@ -118,6 +121,7 @@ try {
 | **element_type** | [**ElementType**](../Model/.md)|  | |
 | **from** | **\DateTime**|  | [optional] |
 | **to** | **\DateTime**|  | [optional] |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
 
 ### Return type
 

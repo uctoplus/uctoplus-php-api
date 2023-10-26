@@ -28,10 +28,12 @@ docs/Model/CreditNoteType.md
 docs/Model/Currency.md
 docs/Model/DeliveryAddress.md
 docs/Model/DeliveryType.md
+docs/Model/Element.md
 docs/Model/ElementType.md
+docs/Model/Except.md
 docs/Model/File.md
-docs/Model/FileElement.md
 docs/Model/FileMimeTypes.md
+docs/Model/FileRequest.md
 docs/Model/GetInvoiceCounter200Response.md
 docs/Model/Invoice.md
 docs/Model/InvoiceCounter.md
@@ -56,6 +58,7 @@ docs/Model/Payment.md
 docs/Model/PaymentType.md
 docs/Model/Response.md
 docs/Model/ResponseContentERROR.md
+docs/Model/SendRequest.md
 docs/Model/Signature.md
 docs/Model/Summary.md
 docs/Model/SummaryTaxesInner.md
@@ -96,10 +99,12 @@ src/Models/CreditNoteType.php
 src/Models/Currency.php
 src/Models/DeliveryAddress.php
 src/Models/DeliveryType.php
+src/Models/Element.php
 src/Models/ElementType.php
+src/Models/Except.php
 src/Models/File.php
-src/Models/FileElement.php
 src/Models/FileMimeTypes.php
+src/Models/FileRequest.php
 src/Models/GetInvoiceCounter200Response.php
 src/Models/Invoice.php
 src/Models/InvoiceCounter.php
@@ -125,6 +130,7 @@ src/Models/Payment.php
 src/Models/PaymentType.php
 src/Models/Response.php
 src/Models/ResponseContentERROR.php
+src/Models/SendRequest.php
 src/Models/Signature.php
 src/Models/Summary.php
 src/Models/SummaryTaxesInner.php
@@ -136,3 +142,7 @@ src/Models/UploadFileRequest.php
 src/Models/UploadMultipageFileRequest.php
 src/Models/UploadSingleFileRequest.php
 src/ObjectSerializer.php
+test/Model/ElementTest.php
+test/Model/ExceptTest.php
+test/Model/FileRequestTest.php
+test/Model/SendRequestTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * Language
+ * Except
  *
  * PHP version 7.4
  *
@@ -31,25 +31,25 @@ namespace Uctoplus\API\Models;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Language Class Doc Comment
+ * Except Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Language
+class Except
 {
     /**
      * Possible values of this enum
      */
-    public const CS = 'cs';
+    public const BASE64_CONTENT = 'base64-content';
 
-    public const EN = 'en';
+    public const LINKED_ELEMENT = 'linked-element';
 
-    public const HU = 'hu';
+    public const COUNTRY = 'country';
 
-    public const SK = 'sk';
+    public const CURRENCY = 'currency';
 
     /**
      * Gets allowable values of the enum
@@ -58,10 +58,10 @@ class Language
     public static function getAllowableEnumValues()
     {
         return [
-            self::CS,
-            self::EN,
-            self::HU,
-            self::SK
+            self::BASE64_CONTENT,
+            self::LINKED_ELEMENT,
+            self::COUNTRY,
+            self::CURRENCY
         ];
     }
 }

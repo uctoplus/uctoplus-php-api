@@ -1,6 +1,6 @@
 <?php
 /**
- * SummaryTaxesInner
+ * FileRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * SummaryTaxesInner Class Doc Comment
+ * FileRequest Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class FileRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Summary_taxes_inner';
+    protected static $openAPIModelName = 'FileRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vat_percentage' => 'float',
-        'base' => 'float',
-        'vat' => 'float',
-        'payed' => 'float',
-        'payed_vat' => 'float',
-        'roundup_base' => 'float',
-        'roundup_vat' => 'float'
+        'name' => 'string',
+        'content' => 'string',
+        'mime_type' => '\Uctoplus\API\Models\FileMimeTypes'
     ];
 
     /**
@@ -75,13 +71,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'vat_percentage' => null,
-        'base' => null,
-        'vat' => null,
-        'payed' => null,
-        'payed_vat' => null,
-        'roundup_base' => null,
-        'roundup_vat' => null
+        'name' => null,
+        'content' => null,
+        'mime_type' => null
     ];
 
     /**
@@ -90,13 +82,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'vat_percentage' => false,
-		'base' => false,
-		'vat' => false,
-		'payed' => false,
-		'payed_vat' => false,
-		'roundup_base' => false,
-		'roundup_vat' => false
+        'name' => false,
+		'content' => false,
+		'mime_type' => false
     ];
 
     /**
@@ -185,13 +173,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'vat_percentage' => 'vat_percentage',
-        'base' => 'base',
-        'vat' => 'vat',
-        'payed' => 'payed',
-        'payed_vat' => 'payed_vat',
-        'roundup_base' => 'roundup_base',
-        'roundup_vat' => 'roundup_vat'
+        'name' => 'name',
+        'content' => 'content',
+        'mime_type' => 'mimeType'
     ];
 
     /**
@@ -200,13 +184,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'vat_percentage' => 'setVatPercentage',
-        'base' => 'setBase',
-        'vat' => 'setVat',
-        'payed' => 'setPayed',
-        'payed_vat' => 'setPayedVat',
-        'roundup_base' => 'setRoundupBase',
-        'roundup_vat' => 'setRoundupVat'
+        'name' => 'setName',
+        'content' => 'setContent',
+        'mime_type' => 'setMimeType'
     ];
 
     /**
@@ -215,13 +195,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'vat_percentage' => 'getVatPercentage',
-        'base' => 'getBase',
-        'vat' => 'getVat',
-        'payed' => 'getPayed',
-        'payed_vat' => 'getPayedVat',
-        'roundup_base' => 'getRoundupBase',
-        'roundup_vat' => 'getRoundupVat'
+        'name' => 'getName',
+        'content' => 'getContent',
+        'mime_type' => 'getMimeType'
     ];
 
     /**
@@ -281,13 +257,9 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('vat_percentage', $data ?? [], null);
-        $this->setIfExists('base', $data ?? [], null);
-        $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('payed', $data ?? [], null);
-        $this->setIfExists('payed_vat', $data ?? [], null);
-        $this->setIfExists('roundup_base', $data ?? [], null);
-        $this->setIfExists('roundup_vat', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('mime_type', $data ?? [], null);
     }
 
     /**
@@ -333,190 +305,82 @@ class SummaryTaxesInner implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets vat_percentage
+     * Gets name
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getVatPercentage()
+    public function getName()
     {
-        return $this->container['vat_percentage'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets vat_percentage
+     * Sets name
      *
-     * @param float|null $vat_percentage vat_percentage
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setVatPercentage($vat_percentage)
+    public function setName($name)
     {
-        if (is_null($vat_percentage)) {
-            throw new \InvalidArgumentException('non-nullable vat_percentage cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['vat_percentage'] = $vat_percentage;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets base
+     * Gets content
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getBase()
+    public function getContent()
     {
-        return $this->container['base'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets base
+     * Sets content
      *
-     * @param float|null $base base
+     * @param string|null $content Base64 encoded file Content
      *
      * @return self
      */
-    public function setBase($base)
+    public function setContent($content)
     {
-        if (is_null($base)) {
-            throw new \InvalidArgumentException('non-nullable base cannot be null');
+        if (is_null($content)) {
+            throw new \InvalidArgumentException('non-nullable content cannot be null');
         }
-        $this->container['base'] = $base;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets vat
+     * Gets mime_type
      *
-     * @return float|null
+     * @return \Uctoplus\API\Models\FileMimeTypes|null
      */
-    public function getVat()
+    public function getMimeType()
     {
-        return $this->container['vat'];
+        return $this->container['mime_type'];
     }
 
     /**
-     * Sets vat
+     * Sets mime_type
      *
-     * @param float|null $vat vat
+     * @param \Uctoplus\API\Models\FileMimeTypes|null $mime_type mime_type
      *
      * @return self
      */
-    public function setVat($vat)
+    public function setMimeType($mime_type)
     {
-        if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+        if (is_null($mime_type)) {
+            throw new \InvalidArgumentException('non-nullable mime_type cannot be null');
         }
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets payed
-     *
-     * @return float|null
-     */
-    public function getPayed()
-    {
-        return $this->container['payed'];
-    }
-
-    /**
-     * Sets payed
-     *
-     * @param float|null $payed payed
-     *
-     * @return self
-     */
-    public function setPayed($payed)
-    {
-        if (is_null($payed)) {
-            throw new \InvalidArgumentException('non-nullable payed cannot be null');
-        }
-        $this->container['payed'] = $payed;
-
-        return $this;
-    }
-
-    /**
-     * Gets payed_vat
-     *
-     * @return float|null
-     */
-    public function getPayedVat()
-    {
-        return $this->container['payed_vat'];
-    }
-
-    /**
-     * Sets payed_vat
-     *
-     * @param float|null $payed_vat payed_vat
-     *
-     * @return self
-     */
-    public function setPayedVat($payed_vat)
-    {
-        if (is_null($payed_vat)) {
-            throw new \InvalidArgumentException('non-nullable payed_vat cannot be null');
-        }
-        $this->container['payed_vat'] = $payed_vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets roundup_base
-     *
-     * @return float|null
-     */
-    public function getRoundupBase()
-    {
-        return $this->container['roundup_base'];
-    }
-
-    /**
-     * Sets roundup_base
-     *
-     * @param float|null $roundup_base roundup_base
-     *
-     * @return self
-     */
-    public function setRoundupBase($roundup_base)
-    {
-        if (is_null($roundup_base)) {
-            throw new \InvalidArgumentException('non-nullable roundup_base cannot be null');
-        }
-        $this->container['roundup_base'] = $roundup_base;
-
-        return $this;
-    }
-
-    /**
-     * Gets roundup_vat
-     *
-     * @return float|null
-     */
-    public function getRoundupVat()
-    {
-        return $this->container['roundup_vat'];
-    }
-
-    /**
-     * Sets roundup_vat
-     *
-     * @param float|null $roundup_vat roundup_vat
-     *
-     * @return self
-     */
-    public function setRoundupVat($roundup_vat)
-    {
-        if (is_null($roundup_vat)) {
-            throw new \InvalidArgumentException('non-nullable roundup_vat cannot be null');
-        }
-        $this->container['roundup_vat'] = $roundup_vat;
+        $this->container['mime_type'] = $mime_type;
 
         return $this;
     }
