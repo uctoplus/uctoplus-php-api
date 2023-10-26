@@ -3,11 +3,10 @@
     "description": "Production environment is located at `https://api.moje.uctoplus.sk/production/`.  Sandbox environment is located at `https://api.moje.uctoplus.sk/sandbox/`.  All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk",
     "keywords": [
         "uctoplus.sk",
-        "\u00da\u010dto+",
-        "sdk",
         "php",
-        "uctoplus",
         "rest",
+        "uctoplus",
+        "sdk",
         "api"
     ],
     "homepage": "https://uctoplus.sk",
