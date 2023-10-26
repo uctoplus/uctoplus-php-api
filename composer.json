@@ -1,21 +1,20 @@
 {
     "name": "uctoplus/uctoplus-php-api",
-    "version": "dev-3.1.1",
-    "description": "Production enviroment is located at `https://moje.uctoplus.sk/api/v3/production`.  Sandbox enviroment is located at `https://moje.uctoplus.sk/api/v3/sandbox`.  All comunication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test enviroment please contact our helpdesk",
+    "description": "Production environment is located at `https://api.moje.uctoplus.sk/production/`.  Sandbox environment is located at `https://api.moje.uctoplus.sk/sandbox/`.  All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk",
     "keywords": [
-        "uctoplus",
         "uctoplus.sk",
-        "moje.uctoplus.sk",
-        "php",
+        "\u00da\u010dto+",
         "sdk",
+        "php",
+        "uctoplus",
         "rest",
         "api"
     ],
     "homepage": "https://uctoplus.sk",
-    "license": "unlicense",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Účto+",
+            "name": "\u00da\u010dto+",
             "homepage": "https://uctoplus.sk"
         }
     ],
@@ -32,9 +31,14 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Uctoplus\\API\\" : "src/" }
+        "psr-4": {
+            "Uctoplus\\API\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Uctoplus\\API\\Test\\" : "test/" }
-    }
+        "psr-4": {
+            "Uctoplus\\API\\Test\\": "test/"
+        }
+    },
+    "version": "3.1.2"
 }

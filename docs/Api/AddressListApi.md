@@ -1,13 +1,13 @@
 # Uctoplus\API\AddressListApi
 
-All URIs are relative to https://moje.uctoplus.sk/api/v3/production, except if the operation defines another base path.
+All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addAddress()**](AddressListApi.md#addAddress) | **POST** /address-list/add | addAddress |
-| [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /address-list/{id}/get | getAddressById. |
-| [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId. |
-| [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /address-list | getAddressList |
+| [**addAddress()**](AddressListApi.md#addAddress) | **POST** /v2/address-list/add | addAddress |
+| [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /v2/address-list/{id}/get | getAddressById. |
+| [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId. |
+| [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /v2/address-list | getAddressList |
 
 
 ## `addAddress()`

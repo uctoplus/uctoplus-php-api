@@ -1,18 +1,18 @@
 # Uctoplus\API\InvoiceApi
 
-All URIs are relative to https://moje.uctoplus.sk/api/v3/production, except if the operation defines another base path.
+All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /invoice/add | addInvoice |
-| [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice |
-| [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /invoice/{id}/get | getInvoice |
+| [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /v3/invoice/add | addInvoice |
+| [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice |
+| [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /v3/invoice/{id}/get | getInvoice |
 
 
 ## `addInvoice()`
 
 ```php
-addInvoice($invoice_request): \Uctoplus\API\Models\AddInvoice200Response
+addInvoice($add_invoice_request): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
 addInvoice
@@ -38,10 +38,10 @@ $apiInstance = new Uctoplus\API\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_request = new \Uctoplus\API\Models\InvoiceRequest(); // \Uctoplus\API\Models\InvoiceRequest | Invoice
+$add_invoice_request = new \Uctoplus\API\Models\AddInvoiceRequest(); // \Uctoplus\API\Models\AddInvoiceRequest | Invoice or Credit Note
 
 try {
-    $result = $apiInstance->addInvoice($invoice_request);
+    $result = $apiInstance->addInvoice($add_invoice_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->addInvoice: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +52,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **invoice_request** | [**\Uctoplus\API\Models\InvoiceRequest**](../Model/InvoiceRequest.md)| Invoice | |
+| **add_invoice_request** | [**\Uctoplus\API\Models\AddInvoiceRequest**](../Model/AddInvoiceRequest.md)| Invoice or Credit Note | |
 
 ### Return type
 

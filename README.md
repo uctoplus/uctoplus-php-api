@@ -1,10 +1,10 @@
 # OpenAPIClient-php
 
-Production enviroment is located at `https://moje.uctoplus.sk/api/v3/production`.
+Production environment is located at `https://api.moje.uctoplus.sk/production/`.
 
-Sandbox enviroment is located at `https://moje.uctoplus.sk/api/v3/sandbox`.
+Sandbox environment is located at `https://api.moje.uctoplus.sk/sandbox/`.
 
-All comunication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test enviroment please contact our helpdesk
+All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk
 
 
 ## Installation & Usage
@@ -78,46 +78,55 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://moje.uctoplus.sk/api/v3/production*
+All URIs are relative to *https://api.moje.uctoplus.sk/production*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddressListApi* | [**addAddress**](docs/Api/AddressListApi.md#addaddress) | **POST** /address-list/add | addAddress
-*AddressListApi* | [**getAddressById**](docs/Api/AddressListApi.md#getaddressbyid) | **GET** /address-list/{id}/get | getAddressById.
-*AddressListApi* | [**getAddressByInternalId**](docs/Api/AddressListApi.md#getaddressbyinternalid) | **GET** /address-list/{id}/get-by-internal-id | getAddressByInternalId.
-*AddressListApi* | [**getAddressList**](docs/Api/AddressListApi.md#getaddresslist) | **GET** /address-list | getAddressList
-*CodeListsApi* | [**getCountries**](docs/Api/CodeListsApi.md#getcountries) | **GET** /dial/global/countries | getCountries
-*CodeListsApi* | [**getCurrencies**](docs/Api/CodeListsApi.md#getcurrencies) | **GET** /dial/global/currencies | getCurrencies
-*CodeListsApi* | [**getDeliveryTypes**](docs/Api/CodeListsApi.md#getdeliverytypes) | **GET** /dial/delivery-types | getDeliveryTypes
-*CodeListsApi* | [**getInvoiceCounter**](docs/Api/CodeListsApi.md#getinvoicecounter) | **GET** /dial/invoice-counters/{counter} | getInvoiceCounter
-*CodeListsApi* | [**getInvoiceCounters**](docs/Api/CodeListsApi.md#getinvoicecounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-*CodeListsApi* | [**getLogos**](docs/Api/CodeListsApi.md#getlogos) | **GET** /dial/logos | getLogos
-*CodeListsApi* | [**getPaymentTypes**](docs/Api/CodeListsApi.md#getpaymenttypes) | **GET** /dial/payment-types | getPaymentTypes
-*CodeListsApi* | [**getSignatures**](docs/Api/CodeListsApi.md#getsignatures) | **GET** /dial/signatures | getSignatures
-*CodeListsApi* | [**getTemplates**](docs/Api/CodeListsApi.md#gettemplates) | **GET** /dial/invoice/templates | getTemplates
-*CountriesApi* | [**getCountries**](docs/Api/CountriesApi.md#getcountries) | **GET** /dial/global/countries | getCountries
-*CurrenciesApi* | [**getCurrencies**](docs/Api/CurrenciesApi.md#getcurrencies) | **GET** /dial/global/currencies | getCurrencies
-*DeliveryTypesApi* | [**getDeliveryTypes**](docs/Api/DeliveryTypesApi.md#getdeliverytypes) | **GET** /dial/delivery-types | getDeliveryTypes
-*InvoiceApi* | [**addInvoice**](docs/Api/InvoiceApi.md#addinvoice) | **POST** /invoice/add | addInvoice
-*InvoiceApi* | [**addPaymentToInvoice**](docs/Api/InvoiceApi.md#addpaymenttoinvoice) | **POST** /invoice/{id}/pay | addPaymentToInvoice
-*InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /invoice/{id}/get | getInvoice
-*InvoiceCountersApi* | [**getInvoiceCounters**](docs/Api/InvoiceCountersApi.md#getinvoicecounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-*InvoiceTemplatesApi* | [**getTemplates**](docs/Api/InvoiceTemplatesApi.md#gettemplates) | **GET** /dial/invoice/templates | getTemplates
-*LogosApi* | [**getLogos**](docs/Api/LogosApi.md#getlogos) | **GET** /dial/logos | getLogos
-*PaymentTypesApi* | [**getPaymentTypes**](docs/Api/PaymentTypesApi.md#getpaymenttypes) | **GET** /dial/payment-types | getPaymentTypes
-*SignaturesApi* | [**getSignatures**](docs/Api/SignaturesApi.md#getsignatures) | **GET** /dial/signatures | getSignatures
-*UploadApi* | [**uploadFile**](docs/Api/UploadApi.md#uploadfile) | **POST** /upload/add | uploadFile
+*AddressListApi* | [**addAddress**](docs/Api/AddressListApi.md#addaddress) | **POST** /v2/address-list/add | addAddress
+*AddressListApi* | [**getAddressById**](docs/Api/AddressListApi.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | getAddressById.
+*AddressListApi* | [**getAddressByInternalId**](docs/Api/AddressListApi.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId.
+*AddressListApi* | [**getAddressList**](docs/Api/AddressListApi.md#getaddresslist) | **GET** /v2/address-list | getAddressList
+*CodeListsApi* | [**getCountries**](docs/Api/CodeListsApi.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
+*CodeListsApi* | [**getCurrencies**](docs/Api/CodeListsApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
+*CodeListsApi* | [**getDeliveryTypes**](docs/Api/CodeListsApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
+*CodeListsApi* | [**getInvoiceCounter**](docs/Api/CodeListsApi.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter
+*CodeListsApi* | [**getInvoiceCounters**](docs/Api/CodeListsApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
+*CodeListsApi* | [**getLogos**](docs/Api/CodeListsApi.md#getlogos) | **GET** /v2/dial/logos | getLogos
+*CodeListsApi* | [**getPaymentTypes**](docs/Api/CodeListsApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
+*CodeListsApi* | [**getSignatures**](docs/Api/CodeListsApi.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
+*CodeListsApi* | [**getTemplates**](docs/Api/CodeListsApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
+*CountriesApi* | [**getCountries**](docs/Api/CountriesApi.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
+*CurrenciesApi* | [**getCurrencies**](docs/Api/CurrenciesApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
+*DeliveryTypesApi* | [**getDeliveryTypes**](docs/Api/DeliveryTypesApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
+*InvoiceApi* | [**addInvoice**](docs/Api/InvoiceApi.md#addinvoice) | **POST** /v3/invoice/add | addInvoice
+*InvoiceApi* | [**addPaymentToInvoice**](docs/Api/InvoiceApi.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice
+*InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /v3/invoice/{id}/get | getInvoice
+*InvoiceCountersApi* | [**getInvoiceCounters**](docs/Api/InvoiceCountersApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
+*InvoiceTemplatesApi* | [**getTemplates**](docs/Api/InvoiceTemplatesApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
+*LogosApi* | [**getLogos**](docs/Api/LogosApi.md#getlogos) | **GET** /v2/dial/logos | getLogos
+*PaymentTypesApi* | [**getPaymentTypes**](docs/Api/PaymentTypesApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
+*SignaturesApi* | [**getSignatures**](docs/Api/SignaturesApi.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
+*UploadApi* | [**uploadFile**](docs/Api/UploadApi.md#uploadfile) | **POST** /v3/upload/add | Uploading files over RestAPI
+*UploadApi* | [**uploadedFilesIndex**](docs/Api/UploadApi.md#uploadedfilesindex) | **GET** /v3/upload/index | uploadFile
 
 ## Models
 
 - [AddAddress200Response](docs/Model/AddAddress200Response.md)
 - [AddInvoice200Response](docs/Model/AddInvoice200Response.md)
+- [AddInvoiceRequest](docs/Model/AddInvoiceRequest.md)
 - [Address](docs/Model/Address.md)
+- [Attribute](docs/Model/Attribute.md)
 - [Country](docs/Model/Country.md)
+- [CreditNoteItem](docs/Model/CreditNoteItem.md)
+- [CreditNoteRequest](docs/Model/CreditNoteRequest.md)
+- [CreditNoteRequestItemsInner](docs/Model/CreditNoteRequestItemsInner.md)
+- [CreditNoteType](docs/Model/CreditNoteType.md)
 - [Currency](docs/Model/Currency.md)
 - [DeliveryAddress](docs/Model/DeliveryAddress.md)
 - [DeliveryType](docs/Model/DeliveryType.md)
+- [ElementType](docs/Model/ElementType.md)
 - [File](docs/Model/File.md)
+- [FileElement](docs/Model/FileElement.md)
 - [FileMimeTypes](docs/Model/FileMimeTypes.md)
 - [GetInvoiceCounter200Response](docs/Model/GetInvoiceCounter200Response.md)
 - [Invoice](docs/Model/Invoice.md)
@@ -138,6 +147,7 @@ Class | Method | HTTP request | Description
 - [Language](docs/Model/Language.md)
 - [LinkedInvoiceItem](docs/Model/LinkedInvoiceItem.md)
 - [Logo](docs/Model/Logo.md)
+- [Page](docs/Model/Page.md)
 - [Payment](docs/Model/Payment.md)
 - [PaymentType](docs/Model/PaymentType.md)
 - [Response](docs/Model/Response.md)
@@ -148,8 +158,10 @@ Class | Method | HTTP request | Description
 - [Tag](docs/Model/Tag.md)
 - [TagType](docs/Model/TagType.md)
 - [Theme](docs/Model/Theme.md)
+- [UploadFile200Response](docs/Model/UploadFile200Response.md)
 - [UploadFileRequest](docs/Model/UploadFileRequest.md)
-- [UploadFileRequestElementSubType](docs/Model/UploadFileRequestElementSubType.md)
+- [UploadMultipageFileRequest](docs/Model/UploadMultipageFileRequest.md)
+- [UploadSingleFileRequest](docs/Model/UploadSingleFileRequest.md)
 
 ## Authorization
 
@@ -178,6 +190,5 @@ helpdesk@uctoplus.sk
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `3.1.1`
-    - Package version: `2`
+- API version: `3.1.2`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

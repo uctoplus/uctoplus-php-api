@@ -1,18 +1,18 @@
 # Uctoplus\API\CodeListsApi
 
-All URIs are relative to https://moje.uctoplus.sk/api/v3/production, except if the operation defines another base path.
+All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCountries()**](CodeListsApi.md#getCountries) | **GET** /dial/global/countries | getCountries |
-| [**getCurrencies()**](CodeListsApi.md#getCurrencies) | **GET** /dial/global/currencies | getCurrencies |
-| [**getDeliveryTypes()**](CodeListsApi.md#getDeliveryTypes) | **GET** /dial/delivery-types | getDeliveryTypes |
-| [**getInvoiceCounter()**](CodeListsApi.md#getInvoiceCounter) | **GET** /dial/invoice-counters/{counter} | getInvoiceCounter |
-| [**getInvoiceCounters()**](CodeListsApi.md#getInvoiceCounters) | **GET** /dial/invoice-type/{invoiceType}/counters | getInvoiceCounters |
-| [**getLogos()**](CodeListsApi.md#getLogos) | **GET** /dial/logos | getLogos |
-| [**getPaymentTypes()**](CodeListsApi.md#getPaymentTypes) | **GET** /dial/payment-types | getPaymentTypes |
-| [**getSignatures()**](CodeListsApi.md#getSignatures) | **GET** /dial/signatures | getSignatures |
-| [**getTemplates()**](CodeListsApi.md#getTemplates) | **GET** /dial/invoice/templates | getTemplates |
+| [**getCountries()**](CodeListsApi.md#getCountries) | **GET** /v2/dial/global/countries | getCountries |
+| [**getCurrencies()**](CodeListsApi.md#getCurrencies) | **GET** /v2/dial/global/currencies | getCurrencies |
+| [**getDeliveryTypes()**](CodeListsApi.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes |
+| [**getInvoiceCounter()**](CodeListsApi.md#getInvoiceCounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter |
+| [**getInvoiceCounters()**](CodeListsApi.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters |
+| [**getLogos()**](CodeListsApi.md#getLogos) | **GET** /v2/dial/logos | getLogos |
+| [**getPaymentTypes()**](CodeListsApi.md#getPaymentTypes) | **GET** /v2/dial/payment-types | getPaymentTypes |
+| [**getSignatures()**](CodeListsApi.md#getSignatures) | **GET** /v2/dial/signatures | getSignatures |
+| [**getTemplates()**](CodeListsApi.md#getTemplates) | **GET** /v2/dial/invoice/templates | getTemplates |
 
 
 ## `getCountries()`
@@ -283,7 +283,7 @@ $apiInstance = new Uctoplus\API\Api\CodeListsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_type = new \Uctoplus\API\Models\InvoiceType(); // InvoiceType | * `INVOICE` - Invoice * `PROFORMA_INVOICE` - Proforma Invoice * `DODACI_LIST` - Dodací list * `VAT_PROOF` - VAT Proof * `PRICE_QUOTATION` - Price Quotation
+$invoice_type = new \Uctoplus\API\Models\InvoiceType(); // InvoiceType | * `INVOICE` - Invoice * `PROFORMA_INVOICE` - Proforma Invoice * `DODACI_LIST` - Dodací list * `VAT_PROOF` - VAT Proof * `PRICE_QUOTATION` - Price Quotation * `CREDIT_NOTE` - Credit note
 
 try {
     $result = $apiInstance->getInvoiceCounters($invoice_type);
@@ -297,7 +297,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **invoice_type** | [**InvoiceType**](../Model/.md)| * &#x60;INVOICE&#x60; - Invoice * &#x60;PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;DODACI_LIST&#x60; - Dodací list * &#x60;VAT_PROOF&#x60; - VAT Proof * &#x60;PRICE_QUOTATION&#x60; - Price Quotation | |
+| **invoice_type** | [**InvoiceType**](../Model/.md)| * &#x60;INVOICE&#x60; - Invoice * &#x60;PROFORMA_INVOICE&#x60; - Proforma Invoice * &#x60;DODACI_LIST&#x60; - Dodací list * &#x60;VAT_PROOF&#x60; - VAT Proof * &#x60;PRICE_QUOTATION&#x60; - Price Quotation * &#x60;CREDIT_NOTE&#x60; - Credit note | |
 
 ### Return type
 
