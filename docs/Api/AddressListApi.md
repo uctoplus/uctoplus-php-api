@@ -10,7 +10,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 | [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /v2/address-list/{id}/get | getAddressById. |
 | [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId. |
 | [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /v2/address-list | getAddressList |
-| [**getAddresses()**](AddressListApi.md#getAddresses) | **GET** /v4/address-list | getAddresses |
+| [**getAddresses()**](AddressListApi.md#getAddresses) | **GET** /v4/addresses | getAddresses |
 
 
 ## `addAddress()`

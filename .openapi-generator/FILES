@@ -1,6 +1,4 @@
 .gitignore
-.php-cs-fixer.dist.php
-.travis.yml
 README.md
 composer.json
 docs/Api/AddressListApi.md
@@ -65,7 +63,6 @@ docs/Model/Tag.md
 docs/Model/TagType.md
 docs/Model/Theme.md
 docs/Model/UploadFile200Response.md
-git_push.sh
 phpunit.xml.dist
 src/Api/AddressListApi.php
 src/Api/CodeListsApi.php

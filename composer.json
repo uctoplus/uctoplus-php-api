@@ -1,22 +1,21 @@
 {
     "name": "uctoplus/uctoplus-php-api",
-    "version": "4.0.0",
-    "description": "Production environment is located at `{portal_api_url}/production/`.  Sandbox environment is located at `{portal_api_url}/sandbox/`.  All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk",
+    "version": "4.0.1",
+    "description": "Production environment is located at `https://api.moje.uctoplus.sk/production/`.  Sandbox environment is located at `https://api.moje.uctoplus.sk/sandbox/`.  All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
-        "php",
-        "sdk",
         "rest",
-        "api"
+        "php",
+        "uctoplus",
+        "api",
+        "uctoplus.sk",
+        "sdk"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://uctoplus.sk",
+    "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI",
-            "homepage": "https://openapi-generator.tech"
+            "name": "\u00da\u010dto+",
+            "homepage": "https://uctoplus.sk"
         }
     ],
     "require": {
