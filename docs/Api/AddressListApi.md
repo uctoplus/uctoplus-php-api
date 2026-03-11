@@ -1,6 +1,8 @@
 # Uctoplus\API\AddressListApi
 
-All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
+Everything about Address List
+
+All URIs are relative to http://localhost/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +10,7 @@ All URIs are relative to https://api.moje.uctoplus.sk/production, except if the 
 | [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /v2/address-list/{id}/get | getAddressById. |
 | [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId. |
 | [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /v2/address-list | getAddressList |
+| [**getAddresses()**](AddressListApi.md#getAddresses) | **GET** /v4/address-list | getAddresses |
 
 
 ## `addAddress()`
@@ -250,6 +253,76 @@ try {
 ### Return type
 
 [**\Uctoplus\API\Models\Address[]**](../Model/Address.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAddresses()`
+
+```php
+getAddresses($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetAddresses200Response
+```
+
+getAddresses
+
+Return all Addresses from Company Address List.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-key
+$config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+
+$apiInstance = new Uctoplus\API\Api\AddressListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
+$offset = 0; // int | Optional arguments for offet of items
+$limit = 50; // int | Optional arguments limit per page
+$sort = 'sort_example'; // string | Optional arguments sort by column
+$order = 'order_example'; // string | Optional arguments order by column
+
+try {
+    $result = $apiInstance->getAddresses($except, $offset, $limit, $sort, $order);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AddressListApi->getAddresses: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
+| **offset** | **int**| Optional arguments for offet of items | [optional] [default to 0] |
+| **limit** | **int**| Optional arguments limit per page | [optional] [default to 50] |
+| **sort** | **string**| Optional arguments sort by column | [optional] |
+| **order** | **string**| Optional arguments order by column | [optional] |
+
+### Return type
+
+[**\Uctoplus\API\Models\GetAddresses200Response**](../Model/GetAddresses200Response.md)
 
 ### Authorization
 

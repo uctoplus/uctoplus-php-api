@@ -1,6 +1,6 @@
 <?php
 /**
- * UploadFile200Response
+ * GetAddresses200Response
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * UploadFile200Response Class Doc Comment
+ * GetAddresses200Response Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetAddresses200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'uploadFile_200_response';
+    protected static $openAPIModelName = 'getAddresses_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'bool',
-        'model' => '\Uctoplus\API\Models\File'
+        'total' => 'int',
+        'rows' => '\Uctoplus\API\Models\Address[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'model' => null
+        'total' => null,
+        'rows' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'status' => false,
-        'model' => false
+        'total' => false,
+        'rows' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'model' => 'model'
+        'total' => 'total',
+        'rows' => 'rows'
     ];
 
     /**
@@ -180,8 +180,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'model' => 'setModel'
+        'total' => 'setTotal',
+        'rows' => 'setRows'
     ];
 
     /**
@@ -190,8 +190,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'model' => 'getModel'
+        'total' => 'getTotal',
+        'rows' => 'getRows'
     ];
 
     /**
@@ -251,8 +251,8 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('status', $data ?? [], true);
-        $this->setIfExists('model', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('rows', $data ?? [], null);
     }
 
     /**
@@ -282,12 +282,6 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['model'] === null) {
-            $invalidProperties[] = "'model' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,55 +298,55 @@ class UploadFile200Response implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets status
+     * Gets total
      *
-     * @return bool
+     * @return int|null
      */
-    public function getStatus()
+    public function getTotal()
     {
-        return $this->container['status'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets status
+     * Sets total
      *
-     * @param bool $status status
+     * @param int|null $total total
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setTotal($total)
     {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
         }
-        $this->container['status'] = $status;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets model
+     * Gets rows
      *
-     * @return \Uctoplus\API\Models\File
+     * @return \Uctoplus\API\Models\Address[]|null
      */
-    public function getModel()
+    public function getRows()
     {
-        return $this->container['model'];
+        return $this->container['rows'];
     }
 
     /**
-     * Sets model
+     * Sets rows
      *
-     * @param \Uctoplus\API\Models\File $model model
+     * @param \Uctoplus\API\Models\Address[]|null $rows rows
      *
      * @return self
      */
-    public function setModel($model)
+    public function setRows($rows)
     {
-        if (is_null($model)) {
-            throw new \InvalidArgumentException('non-nullable model cannot be null');
+        if (is_null($rows)) {
+            throw new \InvalidArgumentException('non-nullable rows cannot be null');
         }
-        $this->container['model'] = $model;
+        $this->container['rows'] = $rows;
 
         return $this;
     }

@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **note2** | **string** | Markdown language allowed. | [optional]
 **note3** | **string** | Markdown language allowed. | [optional]
 **theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional]
-**logo_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
-**signature_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
-**template_id** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
+**logo_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**signature_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional]
 **items** | [**\Uctoplus\API\Models\CreditNoteRequestItemsInner[]**](CreditNoteRequestItemsInner.md) | Items in invoice |
 **tags** | [**\Uctoplus\API\Models\InvoiceRequestTagsInner[]**](InvoiceRequestTagsInner.md) | Tags | [optional]

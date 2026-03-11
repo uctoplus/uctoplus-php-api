@@ -1,6 +1,8 @@
 # Uctoplus\API\LogosApi
 
-All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
+Logos
+
+All URIs are relative to http://localhost/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

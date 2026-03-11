@@ -1,12 +1,15 @@
 # Uctoplus\API\InvoiceApi
 
-All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
+Everything about Invoice
+
+All URIs are relative to http://localhost/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /v3/invoice/add | addInvoice |
 | [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice |
 | [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /v3/invoice/{id}/get | getInvoice |
+| [**getInvoices()**](InvoiceApi.md#getInvoices) | **GET** /v4/invoices | getInvoices |
 | [**sendInvoice()**](InvoiceApi.md#sendInvoice) | **POST** /v3/invoice/{id}/send | sendInvoice |
 
 
@@ -204,6 +207,76 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInvoices()`
+
+```php
+getInvoices($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetInvoices200Response
+```
+
+getInvoices
+
+Get list of invoices.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-key
+$config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+
+$apiInstance = new Uctoplus\API\Api\InvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
+$offset = 1; // int | Optional arguments for offet of items
+$limit = 50; // int | Optional arguments limit per page
+$sort = 'sort_example'; // string | Optional arguments sort by column
+$order = 'order_example'; // string | Optional arguments order by column
+
+try {
+    $result = $apiInstance->getInvoices($except, $offset, $limit, $sort, $order);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InvoiceApi->getInvoices: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
+| **offset** | **int**| Optional arguments for offet of items | [optional] [default to 1] |
+| **limit** | **int**| Optional arguments limit per page | [optional] [default to 50] |
+| **sort** | **string**| Optional arguments sort by column | [optional] |
+| **order** | **string**| Optional arguments order by column | [optional] |
+
+### Return type
+
+[**\Uctoplus\API\Models\GetInvoices200Response**](../Model/GetInvoices200Response.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `sendInvoice()`
 
 ```php
@@ -212,7 +285,7 @@ sendInvoice($id, $send_request, $except): \Uctoplus\API\Models\AddInvoice200Resp
 
 sendInvoice
 
-Sends invoice from Účto+
+Sends invoice from {portal_name}
 
 ### Example
 

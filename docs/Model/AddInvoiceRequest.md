@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **invoice_number** | [**\Uctoplus\API\Models\InvoiceRequestInvoiceNumber**](InvoiceRequestInvoiceNumber.md) |  |
 **invoice_type** | [**\Uctoplus\API\Models\CreditNoteType**](CreditNoteType.md) |  |
 **reciever** | [**\Uctoplus\API\Models\InvoiceRequestReciever**](InvoiceRequestReciever.md) |  |
-**delivery_address** | [**\Uctoplus\API\Models\InvoiceRequestDeliveryAddress**](InvoiceRequestDeliveryAddress.md) |  | [optional]
+**delivery_address** | [**\Uctoplus\API\Models\DeliveryAddress**](DeliveryAddress.md) |  | [optional]
 **internal_description** | **string** |  | [optional]
 **variable_symbol** | **string** |  | [optional]
 **konstantny_symbol** | **string** |  | [optional]
@@ -23,10 +23,10 @@ Name | Type | Description | Notes
 **note2** | **string** | Markdown language allowed. | [optional]
 **note3** | **string** | Markdown language allowed. | [optional]
 **theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional]
-**logo_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
-**signature_version** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
-**template_id** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
-**delivery_type** | **int** | ID from [Účto+](https://moje.uctoplus.sk) | [optional]
+**logo_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**signature_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**delivery_type** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
 **payment_type** | [**\Uctoplus\API\Models\InvoiceRequestPaymentType**](InvoiceRequestPaymentType.md) |  |
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional]
 **items** | [**\Uctoplus\API\Models\CreditNoteRequestItemsInner[]**](CreditNoteRequestItemsInner.md) | Items in invoice |
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **reverse_charge** | **bool** |  | [optional] [default to false]
 **discount** | **float** |  | [optional] [default to 0.0]
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
-**payment** | [**\Uctoplus\API\Models\InvoiceRequestPayment**](InvoiceRequestPayment.md) |  | [optional]
+**payment** | [**\Uctoplus\API\Models\Payment**](Payment.md) |  | [optional]
 **original_invoice_reference** | **string** | UUID of the original Invoice |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

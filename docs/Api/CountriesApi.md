@@ -1,6 +1,8 @@
 # Uctoplus\API\CountriesApi
 
-All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
+Countries
+
+All URIs are relative to http://localhost/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

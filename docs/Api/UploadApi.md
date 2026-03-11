@@ -1,6 +1,8 @@
 # Uctoplus\API\UploadApi
 
-All URIs are relative to https://api.moje.uctoplus.sk/production, except if the operation defines another base path.
+
+
+All URIs are relative to http://localhost/production, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +13,7 @@ All URIs are relative to https://api.moje.uctoplus.sk/production, except if the 
 ## `uploadFile()`
 
 ```php
-uploadFile($upload_file_request, $except): \Uctoplus\API\Models\UploadFile200Response
+uploadFile($except, $file, $element_type, $attributes, $pages): \Uctoplus\API\Models\UploadFile200Response
 ```
 
 Uploading files over RestAPI
@@ -37,11 +39,14 @@ $apiInstance = new Uctoplus\API\Api\UploadApi(
     new GuzzleHttp\Client(),
     $config
 );
-$upload_file_request = new \Uctoplus\API\Models\UploadFileRequest(); // \Uctoplus\API\Models\UploadFileRequest | Upload single file or upload separate files for pages and API will glue it together into one file.
 $except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
+$file = '/path/to/file.txt'; // \SplFileObject
+$element_type = new \Uctoplus\API\Models\ElementType(); // \Uctoplus\API\Models\ElementType
+$attributes = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Attribute()); // \Uctoplus\API\Models\Attribute[] | Additional data to fill in according
+$pages = array('/path/to/file.txt'); // \SplFileObject[] | Separate pages which will be glued together into one file
 
 try {
-    $result = $apiInstance->uploadFile($upload_file_request, $except);
+    $result = $apiInstance->uploadFile($except, $file, $element_type, $attributes, $pages);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UploadApi->uploadFile: ', $e->getMessage(), PHP_EOL;
@@ -52,8 +57,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **upload_file_request** | [**\Uctoplus\API\Models\UploadFileRequest**](../Model/UploadFileRequest.md)| Upload single file or upload separate files for pages and API will glue it together into one file. | |
 | **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
+| **file** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **element_type** | [**\Uctoplus\API\Models\ElementType**](../Model/ElementType.md)|  | [optional] |
+| **attributes** | [**\Uctoplus\API\Models\Attribute[]**](../Model/\Uctoplus\API\Models\Attribute.md)| Additional data to fill in according | [optional] |
+| **pages** | **\SplFileObject[]**| Separate pages which will be glued together into one file | [optional] |
 
 ### Return type
 
@@ -65,7 +73,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -101,9 +109,9 @@ $apiInstance = new Uctoplus\API\Api\UploadApi(
     new GuzzleHttp\Client(),
     $config
 );
-$element_type = new \Uctoplus\API\Models\ElementType(); // ElementType
-$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$element_type = new \Uctoplus\API\Models\\Uctoplus\API\Models\ElementType(); // \Uctoplus\API\Models\ElementType
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
 
 try {
@@ -118,7 +126,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **element_type** | [**ElementType**](../Model/.md)|  | |
+| **element_type** | [**\Uctoplus\API\Models\ElementType**](../Model/.md)|  | |
 | **from** | **\DateTime**|  | [optional] |
 | **to** | **\DateTime**|  | [optional] |
 | **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
