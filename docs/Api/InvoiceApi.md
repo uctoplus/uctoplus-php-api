@@ -237,7 +237,7 @@ $apiInstance = new Uctoplus\API\Api\InvoiceApi(
     $config
 );
 $except = array(new \Uctoplus\API\Models\\Uctoplus\API\Models\Except()); // \Uctoplus\API\Models\Except[] | Optional arguments for exclude data from response
-$offset = 1; // int | Optional arguments for offet of items
+$offset = 0; // int | Optional arguments for offet of items
 $limit = 50; // int | Optional arguments limit per page
 $sort = 'sort_example'; // string | Optional arguments sort by column
 $order = 'order_example'; // string | Optional arguments order by column
@@ -255,7 +255,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **except** | [**\Uctoplus\API\Models\Except[]**](../Model/\Uctoplus\API\Models\Except.md)| Optional arguments for exclude data from response | [optional] |
-| **offset** | **int**| Optional arguments for offet of items | [optional] [default to 1] |
+| **offset** | **int**| Optional arguments for offet of items | [optional] [default to 0] |
 | **limit** | **int**| Optional arguments limit per page | [optional] [default to 50] |
 | **sort** | **string**| Optional arguments sort by column | [optional] |
 | **order** | **string**| Optional arguments order by column | [optional] |

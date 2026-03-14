@@ -1236,7 +1236,7 @@ class InvoiceApi
      * getInvoices
      *
      * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
-     * @param  int|null $offset Optional arguments for offet of items (optional, default to 1)
+     * @param  int|null $offset Optional arguments for offet of items (optional, default to 0)
      * @param  int|null $limit Optional arguments limit per page (optional, default to 50)
      * @param  string|null $sort Optional arguments sort by column (optional)
      * @param  string|null $order Optional arguments order by column (optional)
@@ -1246,7 +1246,7 @@ class InvoiceApi
      * @throws \InvalidArgumentException
      * @return \Uctoplus\API\Models\GetInvoices200Response|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR
      */
-    public function getInvoices($except = null, $offset = 1, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoices($except = null, $offset = 0, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
         list($response) = $this->getInvoicesWithHttpInfo($except, $offset, $limit, $sort, $order, $contentType);
         return $response;
@@ -1258,7 +1258,7 @@ class InvoiceApi
      * getInvoices
      *
      * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
-     * @param  int|null $offset Optional arguments for offet of items (optional, default to 1)
+     * @param  int|null $offset Optional arguments for offet of items (optional, default to 0)
      * @param  int|null $limit Optional arguments limit per page (optional, default to 50)
      * @param  string|null $sort Optional arguments sort by column (optional)
      * @param  string|null $order Optional arguments order by column (optional)
@@ -1268,7 +1268,7 @@ class InvoiceApi
      * @throws \InvalidArgumentException
      * @return array of \Uctoplus\API\Models\GetInvoices200Response|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInvoicesWithHttpInfo($except = null, $offset = 1, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesWithHttpInfo($except = null, $offset = 0, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
         $request = $this->getInvoicesRequest($except, $offset, $limit, $sort, $order, $contentType);
 
@@ -1417,7 +1417,7 @@ class InvoiceApi
      * getInvoices
      *
      * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
-     * @param  int|null $offset Optional arguments for offet of items (optional, default to 1)
+     * @param  int|null $offset Optional arguments for offet of items (optional, default to 0)
      * @param  int|null $limit Optional arguments limit per page (optional, default to 50)
      * @param  string|null $sort Optional arguments sort by column (optional)
      * @param  string|null $order Optional arguments order by column (optional)
@@ -1426,7 +1426,7 @@ class InvoiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoicesAsync($except = null, $offset = 1, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesAsync($except = null, $offset = 0, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
         return $this->getInvoicesAsyncWithHttpInfo($except, $offset, $limit, $sort, $order, $contentType)
             ->then(
@@ -1442,7 +1442,7 @@ class InvoiceApi
      * getInvoices
      *
      * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
-     * @param  int|null $offset Optional arguments for offet of items (optional, default to 1)
+     * @param  int|null $offset Optional arguments for offet of items (optional, default to 0)
      * @param  int|null $limit Optional arguments limit per page (optional, default to 50)
      * @param  string|null $sort Optional arguments sort by column (optional)
      * @param  string|null $order Optional arguments order by column (optional)
@@ -1451,7 +1451,7 @@ class InvoiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoicesAsyncWithHttpInfo($except = null, $offset = 1, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesAsyncWithHttpInfo($except = null, $offset = 0, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
         $returnType = '\Uctoplus\API\Models\GetInvoices200Response';
         $request = $this->getInvoicesRequest($except, $offset, $limit, $sort, $order, $contentType);
@@ -1496,7 +1496,7 @@ class InvoiceApi
      * Create request for operation 'getInvoices'
      *
      * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
-     * @param  int|null $offset Optional arguments for offet of items (optional, default to 1)
+     * @param  int|null $offset Optional arguments for offet of items (optional, default to 0)
      * @param  int|null $limit Optional arguments limit per page (optional, default to 50)
      * @param  string|null $sort Optional arguments sort by column (optional)
      * @param  string|null $order Optional arguments order by column (optional)
@@ -1505,7 +1505,7 @@ class InvoiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInvoicesRequest($except = null, $offset = 1, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesRequest($except = null, $offset = 0, $limit = 50, $sort = null, $order = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
 
 
