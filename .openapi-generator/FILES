@@ -17,6 +17,7 @@ docs/Model/AddAddress200Response.md
 docs/Model/AddInvoice200Response.md
 docs/Model/AddInvoiceRequest.md
 docs/Model/Address.md
+docs/Model/AddressCountry.md
 docs/Model/Attribute.md
 docs/Model/Country.md
 docs/Model/CreditNoteItem.md
@@ -84,6 +85,7 @@ src/Models/AddAddress200Response.php
 src/Models/AddInvoice200Response.php
 src/Models/AddInvoiceRequest.php
 src/Models/Address.php
+src/Models/AddressCountry.php
 src/Models/Attribute.php
 src/Models/Country.php
 src/Models/CreditNoteItem.php
@@ -132,3 +134,4 @@ src/Models/TagType.php
 src/Models/Theme.php
 src/Models/UploadFile200Response.php
 src/ObjectSerializer.php
+test/Model/AddressCountryTest.php

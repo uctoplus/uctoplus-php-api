@@ -62,7 +62,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess, \JsonSerializable
         'street' => 'string',
         'city' => 'string',
         'zip' => 'string',
-        'country' => 'string'
+        'country' => '\Uctoplus\API\Models\AddressCountry'
     ];
 
     /**
@@ -429,7 +429,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets country
      *
-     * @return string|null
+     * @return \Uctoplus\API\Models\AddressCountry|null
      */
     public function getCountry()
     {
@@ -439,7 +439,7 @@ class DeliveryAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets country
      *
-     * @param string|null $country 3 letter code of Country [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
+     * @param \Uctoplus\API\Models\AddressCountry|null $country country
      *
      * @return self
      */

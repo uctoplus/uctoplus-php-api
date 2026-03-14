@@ -78,7 +78,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.moje.uctoplus.sk/production*
+All URIs are relative to *http://localhost/production*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -118,6 +118,7 @@ Class | Method | HTTP request | Description
 - [AddInvoice200Response](docs/Model/AddInvoice200Response.md)
 - [AddInvoiceRequest](docs/Model/AddInvoiceRequest.md)
 - [Address](docs/Model/Address.md)
+- [AddressCountry](docs/Model/AddressCountry.md)
 - [Attribute](docs/Model/Attribute.md)
 - [Country](docs/Model/Country.md)
 - [CreditNoteItem](docs/Model/CreditNoteItem.md)
