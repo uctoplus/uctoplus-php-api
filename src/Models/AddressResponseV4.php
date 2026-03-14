@@ -1,6 +1,6 @@
 <?php
 /**
- * Address
+ * AddressResponseV4
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Address Class Doc Comment
+ * AddressResponseV4 Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Address implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddressResponseV4 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Address';
+    protected static $openAPIModelName = 'AddressResponse_v4';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -63,7 +63,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         'street' => 'string',
         'city' => 'string',
         'zip' => 'string',
-        'country' => 'string',
+        'country' => '\Uctoplus\API\Models\Country',
         'sk_ico' => 'int',
         'sk_dic' => 'int',
         'vat' => 'string',
@@ -304,7 +304,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('street', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
         $this->setIfExists('zip', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], 'SVK');
+        $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('sk_ico', $data ?? [], null);
         $this->setIfExists('sk_dic', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
@@ -503,7 +503,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets country
      *
-     * @return string
+     * @return \Uctoplus\API\Models\Country
      */
     public function getCountry()
     {
@@ -513,7 +513,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets country
      *
-     * @param string $country 3 letter code of Country [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
+     * @param \Uctoplus\API\Models\Country $country country
      *
      * @return self
      */

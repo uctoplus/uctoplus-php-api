@@ -59,7 +59,7 @@ class GetAddresses200Response implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'total' => 'int',
-        'items' => '\Uctoplus\API\Models\Address[]'
+        'items' => '\Uctoplus\API\Models\AddressResponseV4[]'
     ];
 
     /**
@@ -327,7 +327,7 @@ class GetAddresses200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets items
      *
-     * @return \Uctoplus\API\Models\Address[]|null
+     * @return \Uctoplus\API\Models\AddressResponseV4[]|null
      */
     public function getItems()
     {
@@ -337,7 +337,7 @@ class GetAddresses200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \Uctoplus\API\Models\Address[]|null $items items
+     * @param \Uctoplus\API\Models\AddressResponseV4[]|null $items items
      *
      * @return self
      */

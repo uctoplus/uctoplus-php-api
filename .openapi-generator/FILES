@@ -1,4 +1,3 @@
-.gitignore
 README.md
 composer.json
 docs/Api/AddressListApi.md
@@ -17,7 +16,7 @@ docs/Model/AddAddress200Response.md
 docs/Model/AddInvoice200Response.md
 docs/Model/AddInvoiceRequest.md
 docs/Model/Address.md
-docs/Model/AddressCountry.md
+docs/Model/AddressResponseV4.md
 docs/Model/Attribute.md
 docs/Model/Country.md
 docs/Model/CreditNoteItem.md
@@ -26,6 +25,7 @@ docs/Model/CreditNoteRequestItemsInner.md
 docs/Model/CreditNoteType.md
 docs/Model/Currency.md
 docs/Model/DeliveryAddress.md
+docs/Model/DeliveryAddressResponseV4.md
 docs/Model/DeliveryType.md
 docs/Model/Element.md
 docs/Model/ElementType.md
@@ -45,6 +45,8 @@ docs/Model/InvoiceRequestItemsInner.md
 docs/Model/InvoiceRequestPaymentType.md
 docs/Model/InvoiceRequestReciever.md
 docs/Model/InvoiceRequestTagsInner.md
+docs/Model/InvoiceResponseV4.md
+docs/Model/InvoiceResponseV4Currency2.md
 docs/Model/InvoiceTemplate.md
 docs/Model/InvoiceType.md
 docs/Model/Issuer.md
@@ -85,7 +87,7 @@ src/Models/AddAddress200Response.php
 src/Models/AddInvoice200Response.php
 src/Models/AddInvoiceRequest.php
 src/Models/Address.php
-src/Models/AddressCountry.php
+src/Models/AddressResponseV4.php
 src/Models/Attribute.php
 src/Models/Country.php
 src/Models/CreditNoteItem.php
@@ -94,6 +96,7 @@ src/Models/CreditNoteRequestItemsInner.php
 src/Models/CreditNoteType.php
 src/Models/Currency.php
 src/Models/DeliveryAddress.php
+src/Models/DeliveryAddressResponseV4.php
 src/Models/DeliveryType.php
 src/Models/Element.php
 src/Models/ElementType.php
@@ -113,6 +116,8 @@ src/Models/InvoiceRequestItemsInner.php
 src/Models/InvoiceRequestPaymentType.php
 src/Models/InvoiceRequestReciever.php
 src/Models/InvoiceRequestTagsInner.php
+src/Models/InvoiceResponseV4.php
+src/Models/InvoiceResponseV4Currency2.php
 src/Models/InvoiceTemplate.php
 src/Models/InvoiceType.php
 src/Models/Issuer.php
@@ -134,3 +139,7 @@ src/Models/TagType.php
 src/Models/Theme.php
 src/Models/UploadFile200Response.php
 src/ObjectSerializer.php
+test/Model/AddressResponseV4Test.php
+test/Model/DeliveryAddressResponseV4Test.php
+test/Model/InvoiceResponseV4Currency2Test.php
+test/Model/InvoiceResponseV4Test.php

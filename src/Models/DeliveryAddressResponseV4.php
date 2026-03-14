@@ -1,6 +1,6 @@
 <?php
 /**
- * Address
+ * DeliveryAddressResponseV4
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Address Class Doc Comment
+ * DeliveryAddressResponseV4 Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Address implements ModelInterface, ArrayAccess, \JsonSerializable
+class DeliveryAddressResponseV4 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Address';
+    protected static $openAPIModelName = 'DeliveryAddressResponse_v4';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,16 +58,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
         'name' => 'string',
         'street' => 'string',
         'city' => 'string',
         'zip' => 'string',
-        'country' => 'string',
-        'sk_ico' => 'int',
-        'sk_dic' => 'int',
-        'vat' => 'string',
-        'internal_id' => 'string'
+        'country' => '\Uctoplus\API\Models\Country'
     ];
 
     /**
@@ -78,16 +73,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'name' => null,
         'street' => null,
         'city' => null,
         'zip' => null,
-        'country' => null,
-        'sk_ico' => null,
-        'sk_dic' => null,
-        'vat' => null,
-        'internal_id' => null
+        'country' => null
     ];
 
     /**
@@ -96,16 +86,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
         'name' => false,
         'street' => false,
         'city' => false,
         'zip' => false,
-        'country' => false,
-        'sk_ico' => true,
-        'sk_dic' => true,
-        'vat' => true,
-        'internal_id' => true
+        'country' => false
     ];
 
     /**
@@ -194,16 +179,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'name' => 'name',
         'street' => 'street',
         'city' => 'city',
         'zip' => 'zip',
-        'country' => 'country',
-        'sk_ico' => 'skIco',
-        'sk_dic' => 'skDic',
-        'vat' => 'vat',
-        'internal_id' => 'internalId'
+        'country' => 'country'
     ];
 
     /**
@@ -212,16 +192,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'name' => 'setName',
         'street' => 'setStreet',
         'city' => 'setCity',
         'zip' => 'setZip',
-        'country' => 'setCountry',
-        'sk_ico' => 'setSkIco',
-        'sk_dic' => 'setSkDic',
-        'vat' => 'setVat',
-        'internal_id' => 'setInternalId'
+        'country' => 'setCountry'
     ];
 
     /**
@@ -230,16 +205,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'name' => 'getName',
         'street' => 'getStreet',
         'city' => 'getCity',
         'zip' => 'getZip',
-        'country' => 'getCountry',
-        'sk_ico' => 'getSkIco',
-        'sk_dic' => 'getSkDic',
-        'vat' => 'getVat',
-        'internal_id' => 'getInternalId'
+        'country' => 'getCountry'
     ];
 
     /**
@@ -299,16 +269,11 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('street', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
         $this->setIfExists('zip', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], 'SVK');
-        $this->setIfExists('sk_ico', $data ?? [], null);
-        $this->setIfExists('sk_dic', $data ?? [], null);
-        $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('internal_id', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
     }
 
     /**
@@ -338,18 +303,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['street'] === null) {
-            $invalidProperties[] = "'street' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -366,36 +319,9 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -405,7 +331,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name name
      *
      * @return self
      */
@@ -422,7 +348,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets street
      *
-     * @return string
+     * @return string|null
      */
     public function getStreet()
     {
@@ -432,7 +358,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets street
      *
-     * @param string $street street
+     * @param string|null $street street
      *
      * @return self
      */
@@ -449,7 +375,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -459,7 +385,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string $city city
+     * @param string|null $city city
      *
      * @return self
      */
@@ -503,7 +429,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets country
      *
-     * @return string
+     * @return \Uctoplus\API\Models\Country|null
      */
     public function getCountry()
     {
@@ -513,7 +439,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets country
      *
-     * @param string $country 3 letter code of Country [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
+     * @param \Uctoplus\API\Models\Country|null $country country
      *
      * @return self
      */
@@ -523,142 +449,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
         $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets sk_ico
-     *
-     * @return int|null
-     */
-    public function getSkIco()
-    {
-        return $this->container['sk_ico'];
-    }
-
-    /**
-     * Sets sk_ico
-     *
-     * @param int|null $sk_ico sk_ico
-     *
-     * @return self
-     */
-    public function setSkIco($sk_ico)
-    {
-        if (is_null($sk_ico)) {
-            array_push($this->openAPINullablesSetToNull, 'sk_ico');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sk_ico', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['sk_ico'] = $sk_ico;
-
-        return $this;
-    }
-
-    /**
-     * Gets sk_dic
-     *
-     * @return int|null
-     */
-    public function getSkDic()
-    {
-        return $this->container['sk_dic'];
-    }
-
-    /**
-     * Sets sk_dic
-     *
-     * @param int|null $sk_dic sk_dic
-     *
-     * @return self
-     */
-    public function setSkDic($sk_dic)
-    {
-        if (is_null($sk_dic)) {
-            array_push($this->openAPINullablesSetToNull, 'sk_dic');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sk_dic', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['sk_dic'] = $sk_dic;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     *
-     * @return string|null
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     *
-     * @param string|null $vat vat
-     *
-     * @return self
-     */
-    public function setVat($vat)
-    {
-        if (is_null($vat)) {
-            array_push($this->openAPINullablesSetToNull, 'vat');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vat', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets internal_id
-     *
-     * @return string|null
-     */
-    public function getInternalId()
-    {
-        return $this->container['internal_id'];
-    }
-
-    /**
-     * Sets internal_id
-     *
-     * @param string|null $internal_id Internal system ID, contact address can be paired with ID in your system and internal_id in {portal_name} In case Address has Internal ID system is trying to mach it with existing entry (with Internal ID) in {portal_name}
-     *
-     * @return self
-     */
-    public function setInternalId($internal_id)
-    {
-        if (is_null($internal_id)) {
-            array_push($this->openAPINullablesSetToNull, 'internal_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('internal_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['internal_id'] = $internal_id;
 
         return $this;
     }

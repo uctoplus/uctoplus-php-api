@@ -1,6 +1,6 @@
 <?php
 /**
- * Address
+ * InvoiceResponseV4Currency2
  *
  * PHP version 8.1
  *
@@ -33,15 +33,16 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Address Class Doc Comment
+ * InvoiceResponseV4Currency2 Class Doc Comment
  *
  * @category Class
+ * @description Second currency of invoice, format corresponds to [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Address implements ModelInterface, ArrayAccess, \JsonSerializable
+class InvoiceResponseV4Currency2 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Address';
+    protected static $openAPIModelName = 'InvoiceResponse_v4_currency2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,16 +59,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'name' => 'string',
-        'street' => 'string',
-        'city' => 'string',
-        'zip' => 'string',
-        'country' => 'string',
-        'sk_ico' => 'int',
-        'sk_dic' => 'int',
-        'vat' => 'string',
-        'internal_id' => 'string'
+        'rate' => 'float',
+        'currency' => '\Uctoplus\API\Models\Currency'
     ];
 
     /**
@@ -78,16 +71,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'street' => null,
-        'city' => null,
-        'zip' => null,
-        'country' => null,
-        'sk_ico' => null,
-        'sk_dic' => null,
-        'vat' => null,
-        'internal_id' => null
+        'rate' => null,
+        'currency' => null
     ];
 
     /**
@@ -96,16 +81,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'name' => false,
-        'street' => false,
-        'city' => false,
-        'zip' => false,
-        'country' => false,
-        'sk_ico' => true,
-        'sk_dic' => true,
-        'vat' => true,
-        'internal_id' => true
+        'rate' => true,
+        'currency' => false
     ];
 
     /**
@@ -194,16 +171,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'street' => 'street',
-        'city' => 'city',
-        'zip' => 'zip',
-        'country' => 'country',
-        'sk_ico' => 'skIco',
-        'sk_dic' => 'skDic',
-        'vat' => 'vat',
-        'internal_id' => 'internalId'
+        'rate' => 'rate',
+        'currency' => 'currency'
     ];
 
     /**
@@ -212,16 +181,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'street' => 'setStreet',
-        'city' => 'setCity',
-        'zip' => 'setZip',
-        'country' => 'setCountry',
-        'sk_ico' => 'setSkIco',
-        'sk_dic' => 'setSkDic',
-        'vat' => 'setVat',
-        'internal_id' => 'setInternalId'
+        'rate' => 'setRate',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -230,16 +191,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'street' => 'getStreet',
-        'city' => 'getCity',
-        'zip' => 'getZip',
-        'country' => 'getCountry',
-        'sk_ico' => 'getSkIco',
-        'sk_dic' => 'getSkDic',
-        'vat' => 'getVat',
-        'internal_id' => 'getInternalId'
+        'rate' => 'getRate',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -299,16 +252,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('street', $data ?? [], null);
-        $this->setIfExists('city', $data ?? [], null);
-        $this->setIfExists('zip', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], 'SVK');
-        $this->setIfExists('sk_ico', $data ?? [], null);
-        $this->setIfExists('sk_dic', $data ?? [], null);
-        $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('internal_id', $data ?? [], null);
+        $this->setIfExists('rate', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -338,18 +283,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['street'] === null) {
-            $invalidProperties[] = "'street' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -366,299 +299,62 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets rate
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getId()
+    public function getRate()
     {
-        return $this->container['id'];
+        return $this->container['rate'];
     }
 
     /**
-     * Sets id
+     * Sets rate
      *
-     * @param string|null $id id
+     * @param float|null $rate rate
      *
      * @return self
      */
-    public function setId($id)
+    public function setRate($rate)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string $street street
-     *
-     * @return self
-     */
-    public function setStreet($street)
-    {
-        if (is_null($street)) {
-            throw new \InvalidArgumentException('non-nullable street cannot be null');
-        }
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city city
-     *
-     * @return self
-     */
-    public function setCity($city)
-    {
-        if (is_null($city)) {
-            throw new \InvalidArgumentException('non-nullable city cannot be null');
-        }
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets zip
-     *
-     * @return string|null
-     */
-    public function getZip()
-    {
-        return $this->container['zip'];
-    }
-
-    /**
-     * Sets zip
-     *
-     * @param string|null $zip zip
-     *
-     * @return self
-     */
-    public function setZip($zip)
-    {
-        if (is_null($zip)) {
-            throw new \InvalidArgumentException('non-nullable zip cannot be null');
-        }
-        $this->container['zip'] = $zip;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string $country 3 letter code of Country [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        if (is_null($country)) {
-            throw new \InvalidArgumentException('non-nullable country cannot be null');
-        }
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets sk_ico
-     *
-     * @return int|null
-     */
-    public function getSkIco()
-    {
-        return $this->container['sk_ico'];
-    }
-
-    /**
-     * Sets sk_ico
-     *
-     * @param int|null $sk_ico sk_ico
-     *
-     * @return self
-     */
-    public function setSkIco($sk_ico)
-    {
-        if (is_null($sk_ico)) {
-            array_push($this->openAPINullablesSetToNull, 'sk_ico');
+        if (is_null($rate)) {
+            array_push($this->openAPINullablesSetToNull, 'rate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sk_ico', $nullablesSetToNull);
+            $index = array_search('rate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sk_ico'] = $sk_ico;
+        $this->container['rate'] = $rate;
 
         return $this;
     }
 
     /**
-     * Gets sk_dic
+     * Gets currency
      *
-     * @return int|null
+     * @return \Uctoplus\API\Models\Currency|null
      */
-    public function getSkDic()
+    public function getCurrency()
     {
-        return $this->container['sk_dic'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets sk_dic
+     * Sets currency
      *
-     * @param int|null $sk_dic sk_dic
+     * @param \Uctoplus\API\Models\Currency|null $currency currency
      *
      * @return self
      */
-    public function setSkDic($sk_dic)
+    public function setCurrency($currency)
     {
-        if (is_null($sk_dic)) {
-            array_push($this->openAPINullablesSetToNull, 'sk_dic');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sk_dic', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
-        $this->container['sk_dic'] = $sk_dic;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     *
-     * @return string|null
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     *
-     * @param string|null $vat vat
-     *
-     * @return self
-     */
-    public function setVat($vat)
-    {
-        if (is_null($vat)) {
-            array_push($this->openAPINullablesSetToNull, 'vat');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vat', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets internal_id
-     *
-     * @return string|null
-     */
-    public function getInternalId()
-    {
-        return $this->container['internal_id'];
-    }
-
-    /**
-     * Sets internal_id
-     *
-     * @param string|null $internal_id Internal system ID, contact address can be paired with ID in your system and internal_id in {portal_name} In case Address has Internal ID system is trying to mach it with existing entry (with Internal ID) in {portal_name}
-     *
-     * @return self
-     */
-    public function setInternalId($internal_id)
-    {
-        if (is_null($internal_id)) {
-            array_push($this->openAPINullablesSetToNull, 'internal_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('internal_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['internal_id'] = $internal_id;
+        $this->container['currency'] = $currency;
 
         return $this;
     }

@@ -59,7 +59,7 @@ class GetInvoices200Response implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'total' => 'int',
-        'items' => '\Uctoplus\API\Models\Invoice[]'
+        'items' => '\Uctoplus\API\Models\InvoiceResponseV4[]'
     ];
 
     /**
@@ -327,7 +327,7 @@ class GetInvoices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets items
      *
-     * @return \Uctoplus\API\Models\Invoice[]|null
+     * @return \Uctoplus\API\Models\InvoiceResponseV4[]|null
      */
     public function getItems()
     {
@@ -337,7 +337,7 @@ class GetInvoices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets items
      *
-     * @param \Uctoplus\API\Models\Invoice[]|null $items items
+     * @param \Uctoplus\API\Models\InvoiceResponseV4[]|null $items items
      *
      * @return self
      */
