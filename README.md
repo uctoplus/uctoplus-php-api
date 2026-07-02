@@ -100,10 +100,15 @@ Class | Method | HTTP request | Description
 *CurrenciesApi* | [**getCurrencies**](docs/Api/CurrenciesApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
 *DeliveryTypesApi* | [**getDeliveryTypes**](docs/Api/DeliveryTypesApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
 *InvoiceApi* | [**addInvoice**](docs/Api/InvoiceApi.md#addinvoice) | **POST** /v3/invoice/add | addInvoice
+*InvoiceApi* | [**addInvoiceV4**](docs/Api/InvoiceApi.md#addinvoicev4) | **POST** /v4/invoice/add | addInvoiceV4
 *InvoiceApi* | [**addPaymentToInvoice**](docs/Api/InvoiceApi.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice
+*InvoiceApi* | [**addPaymentToInvoiceV4**](docs/Api/InvoiceApi.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4
 *InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /v3/invoice/{id}/get | getInvoice
+*InvoiceApi* | [**getInvoiceV4**](docs/Api/InvoiceApi.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | getInvoiceV4
 *InvoiceApi* | [**getInvoices**](docs/Api/InvoiceApi.md#getinvoices) | **GET** /v4/invoices | getInvoices
 *InvoiceApi* | [**sendInvoice**](docs/Api/InvoiceApi.md#sendinvoice) | **POST** /v3/invoice/{id}/send | sendInvoice
+*InvoiceApi* | [**sendInvoiceViaEmail**](docs/Api/InvoiceApi.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail
+*InvoiceApi* | [**sendInvoiceViaPeppol**](docs/Api/InvoiceApi.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol
 *InvoiceCountersApi* | [**getInvoiceCounters**](docs/Api/InvoiceCountersApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
 *InvoiceTemplatesApi* | [**getTemplates**](docs/Api/InvoiceTemplatesApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
 *LogosApi* | [**getLogos**](docs/Api/LogosApi.md#getlogos) | **GET** /v2/dial/logos | getLogos
@@ -111,12 +116,39 @@ Class | Method | HTTP request | Description
 *SignaturesApi* | [**getSignatures**](docs/Api/SignaturesApi.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
 *UploadApi* | [**uploadFile**](docs/Api/UploadApi.md#uploadfile) | **POST** /v3/upload/add | Uploading files over RestAPI
 *UploadApi* | [**uploadedFilesIndex**](docs/Api/UploadApi.md#uploadedfilesindex) | **GET** /v3/upload/index | uploadFile
+*V2Api* | [**addAddress**](docs/Api/V2Api.md#addaddress) | **POST** /v2/address-list/add | addAddress
+*V2Api* | [**getAddressById**](docs/Api/V2Api.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | getAddressById.
+*V2Api* | [**getAddressByInternalId**](docs/Api/V2Api.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId.
+*V2Api* | [**getAddressList**](docs/Api/V2Api.md#getaddresslist) | **GET** /v2/address-list | getAddressList
+*V2Api* | [**getCountries**](docs/Api/V2Api.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
+*V2Api* | [**getCurrencies**](docs/Api/V2Api.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
+*V2Api* | [**getDeliveryTypes**](docs/Api/V2Api.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
+*V2Api* | [**getInvoiceCounter**](docs/Api/V2Api.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter
+*V2Api* | [**getInvoiceCounters**](docs/Api/V2Api.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
+*V2Api* | [**getLogos**](docs/Api/V2Api.md#getlogos) | **GET** /v2/dial/logos | getLogos
+*V2Api* | [**getPaymentTypes**](docs/Api/V2Api.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
+*V2Api* | [**getSignatures**](docs/Api/V2Api.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
+*V2Api* | [**getTemplates**](docs/Api/V2Api.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
+*V3Api* | [**addInvoice**](docs/Api/V3Api.md#addinvoice) | **POST** /v3/invoice/add | addInvoice
+*V3Api* | [**addPaymentToInvoice**](docs/Api/V3Api.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice
+*V3Api* | [**getInvoice**](docs/Api/V3Api.md#getinvoice) | **GET** /v3/invoice/{id}/get | getInvoice
+*V3Api* | [**sendInvoice**](docs/Api/V3Api.md#sendinvoice) | **POST** /v3/invoice/{id}/send | sendInvoice
+*V3Api* | [**uploadFile**](docs/Api/V3Api.md#uploadfile) | **POST** /v3/upload/add | Uploading files over RestAPI
+*V3Api* | [**uploadedFilesIndex**](docs/Api/V3Api.md#uploadedfilesindex) | **GET** /v3/upload/index | uploadFile
+*V4Api* | [**addInvoiceV4**](docs/Api/V4Api.md#addinvoicev4) | **POST** /v4/invoice/add | addInvoiceV4
+*V4Api* | [**addPaymentToInvoiceV4**](docs/Api/V4Api.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4
+*V4Api* | [**getAddresses**](docs/Api/V4Api.md#getaddresses) | **GET** /v4/addresses | getAddresses
+*V4Api* | [**getInvoiceV4**](docs/Api/V4Api.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | getInvoiceV4
+*V4Api* | [**getInvoices**](docs/Api/V4Api.md#getinvoices) | **GET** /v4/invoices | getInvoices
+*V4Api* | [**sendInvoiceViaEmail**](docs/Api/V4Api.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail
+*V4Api* | [**sendInvoiceViaPeppol**](docs/Api/V4Api.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol
 
 ## Models
 
 - [AddAddress200Response](docs/Model/AddAddress200Response.md)
 - [AddInvoice200Response](docs/Model/AddInvoice200Response.md)
 - [AddInvoiceRequest](docs/Model/AddInvoiceRequest.md)
+- [AddInvoiceV4200Response](docs/Model/AddInvoiceV4200Response.md)
 - [Address](docs/Model/Address.md)
 - [AddressResponseV4](docs/Model/AddressResponseV4.md)
 - [Attribute](docs/Model/Attribute.md)
@@ -158,6 +190,7 @@ Class | Method | HTTP request | Description
 - [Page](docs/Model/Page.md)
 - [Payment](docs/Model/Payment.md)
 - [PaymentType](docs/Model/PaymentType.md)
+- [PeppolStatus](docs/Model/PeppolStatus.md)
 - [Response](docs/Model/Response.md)
 - [ResponseContentERROR](docs/Model/ResponseContentERROR.md)
 - [SendRequest](docs/Model/SendRequest.md)
@@ -168,6 +201,7 @@ Class | Method | HTTP request | Description
 - [TagType](docs/Model/TagType.md)
 - [Theme](docs/Model/Theme.md)
 - [UploadFile200Response](docs/Model/UploadFile200Response.md)
+- [UploadFileMimeTypes](docs/Model/UploadFileMimeTypes.md)
 
 ## Authorization
 
@@ -196,7 +230,7 @@ helpdesk@uctoplus.sk
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.0.1`
-    - Package version: `4.0.1`
+- API version: `4.1.0`
+    - Package version: `4.1.0`
     - Generator version: `7.21.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

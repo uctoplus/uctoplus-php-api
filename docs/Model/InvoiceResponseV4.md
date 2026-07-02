@@ -36,8 +36,10 @@ Name | Type | Description | Notes
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
 **payment** | [**\Uctoplus\API\Models\Payment**](Payment.md) |  | [optional]
 **file** | [**\Uctoplus\API\Models\File**](File.md) |  | [optional]
+**file_xml** | [**\Uctoplus\API\Models\File**](File.md) |  | [optional]
 **moje_uctoplus_url** | **string** |  | [optional]
 **moje_uctoplus_add_url** | **string** |  | [optional]
 **summary** | [**\Uctoplus\API\Models\Summary**](Summary.md) |  | [optional]
+**peppol_status** | [**\Uctoplus\API\Models\PeppolStatus**](PeppolStatus.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
