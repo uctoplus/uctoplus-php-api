@@ -25,6 +25,5 @@ Name | Type | Description | Notes
 **items** | [**\Uctoplus\API\Models\CreditNoteRequestItemsInner[]**](CreditNoteRequestItemsInner.md) | Items in invoice |
 **tags** | [**\Uctoplus\API\Models\InvoiceRequestTagsInner[]**](InvoiceRequestTagsInner.md) | Tags | [optional]
 **reverse_charge** | **bool** |  | [optional] [default to false]
-**send_via_peppol** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Issuer
+ * GetUploadedFiles200Response
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * Issuer Class Doc Comment
+ * GetUploadedFiles200Response Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetUploadedFiles200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Issuer';
+    protected static $openAPIModelName = 'getUploadedFiles_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'phone' => 'string',
-        'web' => 'string',
-        'email' => 'string'
+        'total' => 'int',
+        'items' => '\Uctoplus\API\Models\File[]'
     ];
 
     /**
@@ -72,10 +70,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'phone' => null,
-        'web' => null,
-        'email' => null
+        'total' => null,
+        'items' => null
     ];
 
     /**
@@ -84,10 +80,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'phone' => true,
-        'web' => true,
-        'email' => true
+        'total' => false,
+        'items' => false
     ];
 
     /**
@@ -176,10 +170,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'phone' => 'phone',
-        'web' => 'web',
-        'email' => 'email'
+        'total' => 'total',
+        'items' => 'items'
     ];
 
     /**
@@ -188,10 +180,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'phone' => 'setPhone',
-        'web' => 'setWeb',
-        'email' => 'setEmail'
+        'total' => 'setTotal',
+        'items' => 'setItems'
     ];
 
     /**
@@ -200,10 +190,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'phone' => 'getPhone',
-        'web' => 'getWeb',
-        'email' => 'getEmail'
+        'total' => 'getTotal',
+        'items' => 'getItems'
     ];
 
     /**
@@ -263,10 +251,8 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('phone', $data ?? [], null);
-        $this->setIfExists('web', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -296,9 +282,6 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -315,130 +298,55 @@ class Issuer implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets total
      *
-     * @return string
+     * @return int|null
      */
-    public function getName()
+    public function getTotal()
     {
-        return $this->container['name'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets name
+     * Sets total
      *
-     * @param string $name name
+     * @param int|null $total total
      *
      * @return self
      */
-    public function setName($name)
+    public function setTotal($total)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets phone
+     * Gets items
      *
-     * @return string|null
+     * @return \Uctoplus\API\Models\File[]|null
      */
-    public function getPhone()
+    public function getItems()
     {
-        return $this->container['phone'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets phone
+     * Sets items
      *
-     * @param string|null $phone phone
+     * @param \Uctoplus\API\Models\File[]|null $items items
      *
      * @return self
      */
-    public function setPhone($phone)
+    public function setItems($items)
     {
-        if (is_null($phone)) {
-            array_push($this->openAPINullablesSetToNull, 'phone');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets web
-     *
-     * @return string|null
-     */
-    public function getWeb()
-    {
-        return $this->container['web'];
-    }
-
-    /**
-     * Sets web
-     *
-     * @param string|null $web web
-     *
-     * @return self
-     */
-    public function setWeb($web)
-    {
-        if (is_null($web)) {
-            array_push($this->openAPINullablesSetToNull, 'web');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('web', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['web'] = $web;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['email'] = $email;
+        $this->container['items'] = $items;
 
         return $this;
     }

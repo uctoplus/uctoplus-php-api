@@ -35,7 +35,6 @@ Name | Type | Description | Notes
 **discount** | **float** |  | [optional] [default to 0.0]
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
 **payment** | [**\Uctoplus\API\Models\Payment**](Payment.md) |  | [optional]
-**send_via_peppol** | **bool** |  | [optional] [default to false]
 **original_invoice_reference** | **string** | UUID of the original Invoice |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

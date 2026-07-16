@@ -1,6 +1,6 @@
 {
     "name": "uctoplus/uctoplus-php-api",
-    "version": "4.1.0",
+    "version": "4.2.0",
     "description": "Production environment is located at `https://api.moje.uctoplus.sk/production/`.  Sandbox environment is located at `https://api.moje.uctoplus.sk/sandbox/`.  All communication with API is encoded in UTF-8. This REST API is based on Open API v3 standard. For help with implementation or access to the test environment please contact our helpdesk",
     "keywords": [
         "rest",
