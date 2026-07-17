@@ -141,4 +141,3 @@ src/Models/TagType.php
 src/Models/Theme.php
 src/Models/UploadFile200Response.php
 src/ObjectSerializer.php
-test/Model/GetUploadedFiles200ResponseTest.php
