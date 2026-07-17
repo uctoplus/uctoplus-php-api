@@ -357,7 +357,7 @@ sendInvoiceViaEmail($id, $send_request, $except): \Uctoplus\API\Models\AddInvoic
 
 sendInvoiceViaEmail
 
-Sends invoice from {portal_name}
+Sends invoice from Účto+
 
 ### Example
 
@@ -423,7 +423,7 @@ sendInvoiceViaPeppol($id, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 
 sendInvoiceViaPeppol
 
-Sends invoice to peppol network from {portal_name}
+Sends invoice to peppol network from Účto+
 
 ### Example
 

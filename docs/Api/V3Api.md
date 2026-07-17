@@ -216,7 +216,7 @@ sendInvoice($id, $send_request, $except): \Uctoplus\API\Models\AddInvoice200Resp
 
 sendInvoice
 
-Sends invoice from {portal_name}
+Sends invoice from Účto+
 
 ### Example
 

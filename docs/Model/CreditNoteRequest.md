@@ -18,12 +18,13 @@ Name | Type | Description | Notes
 **note2** | **string** | Markdown language allowed. | [optional]
 **note3** | **string** | Markdown language allowed. | [optional]
 **theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional]
-**logo_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
-**signature_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
-**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**logo_version** | **int** | ID from [Účto+]({portal_url}) | [optional]
+**signature_version** | **int** | ID from [Účto+]({portal_url}) | [optional]
+**template_id** | **int** | ID from [Účto+]({portal_url}) | [optional]
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional]
 **items** | [**\Uctoplus\API\Models\CreditNoteRequestItemsInner[]**](CreditNoteRequestItemsInner.md) | Items in invoice |
 **tags** | [**\Uctoplus\API\Models\InvoiceRequestTagsInner[]**](InvoiceRequestTagsInner.md) | Tags | [optional]
 **reverse_charge** | **bool** |  | [optional] [default to false]
+**send_via_peppol** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **note3** | **string** | Markdown language allowed. | [optional]
 **logo_version** | [**\Uctoplus\API\Models\Logo**](Logo.md) |  | [optional]
 **signature_version** | [**\Uctoplus\API\Models\Signature**](Signature.md) |  | [optional]
-**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**template_id** | **int** | ID from [Účto+]({portal_url}) | [optional]
 **delivery_type** | [**\Uctoplus\API\Models\DeliveryType**](DeliveryType.md) |  | [optional]
 **payment_type** | [**\Uctoplus\API\Models\PaymentType**](PaymentType.md) |  | [optional]
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional]

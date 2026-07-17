@@ -23,10 +23,10 @@ Name | Type | Description | Notes
 **note2** | **string** | Markdown language allowed. | [optional]
 **note3** | **string** | Markdown language allowed. | [optional]
 **theme** | [**\Uctoplus\API\Models\Theme**](Theme.md) |  | [optional]
-**logo_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
-**signature_version** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
-**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
-**delivery_type** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**logo_version** | **int** | ID from [Účto+]({portal_url}) | [optional]
+**signature_version** | **int** | ID from [Účto+]({portal_url}) | [optional]
+**template_id** | **int** | ID from [Účto+]({portal_url}) | [optional]
+**delivery_type** | **int** | ID from [Účto+]({portal_url}) | [optional]
 **payment_type** | [**\Uctoplus\API\Models\InvoiceRequestPaymentType**](InvoiceRequestPaymentType.md) |  |
 **currency2** | [**\Uctoplus\API\Models\InvoiceCurrency2**](InvoiceCurrency2.md) |  | [optional]
 **items** | [**\Uctoplus\API\Models\CreditNoteRequestItemsInner[]**](CreditNoteRequestItemsInner.md) | Items in invoice |
@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **discount** | **float** |  | [optional] [default to 0.0]
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
 **payment** | [**\Uctoplus\API\Models\Payment**](Payment.md) |  | [optional]
+**send_via_peppol** | **bool** |  | [optional] [default to false]
 **original_invoice_reference** | **string** | UUID of the original Invoice |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

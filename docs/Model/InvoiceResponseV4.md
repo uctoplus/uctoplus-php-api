@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **note3** | **string** | Markdown language allowed. | [optional]
 **logo_version** | [**\Uctoplus\API\Models\Logo**](Logo.md) |  | [optional]
 **signature_version** | [**\Uctoplus\API\Models\Signature**](Signature.md) |  | [optional]
-**template_id** | **int** | ID from [{portal_name}]({portal_url}) | [optional]
+**template_id** | **int** | ID from [Účto+]({portal_url}) | [optional]
 **delivery_type** | [**\Uctoplus\API\Models\DeliveryType**](DeliveryType.md) |  | [optional]
 **payment_type** | [**\Uctoplus\API\Models\PaymentType**](PaymentType.md) |  | [optional]
 **currency2** | [**\Uctoplus\API\Models\InvoiceResponseV4Currency2**](InvoiceResponseV4Currency2.md) |  | [optional]
@@ -36,8 +36,10 @@ Name | Type | Description | Notes
 **discount_type** | **float** | 0 - none 1 - percentage of price | [optional] [default to 0]
 **payment** | [**\Uctoplus\API\Models\Payment**](Payment.md) |  | [optional]
 **file** | [**\Uctoplus\API\Models\File**](File.md) |  | [optional]
+**file_xml** | [**\Uctoplus\API\Models\File**](File.md) |  | [optional]
 **moje_uctoplus_url** | **string** |  | [optional]
 **moje_uctoplus_add_url** | **string** |  | [optional]
 **summary** | [**\Uctoplus\API\Models\Summary**](Summary.md) |  | [optional]
+**peppol_status** | [**\Uctoplus\API\Models\PeppolStatus**](PeppolStatus.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

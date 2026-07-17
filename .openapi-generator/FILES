@@ -12,9 +12,13 @@ docs/Api/LogosApi.md
 docs/Api/PaymentTypesApi.md
 docs/Api/SignaturesApi.md
 docs/Api/UploadApi.md
+docs/Api/V2Api.md
+docs/Api/V3Api.md
+docs/Api/V4Api.md
 docs/Model/AddAddress200Response.md
 docs/Model/AddInvoice200Response.md
 docs/Model/AddInvoiceRequest.md
+docs/Model/AddInvoiceV4200Response.md
 docs/Model/Address.md
 docs/Model/AddressResponseV4.md
 docs/Model/Attribute.md
@@ -57,6 +61,7 @@ docs/Model/Logo.md
 docs/Model/Page.md
 docs/Model/Payment.md
 docs/Model/PaymentType.md
+docs/Model/PeppolStatus.md
 docs/Model/Response.md
 docs/Model/ResponseContentERROR.md
 docs/Model/SendRequest.md
@@ -67,6 +72,7 @@ docs/Model/Tag.md
 docs/Model/TagType.md
 docs/Model/Theme.md
 docs/Model/UploadFile200Response.md
+docs/Model/UploadFileMimeTypes.md
 phpunit.xml.dist
 src/Api/AddressListApi.php
 src/Api/CodeListsApi.php
@@ -80,6 +86,9 @@ src/Api/LogosApi.php
 src/Api/PaymentTypesApi.php
 src/Api/SignaturesApi.php
 src/Api/UploadApi.php
+src/Api/V2Api.php
+src/Api/V3Api.php
+src/Api/V4Api.php
 src/ApiException.php
 src/Configuration.php
 src/FormDataProcessor.php
@@ -87,6 +96,7 @@ src/HeaderSelector.php
 src/Models/AddAddress200Response.php
 src/Models/AddInvoice200Response.php
 src/Models/AddInvoiceRequest.php
+src/Models/AddInvoiceV4200Response.php
 src/Models/Address.php
 src/Models/AddressResponseV4.php
 src/Models/Attribute.php
@@ -130,6 +140,7 @@ src/Models/ModelInterface.php
 src/Models/Page.php
 src/Models/Payment.php
 src/Models/PaymentType.php
+src/Models/PeppolStatus.php
 src/Models/Response.php
 src/Models/ResponseContentERROR.php
 src/Models/SendRequest.php
@@ -140,4 +151,5 @@ src/Models/Tag.php
 src/Models/TagType.php
 src/Models/Theme.php
 src/Models/UploadFile200Response.php
+src/Models/UploadFileMimeTypes.php
 src/ObjectSerializer.php
