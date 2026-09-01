@@ -10,6 +10,7 @@ docs/Api/InvoiceCountersApi.md
 docs/Api/InvoiceTemplatesApi.md
 docs/Api/LogosApi.md
 docs/Api/PaymentTypesApi.md
+docs/Api/PeppolApi.md
 docs/Api/SignaturesApi.md
 docs/Api/UploadApi.md
 docs/Api/V2Api.md
@@ -39,7 +40,8 @@ docs/Model/FileMimeTypes.md
 docs/Model/GetAddresses200Response.md
 docs/Model/GetInvoiceCounter200Response.md
 docs/Model/GetInvoices200Response.md
-docs/Model/GetUploadedFiles200Response.md
+docs/Model/GetUploadedFilesList200Response.md
+docs/Model/ImportInvoiceV4Request.md
 docs/Model/Invoice.md
 docs/Model/InvoiceCounter.md
 docs/Model/InvoiceCurrency2.md
@@ -84,6 +86,7 @@ src/Api/InvoiceCountersApi.php
 src/Api/InvoiceTemplatesApi.php
 src/Api/LogosApi.php
 src/Api/PaymentTypesApi.php
+src/Api/PeppolApi.php
 src/Api/SignaturesApi.php
 src/Api/UploadApi.php
 src/Api/V2Api.php
@@ -117,7 +120,8 @@ src/Models/FileMimeTypes.php
 src/Models/GetAddresses200Response.php
 src/Models/GetInvoiceCounter200Response.php
 src/Models/GetInvoices200Response.php
-src/Models/GetUploadedFiles200Response.php
+src/Models/GetUploadedFilesList200Response.php
+src/Models/ImportInvoiceV4Request.php
 src/Models/Invoice.php
 src/Models/InvoiceCounter.php
 src/Models/InvoiceCurrency2.php
@@ -153,3 +157,6 @@ src/Models/Theme.php
 src/Models/UploadFile200Response.php
 src/Models/UploadFileMimeTypes.php
 src/ObjectSerializer.php
+test/Api/PeppolApiTest.php
+test/Model/GetUploadedFilesList200ResponseTest.php
+test/Model/ImportInvoiceV4RequestTest.php

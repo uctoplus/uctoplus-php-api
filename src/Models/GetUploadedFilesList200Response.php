@@ -1,6 +1,6 @@
 <?php
 /**
- * InvoiceRequestTagsInner
+ * GetUploadedFilesList200Response
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * InvoiceRequestTagsInner Class Doc Comment
+ * GetUploadedFilesList200Response Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetUploadedFilesList200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'InvoiceRequest_tags_inner';
+    protected static $openAPIModelName = 'getUploadedFilesList_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tag_name' => 'string',
-        'tag_type' => '\Uctoplus\API\Models\TagType'
+        'total' => 'int',
+        'items' => '\Uctoplus\API\Models\File[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tag_name' => null,
-        'tag_type' => null
+        'total' => null,
+        'items' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tag_name' => false,
-        'tag_type' => false
+        'total' => false,
+        'items' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'tag_name' => 'tagName',
-        'tag_type' => 'tagType'
+        'total' => 'total',
+        'items' => 'items'
     ];
 
     /**
@@ -180,8 +180,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'tag_name' => 'setTagName',
-        'tag_type' => 'setTagType'
+        'total' => 'setTotal',
+        'items' => 'setItems'
     ];
 
     /**
@@ -190,8 +190,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'tag_name' => 'getTagName',
-        'tag_type' => 'getTagType'
+        'total' => 'getTotal',
+        'items' => 'getItems'
     ];
 
     /**
@@ -251,8 +251,8 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('tag_name', $data ?? [], null);
-        $this->setIfExists('tag_type', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -282,9 +282,6 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['tag_name'] === null) {
-            $invalidProperties[] = "'tag_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -301,55 +298,55 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets tag_name
+     * Gets total
      *
-     * @return string
+     * @return int|null
      */
-    public function getTagName()
+    public function getTotal()
     {
-        return $this->container['tag_name'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets tag_name
+     * Sets total
      *
-     * @param string $tag_name tag_name
+     * @param int|null $total total
      *
      * @return self
      */
-    public function setTagName($tag_name)
+    public function setTotal($total)
     {
-        if (is_null($tag_name)) {
-            throw new \InvalidArgumentException('non-nullable tag_name cannot be null');
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
         }
-        $this->container['tag_name'] = $tag_name;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets tag_type
+     * Gets items
      *
-     * @return \Uctoplus\API\Models\TagType|null
+     * @return \Uctoplus\API\Models\File[]|null
      */
-    public function getTagType()
+    public function getItems()
     {
-        return $this->container['tag_type'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets tag_type
+     * Sets items
      *
-     * @param \Uctoplus\API\Models\TagType|null $tag_type tag_type
+     * @param \Uctoplus\API\Models\File[]|null $items items
      *
      * @return self
      */
-    public function setTagType($tag_type)
+    public function setItems($items)
     {
-        if (is_null($tag_type)) {
-            throw new \InvalidArgumentException('non-nullable tag_type cannot be null');
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
-        $this->container['tag_type'] = $tag_type;
+        $this->container['items'] = $items;
 
         return $this;
     }

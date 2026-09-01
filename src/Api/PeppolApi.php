@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentTypesApi
+ * PeppolApi
  * PHP version 8.1
  *
  * @category Class
@@ -44,14 +44,14 @@ use Uctoplus\API\HeaderSelector;
 use Uctoplus\API\ObjectSerializer;
 
 /**
- * PaymentTypesApi Class Doc Comment
+ * PeppolApi Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PaymentTypesApi
+class PeppolApi
 {
     /**
      * @var ClientInterface
@@ -75,7 +75,7 @@ class PaymentTypesApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'getPaymentTypes' => [
+        'importInvoiceV4' => [
             'application/json',
         ],
     ];
@@ -127,36 +127,40 @@ class PaymentTypesApi
     }
 
     /**
-     * Operation getPaymentTypes
+     * Operation importInvoiceV4
      *
-     * getPaymentTypes
+     * importInvoiceV4
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentTypes'] to see the possible values for this operation
+     * @param  \Uctoplus\API\Models\ImportInvoiceV4Request $import_invoice_v4_request Custom made PeppolBIS Document (required)
+     * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importInvoiceV4'] to see the possible values for this operation
      *
      * @throws \Uctoplus\API\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Uctoplus\API\Models\PaymentType[]|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR
+     * @return \Uctoplus\API\Models\AddInvoiceV4200Response|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR
      */
-    public function getPaymentTypes(string $contentType = self::contentTypes['getPaymentTypes'][0])
+    public function importInvoiceV4($import_invoice_v4_request, $except = null, string $contentType = self::contentTypes['importInvoiceV4'][0])
     {
-        list($response) = $this->getPaymentTypesWithHttpInfo($contentType);
+        list($response) = $this->importInvoiceV4WithHttpInfo($import_invoice_v4_request, $except, $contentType);
         return $response;
     }
 
     /**
-     * Operation getPaymentTypesWithHttpInfo
+     * Operation importInvoiceV4WithHttpInfo
      *
-     * getPaymentTypes
+     * importInvoiceV4
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentTypes'] to see the possible values for this operation
+     * @param  \Uctoplus\API\Models\ImportInvoiceV4Request $import_invoice_v4_request Custom made PeppolBIS Document (required)
+     * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importInvoiceV4'] to see the possible values for this operation
      *
      * @throws \Uctoplus\API\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Uctoplus\API\Models\PaymentType[]|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Uctoplus\API\Models\AddInvoiceV4200Response|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR|\Uctoplus\API\Models\ResponseContentERROR, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentTypesWithHttpInfo(string $contentType = self::contentTypes['getPaymentTypes'][0])
+    public function importInvoiceV4WithHttpInfo($import_invoice_v4_request, $except = null, string $contentType = self::contentTypes['importInvoiceV4'][0])
     {
-        $request = $this->getPaymentTypesRequest($contentType);
+        $request = $this->importInvoiceV4Request($import_invoice_v4_request, $except, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,7 +188,7 @@ class PaymentTypesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Uctoplus\API\Models\PaymentType[]',
+                        '\Uctoplus\API\Models\AddInvoiceV4200Response',
                         $request,
                         $response,
                     );
@@ -236,7 +240,7 @@ class PaymentTypesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Uctoplus\API\Models\PaymentType[]',
+                '\Uctoplus\API\Models\AddInvoiceV4200Response',
                 $request,
                 $response,
             );
@@ -245,7 +249,7 @@ class PaymentTypesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Uctoplus\API\Models\PaymentType[]',
+                        '\Uctoplus\API\Models\AddInvoiceV4200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -298,18 +302,20 @@ class PaymentTypesApi
     }
 
     /**
-     * Operation getPaymentTypesAsync
+     * Operation importInvoiceV4Async
      *
-     * getPaymentTypes
+     * importInvoiceV4
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentTypes'] to see the possible values for this operation
+     * @param  \Uctoplus\API\Models\ImportInvoiceV4Request $import_invoice_v4_request Custom made PeppolBIS Document (required)
+     * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importInvoiceV4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPaymentTypesAsync(string $contentType = self::contentTypes['getPaymentTypes'][0])
+    public function importInvoiceV4Async($import_invoice_v4_request, $except = null, string $contentType = self::contentTypes['importInvoiceV4'][0])
     {
-        return $this->getPaymentTypesAsyncWithHttpInfo($contentType)
+        return $this->importInvoiceV4AsyncWithHttpInfo($import_invoice_v4_request, $except, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -318,19 +324,21 @@ class PaymentTypesApi
     }
 
     /**
-     * Operation getPaymentTypesAsyncWithHttpInfo
+     * Operation importInvoiceV4AsyncWithHttpInfo
      *
-     * getPaymentTypes
+     * importInvoiceV4
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentTypes'] to see the possible values for this operation
+     * @param  \Uctoplus\API\Models\ImportInvoiceV4Request $import_invoice_v4_request Custom made PeppolBIS Document (required)
+     * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importInvoiceV4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPaymentTypesAsyncWithHttpInfo(string $contentType = self::contentTypes['getPaymentTypes'][0])
+    public function importInvoiceV4AsyncWithHttpInfo($import_invoice_v4_request, $except = null, string $contentType = self::contentTypes['importInvoiceV4'][0])
     {
-        $returnType = '\Uctoplus\API\Models\PaymentType[]';
-        $request = $this->getPaymentTypesRequest($contentType);
+        $returnType = '\Uctoplus\API\Models\AddInvoiceV4200Response';
+        $request = $this->importInvoiceV4Request($import_invoice_v4_request, $except, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -369,24 +377,43 @@ class PaymentTypesApi
     }
 
     /**
-     * Create request for operation 'getPaymentTypes'
+     * Create request for operation 'importInvoiceV4'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentTypes'] to see the possible values for this operation
+     * @param  \Uctoplus\API\Models\ImportInvoiceV4Request $import_invoice_v4_request Custom made PeppolBIS Document (required)
+     * @param  \Uctoplus\API\Models\Except[]|null $except Optional arguments for exclude data from response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importInvoiceV4'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPaymentTypesRequest(string $contentType = self::contentTypes['getPaymentTypes'][0])
+    public function importInvoiceV4Request($import_invoice_v4_request, $except = null, string $contentType = self::contentTypes['importInvoiceV4'][0])
     {
 
+        // verify the required parameter 'import_invoice_v4_request' is set
+        if ($import_invoice_v4_request === null || (is_array($import_invoice_v4_request) && count($import_invoice_v4_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $import_invoice_v4_request when calling importInvoiceV4'
+            );
+        }
 
-        $resourcePath = '/v2/dial/payment-types';
+
+
+        $resourcePath = '/v4/invoice/import';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $except,
+            'except', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -398,7 +425,14 @@ class PaymentTypesApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($import_invoice_v4_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($import_invoice_v4_request));
+            } else {
+                $httpBody = $import_invoice_v4_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -442,7 +476,7 @@ class PaymentTypesApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

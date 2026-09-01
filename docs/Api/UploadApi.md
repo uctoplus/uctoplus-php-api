@@ -6,8 +6,8 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getUploadedFile()**](UploadApi.md#getUploadedFile) | **GET** /v3/upload/{elementType}/{elementId}/get | Returning UploadedFile |
-| [**getUploadedFiles()**](UploadApi.md#getUploadedFiles) | **GET** /v4/uploaded-files | getUploadedFiles |
+| [**getUploadedFile()**](UploadApi.md#getUploadedFile) | **GET** /v4/upload/{elementType}/{elementId}/get | Returning UploadedFile |
+| [**getUploadedFilesList()**](UploadApi.md#getUploadedFilesList) | **GET** /v4/uploaded-files | getUploadedFilesList |
 | [**uploadFile()**](UploadApi.md#uploadFile) | **POST** /v3/upload/add | Uploading files over RestAPI |
 | [**uploadedFilesIndex()**](UploadApi.md#uploadedFilesIndex) | **GET** /v3/upload/index | uploadFile |
 
@@ -78,13 +78,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getUploadedFiles()`
+## `getUploadedFilesList()`
 
 ```php
-getUploadedFiles($element_type, $except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetUploadedFiles200Response
+getUploadedFilesList($element_type, $except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetUploadedFilesList200Response
 ```
 
-getUploadedFiles
+getUploadedFilesList
 
 Get List of Uploaded Files by elementType
 
@@ -115,10 +115,10 @@ $sort = 'sort_example'; // string | Optional arguments sort by column
 $order = 'order_example'; // string | Optional arguments order by column
 
 try {
-    $result = $apiInstance->getUploadedFiles($element_type, $except, $offset, $limit, $sort, $order);
+    $result = $apiInstance->getUploadedFilesList($element_type, $except, $offset, $limit, $sort, $order);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UploadApi->getUploadedFiles: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UploadApi->getUploadedFilesList: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -135,7 +135,7 @@ try {
 
 ### Return type
 
-[**\Uctoplus\API\Models\GetUploadedFiles200Response**](../Model/GetUploadedFiles200Response.md)
+[**\Uctoplus\API\Models\GetUploadedFilesList200Response**](../Model/GetUploadedFilesList200Response.md)
 
 ### Authorization
 

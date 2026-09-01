@@ -1,6 +1,6 @@
 <?php
 /**
- * InvoiceRequestTagsInner
+ * ImportInvoiceV4Request
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Uctoplus\API\ObjectSerializer;
 
 /**
- * InvoiceRequestTagsInner Class Doc Comment
+ * ImportInvoiceV4Request Class Doc Comment
  *
  * @category Class
  * @package  Uctoplus\API
@@ -41,7 +41,7 @@ use \Uctoplus\API\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImportInvoiceV4Request implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'InvoiceRequest_tags_inner';
+    protected static $openAPIModelName = 'importInvoiceV4_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tag_name' => 'string',
-        'tag_type' => '\Uctoplus\API\Models\TagType'
+        'payload' => 'string',
+        'send_via_peppol' => 'bool',
+        'webhook' => 'string'
     ];
 
     /**
@@ -70,8 +71,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tag_name' => null,
-        'tag_type' => null
+        'payload' => null,
+        'send_via_peppol' => null,
+        'webhook' => null
     ];
 
     /**
@@ -80,8 +82,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tag_name' => false,
-        'tag_type' => false
+        'payload' => false,
+        'send_via_peppol' => true,
+        'webhook' => true
     ];
 
     /**
@@ -170,8 +173,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'tag_name' => 'tagName',
-        'tag_type' => 'tagType'
+        'payload' => 'payload',
+        'send_via_peppol' => 'sendViaPeppol',
+        'webhook' => 'webhook'
     ];
 
     /**
@@ -180,8 +184,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'tag_name' => 'setTagName',
-        'tag_type' => 'setTagType'
+        'payload' => 'setPayload',
+        'send_via_peppol' => 'setSendViaPeppol',
+        'webhook' => 'setWebhook'
     ];
 
     /**
@@ -190,8 +195,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'tag_name' => 'getTagName',
-        'tag_type' => 'getTagType'
+        'payload' => 'getPayload',
+        'send_via_peppol' => 'getSendViaPeppol',
+        'webhook' => 'getWebhook'
     ];
 
     /**
@@ -251,8 +257,9 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('tag_name', $data ?? [], null);
-        $this->setIfExists('tag_type', $data ?? [], null);
+        $this->setIfExists('payload', $data ?? [], null);
+        $this->setIfExists('send_via_peppol', $data ?? [], null);
+        $this->setIfExists('webhook', $data ?? [], null);
     }
 
     /**
@@ -282,9 +289,6 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['tag_name'] === null) {
-            $invalidProperties[] = "'tag_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -301,55 +305,96 @@ class InvoiceRequestTagsInner implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets tag_name
+     * Gets payload
      *
-     * @return string
+     * @return string|null
      */
-    public function getTagName()
+    public function getPayload()
     {
-        return $this->container['tag_name'];
+        return $this->container['payload'];
     }
 
     /**
-     * Sets tag_name
+     * Sets payload
      *
-     * @param string $tag_name tag_name
+     * @param string|null $payload Peppol BIS 3 XML
      *
      * @return self
      */
-    public function setTagName($tag_name)
+    public function setPayload($payload)
     {
-        if (is_null($tag_name)) {
-            throw new \InvalidArgumentException('non-nullable tag_name cannot be null');
+        if (is_null($payload)) {
+            throw new \InvalidArgumentException('non-nullable payload cannot be null');
         }
-        $this->container['tag_name'] = $tag_name;
+        $this->container['payload'] = $payload;
 
         return $this;
     }
 
     /**
-     * Gets tag_type
+     * Gets send_via_peppol
      *
-     * @return \Uctoplus\API\Models\TagType|null
+     * @return bool|null
      */
-    public function getTagType()
+    public function getSendViaPeppol()
     {
-        return $this->container['tag_type'];
+        return $this->container['send_via_peppol'];
     }
 
     /**
-     * Sets tag_type
+     * Sets send_via_peppol
      *
-     * @param \Uctoplus\API\Models\TagType|null $tag_type tag_type
+     * @param bool|null $send_via_peppol Force to send document via Peppol Network
      *
      * @return self
      */
-    public function setTagType($tag_type)
+    public function setSendViaPeppol($send_via_peppol)
     {
-        if (is_null($tag_type)) {
-            throw new \InvalidArgumentException('non-nullable tag_type cannot be null');
+        if (is_null($send_via_peppol)) {
+            array_push($this->openAPINullablesSetToNull, 'send_via_peppol');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('send_via_peppol', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['tag_type'] = $tag_type;
+        $this->container['send_via_peppol'] = $send_via_peppol;
+
+        return $this;
+    }
+
+    /**
+     * Gets webhook
+     *
+     * @return string|null
+     */
+    public function getWebhook()
+    {
+        return $this->container['webhook'];
+    }
+
+    /**
+     * Sets webhook
+     *
+     * @param string|null $webhook Possibility to insert custom webhook to get notified about document status changes
+     *
+     * @return self
+     */
+    public function setWebhook($webhook)
+    {
+        if (is_null($webhook)) {
+            array_push($this->openAPINullablesSetToNull, 'webhook');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('webhook', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['webhook'] = $webhook;
 
         return $this;
     }
