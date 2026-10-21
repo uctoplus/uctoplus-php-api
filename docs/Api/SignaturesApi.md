@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getSignatures()**](SignaturesApi.md#getSignatures) | **GET** /v2/dial/signatures | getSignatures |
+| [**getSignatures()**](SignaturesApi.md#getSignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures |
 
 
 ## `getSignatures()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getSignatures(): \Uctoplus\API\Models\Signature[]
 ```
 
-getSignatures
+Retrieve configured company signatures
 
-Return all Signatures in Company.
+Returns all pre-configured digital signature graphics available to be appended to outgoing invoices.
 
 ### Example
 

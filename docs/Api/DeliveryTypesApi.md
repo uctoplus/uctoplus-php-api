@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getDeliveryTypes()**](DeliveryTypesApi.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes |
+| [**getDeliveryTypes()**](DeliveryTypesApi.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list |
 
 
 ## `getDeliveryTypes()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getDeliveryTypes(): \Uctoplus\API\Models\DeliveryType[]
 ```
 
-getDeliveryTypes
+Retrieve delivery options code list
 
-Return all DeliveryTypes in Company.
+Returns all supported delivery types (e.g., electronic delivery, courier, personal pickup) configured for the company.
 
 ### Example
 

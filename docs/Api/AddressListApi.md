@@ -6,11 +6,11 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addAddress()**](AddressListApi.md#addAddress) | **POST** /v2/address-list/add | addAddress |
-| [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /v2/address-list/{id}/get | getAddressById. |
-| [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId. |
-| [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /v2/address-list | getAddressList |
-| [**getAddresses()**](AddressListApi.md#getAddresses) | **GET** /v4/addresses | getAddresses |
+| [**addAddress()**](AddressListApi.md#addAddress) | **POST** /v2/address-list/add | Create a new address entry |
+| [**getAddressById()**](AddressListApi.md#getAddressById) | **GET** /v2/address-list/{id}/get | Retrieve an address by unique primary ID |
+| [**getAddressByInternalId()**](AddressListApi.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | Retrieve an address by internal system ID |
+| [**getAddressList()**](AddressListApi.md#getAddressList) | **GET** /v2/address-list | Retrieve all addresses (v2) |
+| [**getAddresses()**](AddressListApi.md#getAddresses) | **GET** /v4/addresses | Retrieve a paginated list of address book contacts |
 
 
 ## `addAddress()`
@@ -19,9 +19,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 addAddress($address, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-addAddress
+Create a new address entry
 
-Create new Contact in Address book.
+Creates a new contact address entry in the company address book with details such as tax identifiers, street location, and internal system IDs.
 
 ### Example
 
@@ -83,9 +83,9 @@ try {
 getAddressById($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-getAddressById.
+Retrieve an address by unique primary ID
 
-Returns Address.
+Fetches a single address record from the address book using its system database integer ID.
 
 ### Example
 
@@ -147,9 +147,9 @@ try {
 getAddressByInternalId($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-getAddressByInternalId.
+Retrieve an address by internal system ID
 
-Returns Address.
+Fetches a single address record matching your custom internal system identifier mapped to the address entry.
 
 ### Example
 
@@ -211,9 +211,9 @@ try {
 getAddressList($except): \Uctoplus\API\Models\Address[]
 ```
 
-getAddressList
+Retrieve all addresses (v2)
 
-Return all Addresses from Company Address List.
+Legacy endpoint to fetch all contact address entries from the company address book. Use /v4/addresses for pagination and better performance.
 
 ### Example
 
@@ -273,9 +273,9 @@ try {
 getAddresses($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetAddresses200Response
 ```
 
-getAddresses
+Retrieve a paginated list of address book contacts
 
-Return all Addresses from Company Address List.
+Returns a paginated list of contacts from the company address list, with configurable sorting, ordering, limits, and field exclusions.
 
 ### Example
 

@@ -6,16 +6,17 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addInvoiceV4()**](V4Api.md#addInvoiceV4) | **POST** /v4/invoice/add | addInvoiceV4 |
-| [**addPaymentToInvoiceV4()**](V4Api.md#addPaymentToInvoiceV4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4 |
-| [**getAddresses()**](V4Api.md#getAddresses) | **GET** /v4/addresses | getAddresses |
-| [**getInvoiceV4()**](V4Api.md#getInvoiceV4) | **GET** /v4/invoice/{id}/get | getInvoiceV4 |
-| [**getInvoices()**](V4Api.md#getInvoices) | **GET** /v4/invoices | getInvoices |
-| [**getUploadedFile()**](V4Api.md#getUploadedFile) | **GET** /v4/upload/{elementType}/{elementId}/get | Returning UploadedFile |
-| [**getUploadedFilesList()**](V4Api.md#getUploadedFilesList) | **GET** /v4/uploaded-files | getUploadedFilesList |
-| [**importInvoiceV4()**](V4Api.md#importInvoiceV4) | **POST** /v4/invoice/import | importInvoiceV4 |
-| [**sendInvoiceViaEmail()**](V4Api.md#sendInvoiceViaEmail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail |
-| [**sendInvoiceViaPeppol()**](V4Api.md#sendInvoiceViaPeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol |
+| [**addInvoiceV4()**](V4Api.md#addInvoiceV4) | **POST** /v4/invoice/add | Create a new invoice or credit note (v4) |
+| [**addPaymentToInvoiceV4()**](V4Api.md#addPaymentToInvoiceV4) | **POST** /v4/invoice/{id}/pay | Record payment for invoice (v4) |
+| [**getAddresses()**](V4Api.md#getAddresses) | **GET** /v4/addresses | Retrieve a paginated list of address book contacts |
+| [**getInvoiceV4()**](V4Api.md#getInvoiceV4) | **GET** /v4/invoice/{id}/get | Get invoice details by ID (v4) |
+| [**getInvoices()**](V4Api.md#getInvoices) | **GET** /v4/invoices | Retrieve a paginated list of invoices |
+| [**getUploadedFile()**](V4Api.md#getUploadedFile) | **GET** /v4/upload/{elementType}/{elementId}/get | Retrieve specific uploaded file details |
+| [**getUploadedFilesList()**](V4Api.md#getUploadedFilesList) | **GET** /v4/uploaded-files | Retrieve paginated list of uploaded files |
+| [**importInvoiceV4()**](V4Api.md#importInvoiceV4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML |
+| [**sendInvoiceViaEmail()**](V4Api.md#sendInvoiceViaEmail) | **POST** /v4/invoice/{id}/send-via-email | Send invoice via email |
+| [**sendInvoiceViaPeppol()**](V4Api.md#sendInvoiceViaPeppol) | **POST** /v4/invoice/{id}/send-via-peppol | Send invoice via Peppol network |
+| [**uploadFileAttributes()**](V4Api.md#uploadFileAttributes) | **POST** /v4/upload/data-attributes | List of possible data attributes for upload |
 
 
 ## `addInvoiceV4()`
@@ -24,9 +25,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 addInvoiceV4($add_invoice_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-addInvoiceV4
+Create a new invoice or credit note (v4)
 
-Create new Invoice.
+Creates a new invoice or credit note with support for custom line items, currency settings, payment types, and optional automatic Peppol network dispatch.
 
 ### Example
 
@@ -88,9 +89,9 @@ try {
 addPaymentToInvoiceV4($id, $payment, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-addPaymentToInvoiceV4
+Record payment for invoice (v4)
 
-Add payment to invoice.
+Registers a new payment entry (amount and date) toward an existing invoice to update its settlement status.
 
 ### Example
 
@@ -154,9 +155,9 @@ try {
 getAddresses($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetAddresses200Response
 ```
 
-getAddresses
+Retrieve a paginated list of address book contacts
 
-Return all Addresses from Company Address List.
+Returns a paginated list of contacts from the company address list, with configurable sorting, ordering, limits, and field exclusions.
 
 ### Example
 
@@ -224,9 +225,9 @@ try {
 getInvoiceV4($id, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-getInvoiceV4
+Get invoice details by ID (v4)
 
-Returns Invoice.
+Retrieves complete invoice details, including linked items, summaries, payment states, Peppol statuses, and attached document metadata.
 
 ### Example
 
@@ -288,9 +289,9 @@ try {
 getInvoices($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetInvoices200Response
 ```
 
-getInvoices
+Retrieve a paginated list of invoices
 
-Get list of invoices.
+Fetches a collection of invoices with support for pagination (limit, offset), sorting, ordering, and optional field exclusions.
 
 ### Example
 
@@ -358,9 +359,9 @@ try {
 getUploadedFile($element_type, $element_id, $except): \Uctoplus\API\Models\File
 ```
 
-Returning UploadedFile
+Retrieve specific uploaded file details
 
-Returns file.
+Fetches metadata, content, and system attributes for a specific uploaded file using its category element type and element UUID.
 
 ### Example
 
@@ -424,9 +425,9 @@ try {
 getUploadedFilesList($element_type, $except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetUploadedFilesList200Response
 ```
 
-getUploadedFilesList
+Retrieve paginated list of uploaded files
 
-Get List of Uploaded Files by elementType
+Returns a paginated list of uploaded files filtered by document element type (e.g., incoming invoice, cash bill, contract).
 
 ### Example
 
@@ -496,9 +497,9 @@ try {
 importInvoiceV4($import_invoice_v4_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-importInvoiceV4
+Import and process a Peppol BIS invoice XML
 
-Import Peppol BIS invoice from XML file and send it to Peppol Access Point.
+Imports an electronic invoice structured in Peppol BIS 3 XML format, processes the document, and optionally forwards it directly to the Peppol Access Point.
 
 ### Example
 
@@ -560,9 +561,9 @@ try {
 sendInvoiceViaEmail($id, $send_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-sendInvoiceViaEmail
+Send invoice via email
 
-Sends invoice from Účto+
+Dispatches an email notification containing the invoice details and attachment to specified recipient email addresses.
 
 ### Example
 
@@ -626,9 +627,9 @@ try {
 sendInvoiceViaPeppol($id, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-sendInvoiceViaPeppol
+Send invoice via Peppol network
 
-Sends invoice to peppol network from Účto+
+Transmits the specified invoice electronically to the recipient over the international Peppol e-delivery network.
 
 ### Example
 
@@ -670,6 +671,68 @@ try {
 ### Return type
 
 [**\Uctoplus\API\Models\AddInvoiceV4200Response**](../Model/AddInvoiceV4200Response.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `uploadFileAttributes()`
+
+```php
+uploadFileAttributes($element_type): \Uctoplus\API\Models\DataAttributeV4[]
+```
+
+List of possible data attributes for upload
+
+This endpoint gives you list of all possible attributes for the specific Element Type which can be used to fill information while file upload
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-key
+$config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+
+$apiInstance = new Uctoplus\API\Api\V4Api(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$element_type = new \Uctoplus\API\Models\\Uctoplus\API\Models\ElementType(); // \Uctoplus\API\Models\ElementType
+
+try {
+    $result = $apiInstance->uploadFileAttributes($element_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling V4Api->uploadFileAttributes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **element_type** | [**\Uctoplus\API\Models\ElementType**](../Model/.md)|  | |
+
+### Return type
+
+[**\Uctoplus\API\Models\DataAttributeV4[]**](../Model/DataAttributeV4.md)
 
 ### Authorization
 

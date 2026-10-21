@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getLogos()**](LogosApi.md#getLogos) | **GET** /v2/dial/logos | getLogos |
+| [**getLogos()**](LogosApi.md#getLogos) | **GET** /v2/dial/logos | Retrieve configured company logos |
 
 
 ## `getLogos()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getLogos(): \Uctoplus\API\Models\Logo[]
 ```
 
-getLogos
+Retrieve configured company logos
 
-Return all Logos in Company.
+Returns all company logo assets available for branding generated invoices and documents.
 
 ### Example
 

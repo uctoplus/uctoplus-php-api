@@ -6,15 +6,15 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCountries()**](CodeListsApi.md#getCountries) | **GET** /v2/dial/global/countries | getCountries |
-| [**getCurrencies()**](CodeListsApi.md#getCurrencies) | **GET** /v2/dial/global/currencies | getCurrencies |
-| [**getDeliveryTypes()**](CodeListsApi.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes |
-| [**getInvoiceCounter()**](CodeListsApi.md#getInvoiceCounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter |
-| [**getInvoiceCounters()**](CodeListsApi.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters |
-| [**getLogos()**](CodeListsApi.md#getLogos) | **GET** /v2/dial/logos | getLogos |
-| [**getPaymentTypes()**](CodeListsApi.md#getPaymentTypes) | **GET** /v2/dial/payment-types | getPaymentTypes |
-| [**getSignatures()**](CodeListsApi.md#getSignatures) | **GET** /v2/dial/signatures | getSignatures |
-| [**getTemplates()**](CodeListsApi.md#getTemplates) | **GET** /v2/dial/invoice/templates | getTemplates |
+| [**getCountries()**](CodeListsApi.md#getCountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list |
+| [**getCurrencies()**](CodeListsApi.md#getCurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list |
+| [**getDeliveryTypes()**](CodeListsApi.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list |
+| [**getInvoiceCounter()**](CodeListsApi.md#getInvoiceCounter) | **GET** /v2/dial/invoice-counters/{counter} | Retrieve specific invoice counter details |
+| [**getInvoiceCounters()**](CodeListsApi.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type |
+| [**getLogos()**](CodeListsApi.md#getLogos) | **GET** /v2/dial/logos | Retrieve configured company logos |
+| [**getPaymentTypes()**](CodeListsApi.md#getPaymentTypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list |
+| [**getSignatures()**](CodeListsApi.md#getSignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures |
+| [**getTemplates()**](CodeListsApi.md#getTemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates |
 
 
 ## `getCountries()`
@@ -23,9 +23,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getCountries(): \Uctoplus\API\Models\Country[]
 ```
 
-getCountries
+Retrieve available countries code list
 
-Return all Countries in Company.
+Returns the full list of available countries along with their 3-letter ISO 3166-1 alpha-3 country codes.
 
 ### Example
 
@@ -82,9 +82,9 @@ This endpoint does not need any parameter.
 getCurrencies(): \Uctoplus\API\Models\Currency[]
 ```
 
-getCurrencies
+Retrieve available currencies code list
 
-Return all Currencies in Company.
+Returns the full list of currencies supported by the system, formatted with ISO 4217 standard codes.
 
 ### Example
 
@@ -141,9 +141,9 @@ This endpoint does not need any parameter.
 getDeliveryTypes(): \Uctoplus\API\Models\DeliveryType[]
 ```
 
-getDeliveryTypes
+Retrieve delivery options code list
 
-Return all DeliveryTypes in Company.
+Returns all supported delivery types (e.g., electronic delivery, courier, personal pickup) configured for the company.
 
 ### Example
 
@@ -200,9 +200,9 @@ This endpoint does not need any parameter.
 getInvoiceCounter($counter): \Uctoplus\API\Models\GetInvoiceCounter200Response
 ```
 
-getInvoiceCounter
+Retrieve specific invoice counter details
 
-Return Invoice Counter by ID.
+Returns configuration details (such as format string and current sequence) for a single invoice counter by its ID.
 
 ### Example
 
@@ -262,9 +262,9 @@ try {
 getInvoiceCounters($invoice_type): \Uctoplus\API\Models\InvoiceCounter[]
 ```
 
-getInvoiceCounters
+Retrieve number counters by document type
 
-Return all InvoiceCounters in Company.
+Fetches all configured number sequence counters (numbering series) associated with a specific document/invoice type.
 
 ### Example
 
@@ -324,9 +324,9 @@ try {
 getLogos(): \Uctoplus\API\Models\Logo[]
 ```
 
-getLogos
+Retrieve configured company logos
 
-Return all Logos in Company.
+Returns all company logo assets available for branding generated invoices and documents.
 
 ### Example
 
@@ -383,9 +383,9 @@ This endpoint does not need any parameter.
 getPaymentTypes(): \Uctoplus\API\Models\PaymentType[]
 ```
 
-getPaymentTypes
+Retrieve payment methods code list
 
-Return all PaymentTypes in Company.
+Returns all valid payment types (e.g., bank transfer, cash, card) available for assignment to invoices.
 
 ### Example
 
@@ -442,9 +442,9 @@ This endpoint does not need any parameter.
 getSignatures(): \Uctoplus\API\Models\Signature[]
 ```
 
-getSignatures
+Retrieve configured company signatures
 
-Return all Signatures in Company.
+Returns all pre-configured digital signature graphics available to be appended to outgoing invoices.
 
 ### Example
 
@@ -501,9 +501,9 @@ This endpoint does not need any parameter.
 getTemplates(): \Uctoplus\API\Models\InvoiceTemplate[]
 ```
 
-getTemplates
+Retrieve invoice design templates
 
-Return all Invoice Templates for specific InvoiceType.
+Returns all available visual invoice template layouts that can be applied to rendered document PDFs.
 
 ### Example
 

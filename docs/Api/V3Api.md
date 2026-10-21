@@ -6,12 +6,12 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addInvoice()**](V3Api.md#addInvoice) | **POST** /v3/invoice/add | addInvoice |
-| [**addPaymentToInvoice()**](V3Api.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice |
-| [**getInvoice()**](V3Api.md#getInvoice) | **GET** /v3/invoice/{id}/get | getInvoice |
-| [**sendInvoice()**](V3Api.md#sendInvoice) | **POST** /v3/invoice/{id}/send | sendInvoice |
-| [**uploadFile()**](V3Api.md#uploadFile) | **POST** /v3/upload/add | Uploading files over RestAPI |
-| [**uploadedFilesIndex()**](V3Api.md#uploadedFilesIndex) | **GET** /v3/upload/index | uploadFile |
+| [**addInvoice()**](V3Api.md#addInvoice) | **POST** /v3/invoice/add | Create a new invoice or credit note (v3) |
+| [**addPaymentToInvoice()**](V3Api.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | Record payment for invoice (v3) |
+| [**getInvoice()**](V3Api.md#getInvoice) | **GET** /v3/invoice/{id}/get | Get invoice details by ID (v3) |
+| [**sendInvoice()**](V3Api.md#sendInvoice) | **POST** /v3/invoice/{id}/send | Send invoice via email (v3) |
+| [**uploadFile()**](V3Api.md#uploadFile) | **POST** /v3/upload/add | Upload file or multi-page documents |
+| [**uploadedFilesIndex()**](V3Api.md#uploadedFilesIndex) | **GET** /v3/upload/index | Retrieve uploaded files index (v3) |
 
 
 ## `addInvoice()`
@@ -20,9 +20,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 addInvoice($add_invoice_request, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-addInvoice
+Create a new invoice or credit note (v3)
 
-Create new Invoice.
+Legacy endpoint to create a new invoice or credit note record. Use /v4/invoice/add for updated functionality.
 
 ### Example
 
@@ -84,9 +84,9 @@ try {
 addPaymentToInvoice($id, $payment, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-addPaymentToInvoice
+Record payment for invoice (v3)
 
-Add payment to invoice.
+Legacy endpoint to log payment details against a specific invoice. Use /v4/invoice/{id}/pay instead.
 
 ### Example
 
@@ -150,9 +150,9 @@ try {
 getInvoice($id, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-getInvoice
+Get invoice details by ID (v3)
 
-Returns Invoice.
+Legacy endpoint to retrieve full details of a single invoice by its unique identifier. Use /v4/invoice/{id}/get instead.
 
 ### Example
 
@@ -214,9 +214,9 @@ try {
 sendInvoice($id, $send_request, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-sendInvoice
+Send invoice via email (v3)
 
-Sends invoice from Účto+
+Legacy endpoint to email an invoice document to designated recipients. Use /v4/invoice/{id}/send-via-email instead.
 
 ### Example
 
@@ -280,9 +280,9 @@ try {
 uploadFile($except, $file, $element_type, $attributes, $pages): \Uctoplus\API\Models\UploadFile200Response
 ```
 
-Uploading files over RestAPI
+Upload file or multi-page documents
 
-Endpoint allows you to upload files either directly into specific category or to the list of files which needs to be sorted later.
+Uploads single files or multi-page document streams directly into specific document categories or an unassigned processing queue.
 
 ### Example
 
@@ -350,9 +350,9 @@ try {
 uploadedFilesIndex($element_type, $from, $to, $except): \Uctoplus\API\Models\File[]
 ```
 
-uploadFile
+Retrieve uploaded files index (v3)
 
-Upload file.
+Legacy endpoint to fetch uploaded files filtered by element type and date range. Use /v4/uploaded-files for pagination support.
 
 ### Example
 

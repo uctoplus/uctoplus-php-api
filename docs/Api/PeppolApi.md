@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**importInvoiceV4()**](PeppolApi.md#importInvoiceV4) | **POST** /v4/invoice/import | importInvoiceV4 |
+| [**importInvoiceV4()**](PeppolApi.md#importInvoiceV4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML |
 
 
 ## `importInvoiceV4()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 importInvoiceV4($import_invoice_v4_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-importInvoiceV4
+Import and process a Peppol BIS invoice XML
 
-Import Peppol BIS invoice from XML file and send it to Peppol Access Point.
+Imports an electronic invoice structured in Peppol BIS 3 XML format, processes the document, and optionally forwards it directly to the Peppol Access Point.
 
 ### Example
 

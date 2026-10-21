@@ -6,17 +6,17 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /v3/invoice/add | addInvoice |
-| [**addInvoiceV4()**](InvoiceApi.md#addInvoiceV4) | **POST** /v4/invoice/add | addInvoiceV4 |
-| [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice |
-| [**addPaymentToInvoiceV4()**](InvoiceApi.md#addPaymentToInvoiceV4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4 |
-| [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /v3/invoice/{id}/get | getInvoice |
-| [**getInvoiceV4()**](InvoiceApi.md#getInvoiceV4) | **GET** /v4/invoice/{id}/get | getInvoiceV4 |
-| [**getInvoices()**](InvoiceApi.md#getInvoices) | **GET** /v4/invoices | getInvoices |
-| [**importInvoiceV4()**](InvoiceApi.md#importInvoiceV4) | **POST** /v4/invoice/import | importInvoiceV4 |
-| [**sendInvoice()**](InvoiceApi.md#sendInvoice) | **POST** /v3/invoice/{id}/send | sendInvoice |
-| [**sendInvoiceViaEmail()**](InvoiceApi.md#sendInvoiceViaEmail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail |
-| [**sendInvoiceViaPeppol()**](InvoiceApi.md#sendInvoiceViaPeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol |
+| [**addInvoice()**](InvoiceApi.md#addInvoice) | **POST** /v3/invoice/add | Create a new invoice or credit note (v3) |
+| [**addInvoiceV4()**](InvoiceApi.md#addInvoiceV4) | **POST** /v4/invoice/add | Create a new invoice or credit note (v4) |
+| [**addPaymentToInvoice()**](InvoiceApi.md#addPaymentToInvoice) | **POST** /v3/invoice/{id}/pay | Record payment for invoice (v3) |
+| [**addPaymentToInvoiceV4()**](InvoiceApi.md#addPaymentToInvoiceV4) | **POST** /v4/invoice/{id}/pay | Record payment for invoice (v4) |
+| [**getInvoice()**](InvoiceApi.md#getInvoice) | **GET** /v3/invoice/{id}/get | Get invoice details by ID (v3) |
+| [**getInvoiceV4()**](InvoiceApi.md#getInvoiceV4) | **GET** /v4/invoice/{id}/get | Get invoice details by ID (v4) |
+| [**getInvoices()**](InvoiceApi.md#getInvoices) | **GET** /v4/invoices | Retrieve a paginated list of invoices |
+| [**importInvoiceV4()**](InvoiceApi.md#importInvoiceV4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML |
+| [**sendInvoice()**](InvoiceApi.md#sendInvoice) | **POST** /v3/invoice/{id}/send | Send invoice via email (v3) |
+| [**sendInvoiceViaEmail()**](InvoiceApi.md#sendInvoiceViaEmail) | **POST** /v4/invoice/{id}/send-via-email | Send invoice via email |
+| [**sendInvoiceViaPeppol()**](InvoiceApi.md#sendInvoiceViaPeppol) | **POST** /v4/invoice/{id}/send-via-peppol | Send invoice via Peppol network |
 
 
 ## `addInvoice()`
@@ -25,9 +25,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 addInvoice($add_invoice_request, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-addInvoice
+Create a new invoice or credit note (v3)
 
-Create new Invoice.
+Legacy endpoint to create a new invoice or credit note record. Use /v4/invoice/add for updated functionality.
 
 ### Example
 
@@ -89,9 +89,9 @@ try {
 addInvoiceV4($add_invoice_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-addInvoiceV4
+Create a new invoice or credit note (v4)
 
-Create new Invoice.
+Creates a new invoice or credit note with support for custom line items, currency settings, payment types, and optional automatic Peppol network dispatch.
 
 ### Example
 
@@ -153,9 +153,9 @@ try {
 addPaymentToInvoice($id, $payment, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-addPaymentToInvoice
+Record payment for invoice (v3)
 
-Add payment to invoice.
+Legacy endpoint to log payment details against a specific invoice. Use /v4/invoice/{id}/pay instead.
 
 ### Example
 
@@ -219,9 +219,9 @@ try {
 addPaymentToInvoiceV4($id, $payment, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-addPaymentToInvoiceV4
+Record payment for invoice (v4)
 
-Add payment to invoice.
+Registers a new payment entry (amount and date) toward an existing invoice to update its settlement status.
 
 ### Example
 
@@ -285,9 +285,9 @@ try {
 getInvoice($id, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-getInvoice
+Get invoice details by ID (v3)
 
-Returns Invoice.
+Legacy endpoint to retrieve full details of a single invoice by its unique identifier. Use /v4/invoice/{id}/get instead.
 
 ### Example
 
@@ -349,9 +349,9 @@ try {
 getInvoiceV4($id, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-getInvoiceV4
+Get invoice details by ID (v4)
 
-Returns Invoice.
+Retrieves complete invoice details, including linked items, summaries, payment states, Peppol statuses, and attached document metadata.
 
 ### Example
 
@@ -413,9 +413,9 @@ try {
 getInvoices($except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetInvoices200Response
 ```
 
-getInvoices
+Retrieve a paginated list of invoices
 
-Get list of invoices.
+Fetches a collection of invoices with support for pagination (limit, offset), sorting, ordering, and optional field exclusions.
 
 ### Example
 
@@ -483,9 +483,9 @@ try {
 importInvoiceV4($import_invoice_v4_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-importInvoiceV4
+Import and process a Peppol BIS invoice XML
 
-Import Peppol BIS invoice from XML file and send it to Peppol Access Point.
+Imports an electronic invoice structured in Peppol BIS 3 XML format, processes the document, and optionally forwards it directly to the Peppol Access Point.
 
 ### Example
 
@@ -547,9 +547,9 @@ try {
 sendInvoice($id, $send_request, $except): \Uctoplus\API\Models\AddInvoice200Response
 ```
 
-sendInvoice
+Send invoice via email (v3)
 
-Sends invoice from Účto+
+Legacy endpoint to email an invoice document to designated recipients. Use /v4/invoice/{id}/send-via-email instead.
 
 ### Example
 
@@ -613,9 +613,9 @@ try {
 sendInvoiceViaEmail($id, $send_request, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-sendInvoiceViaEmail
+Send invoice via email
 
-Sends invoice from Účto+
+Dispatches an email notification containing the invoice details and attachment to specified recipient email addresses.
 
 ### Example
 
@@ -679,9 +679,9 @@ try {
 sendInvoiceViaPeppol($id, $except): \Uctoplus\API\Models\AddInvoiceV4200Response
 ```
 
-sendInvoiceViaPeppol
+Send invoice via Peppol network
 
-Sends invoice to peppol network from Účto+
+Transmits the specified invoice electronically to the recipient over the international Peppol e-delivery network.
 
 ### Example
 

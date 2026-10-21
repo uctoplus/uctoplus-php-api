@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getPaymentTypes()**](PaymentTypesApi.md#getPaymentTypes) | **GET** /v2/dial/payment-types | getPaymentTypes |
+| [**getPaymentTypes()**](PaymentTypesApi.md#getPaymentTypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list |
 
 
 ## `getPaymentTypes()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getPaymentTypes(): \Uctoplus\API\Models\PaymentType[]
 ```
 
-getPaymentTypes
+Retrieve payment methods code list
 
-Return all PaymentTypes in Company.
+Returns all valid payment types (e.g., bank transfer, cash, card) available for assignment to invoices.
 
 ### Example
 

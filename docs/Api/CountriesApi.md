@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCountries()**](CountriesApi.md#getCountries) | **GET** /v2/dial/global/countries | getCountries |
+| [**getCountries()**](CountriesApi.md#getCountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list |
 
 
 ## `getCountries()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getCountries(): \Uctoplus\API\Models\Country[]
 ```
 
-getCountries
+Retrieve available countries code list
 
-Return all Countries in Company.
+Returns the full list of available countries along with their 3-letter ISO 3166-1 alpha-3 country codes.
 
 ### Example
 

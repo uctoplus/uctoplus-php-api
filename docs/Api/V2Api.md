@@ -6,19 +6,19 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**addAddress()**](V2Api.md#addAddress) | **POST** /v2/address-list/add | addAddress |
-| [**getAddressById()**](V2Api.md#getAddressById) | **GET** /v2/address-list/{id}/get | getAddressById. |
-| [**getAddressByInternalId()**](V2Api.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId. |
-| [**getAddressList()**](V2Api.md#getAddressList) | **GET** /v2/address-list | getAddressList |
-| [**getCountries()**](V2Api.md#getCountries) | **GET** /v2/dial/global/countries | getCountries |
-| [**getCurrencies()**](V2Api.md#getCurrencies) | **GET** /v2/dial/global/currencies | getCurrencies |
-| [**getDeliveryTypes()**](V2Api.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes |
-| [**getInvoiceCounter()**](V2Api.md#getInvoiceCounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter |
-| [**getInvoiceCounters()**](V2Api.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters |
-| [**getLogos()**](V2Api.md#getLogos) | **GET** /v2/dial/logos | getLogos |
-| [**getPaymentTypes()**](V2Api.md#getPaymentTypes) | **GET** /v2/dial/payment-types | getPaymentTypes |
-| [**getSignatures()**](V2Api.md#getSignatures) | **GET** /v2/dial/signatures | getSignatures |
-| [**getTemplates()**](V2Api.md#getTemplates) | **GET** /v2/dial/invoice/templates | getTemplates |
+| [**addAddress()**](V2Api.md#addAddress) | **POST** /v2/address-list/add | Create a new address entry |
+| [**getAddressById()**](V2Api.md#getAddressById) | **GET** /v2/address-list/{id}/get | Retrieve an address by unique primary ID |
+| [**getAddressByInternalId()**](V2Api.md#getAddressByInternalId) | **GET** /v2/address-list/{id}/get-by-internal-id | Retrieve an address by internal system ID |
+| [**getAddressList()**](V2Api.md#getAddressList) | **GET** /v2/address-list | Retrieve all addresses (v2) |
+| [**getCountries()**](V2Api.md#getCountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list |
+| [**getCurrencies()**](V2Api.md#getCurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list |
+| [**getDeliveryTypes()**](V2Api.md#getDeliveryTypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list |
+| [**getInvoiceCounter()**](V2Api.md#getInvoiceCounter) | **GET** /v2/dial/invoice-counters/{counter} | Retrieve specific invoice counter details |
+| [**getInvoiceCounters()**](V2Api.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type |
+| [**getLogos()**](V2Api.md#getLogos) | **GET** /v2/dial/logos | Retrieve configured company logos |
+| [**getPaymentTypes()**](V2Api.md#getPaymentTypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list |
+| [**getSignatures()**](V2Api.md#getSignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures |
+| [**getTemplates()**](V2Api.md#getTemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates |
 
 
 ## `addAddress()`
@@ -27,9 +27,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 addAddress($address, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-addAddress
+Create a new address entry
 
-Create new Contact in Address book.
+Creates a new contact address entry in the company address book with details such as tax identifiers, street location, and internal system IDs.
 
 ### Example
 
@@ -91,9 +91,9 @@ try {
 getAddressById($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-getAddressById.
+Retrieve an address by unique primary ID
 
-Returns Address.
+Fetches a single address record from the address book using its system database integer ID.
 
 ### Example
 
@@ -155,9 +155,9 @@ try {
 getAddressByInternalId($id, $except): \Uctoplus\API\Models\AddAddress200Response
 ```
 
-getAddressByInternalId.
+Retrieve an address by internal system ID
 
-Returns Address.
+Fetches a single address record matching your custom internal system identifier mapped to the address entry.
 
 ### Example
 
@@ -219,9 +219,9 @@ try {
 getAddressList($except): \Uctoplus\API\Models\Address[]
 ```
 
-getAddressList
+Retrieve all addresses (v2)
 
-Return all Addresses from Company Address List.
+Legacy endpoint to fetch all contact address entries from the company address book. Use /v4/addresses for pagination and better performance.
 
 ### Example
 
@@ -281,9 +281,9 @@ try {
 getCountries(): \Uctoplus\API\Models\Country[]
 ```
 
-getCountries
+Retrieve available countries code list
 
-Return all Countries in Company.
+Returns the full list of available countries along with their 3-letter ISO 3166-1 alpha-3 country codes.
 
 ### Example
 
@@ -340,9 +340,9 @@ This endpoint does not need any parameter.
 getCurrencies(): \Uctoplus\API\Models\Currency[]
 ```
 
-getCurrencies
+Retrieve available currencies code list
 
-Return all Currencies in Company.
+Returns the full list of currencies supported by the system, formatted with ISO 4217 standard codes.
 
 ### Example
 
@@ -399,9 +399,9 @@ This endpoint does not need any parameter.
 getDeliveryTypes(): \Uctoplus\API\Models\DeliveryType[]
 ```
 
-getDeliveryTypes
+Retrieve delivery options code list
 
-Return all DeliveryTypes in Company.
+Returns all supported delivery types (e.g., electronic delivery, courier, personal pickup) configured for the company.
 
 ### Example
 
@@ -458,9 +458,9 @@ This endpoint does not need any parameter.
 getInvoiceCounter($counter): \Uctoplus\API\Models\GetInvoiceCounter200Response
 ```
 
-getInvoiceCounter
+Retrieve specific invoice counter details
 
-Return Invoice Counter by ID.
+Returns configuration details (such as format string and current sequence) for a single invoice counter by its ID.
 
 ### Example
 
@@ -520,9 +520,9 @@ try {
 getInvoiceCounters($invoice_type): \Uctoplus\API\Models\InvoiceCounter[]
 ```
 
-getInvoiceCounters
+Retrieve number counters by document type
 
-Return all InvoiceCounters in Company.
+Fetches all configured number sequence counters (numbering series) associated with a specific document/invoice type.
 
 ### Example
 
@@ -582,9 +582,9 @@ try {
 getLogos(): \Uctoplus\API\Models\Logo[]
 ```
 
-getLogos
+Retrieve configured company logos
 
-Return all Logos in Company.
+Returns all company logo assets available for branding generated invoices and documents.
 
 ### Example
 
@@ -641,9 +641,9 @@ This endpoint does not need any parameter.
 getPaymentTypes(): \Uctoplus\API\Models\PaymentType[]
 ```
 
-getPaymentTypes
+Retrieve payment methods code list
 
-Return all PaymentTypes in Company.
+Returns all valid payment types (e.g., bank transfer, cash, card) available for assignment to invoices.
 
 ### Example
 
@@ -700,9 +700,9 @@ This endpoint does not need any parameter.
 getSignatures(): \Uctoplus\API\Models\Signature[]
 ```
 
-getSignatures
+Retrieve configured company signatures
 
-Return all Signatures in Company.
+Returns all pre-configured digital signature graphics available to be appended to outgoing invoices.
 
 ### Example
 
@@ -759,9 +759,9 @@ This endpoint does not need any parameter.
 getTemplates(): \Uctoplus\API\Models\InvoiceTemplate[]
 ```
 
-getTemplates
+Retrieve invoice design templates
 
-Return all Invoice Templates for specific InvoiceType.
+Returns all available visual invoice template layouts that can be applied to rendered document PDFs.
 
 ### Example
 

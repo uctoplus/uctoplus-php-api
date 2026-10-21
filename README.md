@@ -1,4 +1,4 @@
-# Účto+ API
+# Uctoplus
 
 Production environment is located at `https://api.moje.uctoplus.sk/production/`.
 
@@ -82,73 +82,75 @@ All URIs are relative to *http://localhost/production*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddressListApi* | [**addAddress**](docs/Api/AddressListApi.md#addaddress) | **POST** /v2/address-list/add | addAddress
-*AddressListApi* | [**getAddressById**](docs/Api/AddressListApi.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | getAddressById.
-*AddressListApi* | [**getAddressByInternalId**](docs/Api/AddressListApi.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId.
-*AddressListApi* | [**getAddressList**](docs/Api/AddressListApi.md#getaddresslist) | **GET** /v2/address-list | getAddressList
-*AddressListApi* | [**getAddresses**](docs/Api/AddressListApi.md#getaddresses) | **GET** /v4/addresses | getAddresses
-*CodeListsApi* | [**getCountries**](docs/Api/CodeListsApi.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
-*CodeListsApi* | [**getCurrencies**](docs/Api/CodeListsApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
-*CodeListsApi* | [**getDeliveryTypes**](docs/Api/CodeListsApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
-*CodeListsApi* | [**getInvoiceCounter**](docs/Api/CodeListsApi.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter
-*CodeListsApi* | [**getInvoiceCounters**](docs/Api/CodeListsApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-*CodeListsApi* | [**getLogos**](docs/Api/CodeListsApi.md#getlogos) | **GET** /v2/dial/logos | getLogos
-*CodeListsApi* | [**getPaymentTypes**](docs/Api/CodeListsApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
-*CodeListsApi* | [**getSignatures**](docs/Api/CodeListsApi.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
-*CodeListsApi* | [**getTemplates**](docs/Api/CodeListsApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
-*CountriesApi* | [**getCountries**](docs/Api/CountriesApi.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
-*CurrenciesApi* | [**getCurrencies**](docs/Api/CurrenciesApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
-*DeliveryTypesApi* | [**getDeliveryTypes**](docs/Api/DeliveryTypesApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
-*InvoiceApi* | [**addInvoice**](docs/Api/InvoiceApi.md#addinvoice) | **POST** /v3/invoice/add | addInvoice
-*InvoiceApi* | [**addInvoiceV4**](docs/Api/InvoiceApi.md#addinvoicev4) | **POST** /v4/invoice/add | addInvoiceV4
-*InvoiceApi* | [**addPaymentToInvoice**](docs/Api/InvoiceApi.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice
-*InvoiceApi* | [**addPaymentToInvoiceV4**](docs/Api/InvoiceApi.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4
-*InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /v3/invoice/{id}/get | getInvoice
-*InvoiceApi* | [**getInvoiceV4**](docs/Api/InvoiceApi.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | getInvoiceV4
-*InvoiceApi* | [**getInvoices**](docs/Api/InvoiceApi.md#getinvoices) | **GET** /v4/invoices | getInvoices
-*InvoiceApi* | [**importInvoiceV4**](docs/Api/InvoiceApi.md#importinvoicev4) | **POST** /v4/invoice/import | importInvoiceV4
-*InvoiceApi* | [**sendInvoice**](docs/Api/InvoiceApi.md#sendinvoice) | **POST** /v3/invoice/{id}/send | sendInvoice
-*InvoiceApi* | [**sendInvoiceViaEmail**](docs/Api/InvoiceApi.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail
-*InvoiceApi* | [**sendInvoiceViaPeppol**](docs/Api/InvoiceApi.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol
-*InvoiceCountersApi* | [**getInvoiceCounters**](docs/Api/InvoiceCountersApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-*InvoiceTemplatesApi* | [**getTemplates**](docs/Api/InvoiceTemplatesApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
-*LogosApi* | [**getLogos**](docs/Api/LogosApi.md#getlogos) | **GET** /v2/dial/logos | getLogos
-*PaymentTypesApi* | [**getPaymentTypes**](docs/Api/PaymentTypesApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
-*PeppolApi* | [**importInvoiceV4**](docs/Api/PeppolApi.md#importinvoicev4) | **POST** /v4/invoice/import | importInvoiceV4
-*SignaturesApi* | [**getSignatures**](docs/Api/SignaturesApi.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
-*UploadApi* | [**getUploadedFile**](docs/Api/UploadApi.md#getuploadedfile) | **GET** /v4/upload/{elementType}/{elementId}/get | Returning UploadedFile
-*UploadApi* | [**getUploadedFilesList**](docs/Api/UploadApi.md#getuploadedfileslist) | **GET** /v4/uploaded-files | getUploadedFilesList
-*UploadApi* | [**uploadFile**](docs/Api/UploadApi.md#uploadfile) | **POST** /v3/upload/add | Uploading files over RestAPI
-*UploadApi* | [**uploadedFilesIndex**](docs/Api/UploadApi.md#uploadedfilesindex) | **GET** /v3/upload/index | uploadFile
-*V2Api* | [**addAddress**](docs/Api/V2Api.md#addaddress) | **POST** /v2/address-list/add | addAddress
-*V2Api* | [**getAddressById**](docs/Api/V2Api.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | getAddressById.
-*V2Api* | [**getAddressByInternalId**](docs/Api/V2Api.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | getAddressByInternalId.
-*V2Api* | [**getAddressList**](docs/Api/V2Api.md#getaddresslist) | **GET** /v2/address-list | getAddressList
-*V2Api* | [**getCountries**](docs/Api/V2Api.md#getcountries) | **GET** /v2/dial/global/countries | getCountries
-*V2Api* | [**getCurrencies**](docs/Api/V2Api.md#getcurrencies) | **GET** /v2/dial/global/currencies | getCurrencies
-*V2Api* | [**getDeliveryTypes**](docs/Api/V2Api.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | getDeliveryTypes
-*V2Api* | [**getInvoiceCounter**](docs/Api/V2Api.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | getInvoiceCounter
-*V2Api* | [**getInvoiceCounters**](docs/Api/V2Api.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters
-*V2Api* | [**getLogos**](docs/Api/V2Api.md#getlogos) | **GET** /v2/dial/logos | getLogos
-*V2Api* | [**getPaymentTypes**](docs/Api/V2Api.md#getpaymenttypes) | **GET** /v2/dial/payment-types | getPaymentTypes
-*V2Api* | [**getSignatures**](docs/Api/V2Api.md#getsignatures) | **GET** /v2/dial/signatures | getSignatures
-*V2Api* | [**getTemplates**](docs/Api/V2Api.md#gettemplates) | **GET** /v2/dial/invoice/templates | getTemplates
-*V3Api* | [**addInvoice**](docs/Api/V3Api.md#addinvoice) | **POST** /v3/invoice/add | addInvoice
-*V3Api* | [**addPaymentToInvoice**](docs/Api/V3Api.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | addPaymentToInvoice
-*V3Api* | [**getInvoice**](docs/Api/V3Api.md#getinvoice) | **GET** /v3/invoice/{id}/get | getInvoice
-*V3Api* | [**sendInvoice**](docs/Api/V3Api.md#sendinvoice) | **POST** /v3/invoice/{id}/send | sendInvoice
-*V3Api* | [**uploadFile**](docs/Api/V3Api.md#uploadfile) | **POST** /v3/upload/add | Uploading files over RestAPI
-*V3Api* | [**uploadedFilesIndex**](docs/Api/V3Api.md#uploadedfilesindex) | **GET** /v3/upload/index | uploadFile
-*V4Api* | [**addInvoiceV4**](docs/Api/V4Api.md#addinvoicev4) | **POST** /v4/invoice/add | addInvoiceV4
-*V4Api* | [**addPaymentToInvoiceV4**](docs/Api/V4Api.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | addPaymentToInvoiceV4
-*V4Api* | [**getAddresses**](docs/Api/V4Api.md#getaddresses) | **GET** /v4/addresses | getAddresses
-*V4Api* | [**getInvoiceV4**](docs/Api/V4Api.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | getInvoiceV4
-*V4Api* | [**getInvoices**](docs/Api/V4Api.md#getinvoices) | **GET** /v4/invoices | getInvoices
-*V4Api* | [**getUploadedFile**](docs/Api/V4Api.md#getuploadedfile) | **GET** /v4/upload/{elementType}/{elementId}/get | Returning UploadedFile
-*V4Api* | [**getUploadedFilesList**](docs/Api/V4Api.md#getuploadedfileslist) | **GET** /v4/uploaded-files | getUploadedFilesList
-*V4Api* | [**importInvoiceV4**](docs/Api/V4Api.md#importinvoicev4) | **POST** /v4/invoice/import | importInvoiceV4
-*V4Api* | [**sendInvoiceViaEmail**](docs/Api/V4Api.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | sendInvoiceViaEmail
-*V4Api* | [**sendInvoiceViaPeppol**](docs/Api/V4Api.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | sendInvoiceViaPeppol
+*AddressListApi* | [**addAddress**](docs/Api/AddressListApi.md#addaddress) | **POST** /v2/address-list/add | Create a new address entry
+*AddressListApi* | [**getAddressById**](docs/Api/AddressListApi.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | Retrieve an address by unique primary ID
+*AddressListApi* | [**getAddressByInternalId**](docs/Api/AddressListApi.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | Retrieve an address by internal system ID
+*AddressListApi* | [**getAddressList**](docs/Api/AddressListApi.md#getaddresslist) | **GET** /v2/address-list | Retrieve all addresses (v2)
+*AddressListApi* | [**getAddresses**](docs/Api/AddressListApi.md#getaddresses) | **GET** /v4/addresses | Retrieve a paginated list of address book contacts
+*CodeListsApi* | [**getCountries**](docs/Api/CodeListsApi.md#getcountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list
+*CodeListsApi* | [**getCurrencies**](docs/Api/CodeListsApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list
+*CodeListsApi* | [**getDeliveryTypes**](docs/Api/CodeListsApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list
+*CodeListsApi* | [**getInvoiceCounter**](docs/Api/CodeListsApi.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | Retrieve specific invoice counter details
+*CodeListsApi* | [**getInvoiceCounters**](docs/Api/CodeListsApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type
+*CodeListsApi* | [**getLogos**](docs/Api/CodeListsApi.md#getlogos) | **GET** /v2/dial/logos | Retrieve configured company logos
+*CodeListsApi* | [**getPaymentTypes**](docs/Api/CodeListsApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list
+*CodeListsApi* | [**getSignatures**](docs/Api/CodeListsApi.md#getsignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures
+*CodeListsApi* | [**getTemplates**](docs/Api/CodeListsApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates
+*CountriesApi* | [**getCountries**](docs/Api/CountriesApi.md#getcountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list
+*CurrenciesApi* | [**getCurrencies**](docs/Api/CurrenciesApi.md#getcurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list
+*DeliveryTypesApi* | [**getDeliveryTypes**](docs/Api/DeliveryTypesApi.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list
+*InvoiceApi* | [**addInvoice**](docs/Api/InvoiceApi.md#addinvoice) | **POST** /v3/invoice/add | Create a new invoice or credit note (v3)
+*InvoiceApi* | [**addInvoiceV4**](docs/Api/InvoiceApi.md#addinvoicev4) | **POST** /v4/invoice/add | Create a new invoice or credit note (v4)
+*InvoiceApi* | [**addPaymentToInvoice**](docs/Api/InvoiceApi.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | Record payment for invoice (v3)
+*InvoiceApi* | [**addPaymentToInvoiceV4**](docs/Api/InvoiceApi.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | Record payment for invoice (v4)
+*InvoiceApi* | [**getInvoice**](docs/Api/InvoiceApi.md#getinvoice) | **GET** /v3/invoice/{id}/get | Get invoice details by ID (v3)
+*InvoiceApi* | [**getInvoiceV4**](docs/Api/InvoiceApi.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | Get invoice details by ID (v4)
+*InvoiceApi* | [**getInvoices**](docs/Api/InvoiceApi.md#getinvoices) | **GET** /v4/invoices | Retrieve a paginated list of invoices
+*InvoiceApi* | [**importInvoiceV4**](docs/Api/InvoiceApi.md#importinvoicev4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML
+*InvoiceApi* | [**sendInvoice**](docs/Api/InvoiceApi.md#sendinvoice) | **POST** /v3/invoice/{id}/send | Send invoice via email (v3)
+*InvoiceApi* | [**sendInvoiceViaEmail**](docs/Api/InvoiceApi.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | Send invoice via email
+*InvoiceApi* | [**sendInvoiceViaPeppol**](docs/Api/InvoiceApi.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | Send invoice via Peppol network
+*InvoiceCountersApi* | [**getInvoiceCounters**](docs/Api/InvoiceCountersApi.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type
+*InvoiceTemplatesApi* | [**getTemplates**](docs/Api/InvoiceTemplatesApi.md#gettemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates
+*LogosApi* | [**getLogos**](docs/Api/LogosApi.md#getlogos) | **GET** /v2/dial/logos | Retrieve configured company logos
+*PaymentTypesApi* | [**getPaymentTypes**](docs/Api/PaymentTypesApi.md#getpaymenttypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list
+*PeppolApi* | [**importInvoiceV4**](docs/Api/PeppolApi.md#importinvoicev4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML
+*SignaturesApi* | [**getSignatures**](docs/Api/SignaturesApi.md#getsignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures
+*UploadApi* | [**getUploadedFile**](docs/Api/UploadApi.md#getuploadedfile) | **GET** /v4/upload/{elementType}/{elementId}/get | Retrieve specific uploaded file details
+*UploadApi* | [**getUploadedFilesList**](docs/Api/UploadApi.md#getuploadedfileslist) | **GET** /v4/uploaded-files | Retrieve paginated list of uploaded files
+*UploadApi* | [**uploadFile**](docs/Api/UploadApi.md#uploadfile) | **POST** /v3/upload/add | Upload file or multi-page documents
+*UploadApi* | [**uploadFileAttributes**](docs/Api/UploadApi.md#uploadfileattributes) | **POST** /v4/upload/data-attributes | List of possible data attributes for upload
+*UploadApi* | [**uploadedFilesIndex**](docs/Api/UploadApi.md#uploadedfilesindex) | **GET** /v3/upload/index | Retrieve uploaded files index (v3)
+*V2Api* | [**addAddress**](docs/Api/V2Api.md#addaddress) | **POST** /v2/address-list/add | Create a new address entry
+*V2Api* | [**getAddressById**](docs/Api/V2Api.md#getaddressbyid) | **GET** /v2/address-list/{id}/get | Retrieve an address by unique primary ID
+*V2Api* | [**getAddressByInternalId**](docs/Api/V2Api.md#getaddressbyinternalid) | **GET** /v2/address-list/{id}/get-by-internal-id | Retrieve an address by internal system ID
+*V2Api* | [**getAddressList**](docs/Api/V2Api.md#getaddresslist) | **GET** /v2/address-list | Retrieve all addresses (v2)
+*V2Api* | [**getCountries**](docs/Api/V2Api.md#getcountries) | **GET** /v2/dial/global/countries | Retrieve available countries code list
+*V2Api* | [**getCurrencies**](docs/Api/V2Api.md#getcurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list
+*V2Api* | [**getDeliveryTypes**](docs/Api/V2Api.md#getdeliverytypes) | **GET** /v2/dial/delivery-types | Retrieve delivery options code list
+*V2Api* | [**getInvoiceCounter**](docs/Api/V2Api.md#getinvoicecounter) | **GET** /v2/dial/invoice-counters/{counter} | Retrieve specific invoice counter details
+*V2Api* | [**getInvoiceCounters**](docs/Api/V2Api.md#getinvoicecounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type
+*V2Api* | [**getLogos**](docs/Api/V2Api.md#getlogos) | **GET** /v2/dial/logos | Retrieve configured company logos
+*V2Api* | [**getPaymentTypes**](docs/Api/V2Api.md#getpaymenttypes) | **GET** /v2/dial/payment-types | Retrieve payment methods code list
+*V2Api* | [**getSignatures**](docs/Api/V2Api.md#getsignatures) | **GET** /v2/dial/signatures | Retrieve configured company signatures
+*V2Api* | [**getTemplates**](docs/Api/V2Api.md#gettemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates
+*V3Api* | [**addInvoice**](docs/Api/V3Api.md#addinvoice) | **POST** /v3/invoice/add | Create a new invoice or credit note (v3)
+*V3Api* | [**addPaymentToInvoice**](docs/Api/V3Api.md#addpaymenttoinvoice) | **POST** /v3/invoice/{id}/pay | Record payment for invoice (v3)
+*V3Api* | [**getInvoice**](docs/Api/V3Api.md#getinvoice) | **GET** /v3/invoice/{id}/get | Get invoice details by ID (v3)
+*V3Api* | [**sendInvoice**](docs/Api/V3Api.md#sendinvoice) | **POST** /v3/invoice/{id}/send | Send invoice via email (v3)
+*V3Api* | [**uploadFile**](docs/Api/V3Api.md#uploadfile) | **POST** /v3/upload/add | Upload file or multi-page documents
+*V3Api* | [**uploadedFilesIndex**](docs/Api/V3Api.md#uploadedfilesindex) | **GET** /v3/upload/index | Retrieve uploaded files index (v3)
+*V4Api* | [**addInvoiceV4**](docs/Api/V4Api.md#addinvoicev4) | **POST** /v4/invoice/add | Create a new invoice or credit note (v4)
+*V4Api* | [**addPaymentToInvoiceV4**](docs/Api/V4Api.md#addpaymenttoinvoicev4) | **POST** /v4/invoice/{id}/pay | Record payment for invoice (v4)
+*V4Api* | [**getAddresses**](docs/Api/V4Api.md#getaddresses) | **GET** /v4/addresses | Retrieve a paginated list of address book contacts
+*V4Api* | [**getInvoiceV4**](docs/Api/V4Api.md#getinvoicev4) | **GET** /v4/invoice/{id}/get | Get invoice details by ID (v4)
+*V4Api* | [**getInvoices**](docs/Api/V4Api.md#getinvoices) | **GET** /v4/invoices | Retrieve a paginated list of invoices
+*V4Api* | [**getUploadedFile**](docs/Api/V4Api.md#getuploadedfile) | **GET** /v4/upload/{elementType}/{elementId}/get | Retrieve specific uploaded file details
+*V4Api* | [**getUploadedFilesList**](docs/Api/V4Api.md#getuploadedfileslist) | **GET** /v4/uploaded-files | Retrieve paginated list of uploaded files
+*V4Api* | [**importInvoiceV4**](docs/Api/V4Api.md#importinvoicev4) | **POST** /v4/invoice/import | Import and process a Peppol BIS invoice XML
+*V4Api* | [**sendInvoiceViaEmail**](docs/Api/V4Api.md#sendinvoiceviaemail) | **POST** /v4/invoice/{id}/send-via-email | Send invoice via email
+*V4Api* | [**sendInvoiceViaPeppol**](docs/Api/V4Api.md#sendinvoiceviapeppol) | **POST** /v4/invoice/{id}/send-via-peppol | Send invoice via Peppol network
+*V4Api* | [**uploadFileAttributes**](docs/Api/V4Api.md#uploadfileattributes) | **POST** /v4/upload/data-attributes | List of possible data attributes for upload
 
 ## Models
 
@@ -165,6 +167,7 @@ Class | Method | HTTP request | Description
 - [CreditNoteRequestItemsInner](docs/Model/CreditNoteRequestItemsInner.md)
 - [CreditNoteType](docs/Model/CreditNoteType.md)
 - [Currency](docs/Model/Currency.md)
+- [DataAttributeV4](docs/Model/DataAttributeV4.md)
 - [DeliveryAddress](docs/Model/DeliveryAddress.md)
 - [DeliveryAddressResponseV4](docs/Model/DeliveryAddressResponseV4.md)
 - [DeliveryType](docs/Model/DeliveryType.md)
@@ -239,7 +242,7 @@ helpdesk@uctoplus.sk
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `4.3.0`
-    - Package version: `4.3.0`
+- API version: `4.3.1`
+    - Package version: `4.2.1`
     - Generator version: `7.21.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

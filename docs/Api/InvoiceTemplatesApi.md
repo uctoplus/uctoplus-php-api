@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getTemplates()**](InvoiceTemplatesApi.md#getTemplates) | **GET** /v2/dial/invoice/templates | getTemplates |
+| [**getTemplates()**](InvoiceTemplatesApi.md#getTemplates) | **GET** /v2/dial/invoice/templates | Retrieve invoice design templates |
 
 
 ## `getTemplates()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getTemplates(): \Uctoplus\API\Models\InvoiceTemplate[]
 ```
 
-getTemplates
+Retrieve invoice design templates
 
-Return all Invoice Templates for specific InvoiceType.
+Returns all available visual invoice template layouts that can be applied to rendered document PDFs.
 
 ### Example
 

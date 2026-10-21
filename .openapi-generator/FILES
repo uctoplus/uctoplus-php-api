@@ -29,6 +29,7 @@ docs/Model/CreditNoteRequest.md
 docs/Model/CreditNoteRequestItemsInner.md
 docs/Model/CreditNoteType.md
 docs/Model/Currency.md
+docs/Model/DataAttributeV4.md
 docs/Model/DeliveryAddress.md
 docs/Model/DeliveryAddressResponseV4.md
 docs/Model/DeliveryType.md
@@ -109,6 +110,7 @@ src/Models/CreditNoteRequest.php
 src/Models/CreditNoteRequestItemsInner.php
 src/Models/CreditNoteType.php
 src/Models/Currency.php
+src/Models/DataAttributeV4.php
 src/Models/DeliveryAddress.php
 src/Models/DeliveryAddressResponseV4.php
 src/Models/DeliveryType.php
@@ -157,6 +159,3 @@ src/Models/Theme.php
 src/Models/UploadFile200Response.php
 src/Models/UploadFileMimeTypes.php
 src/ObjectSerializer.php
-test/Api/PeppolApiTest.php
-test/Model/GetUploadedFilesList200ResponseTest.php
-test/Model/ImportInvoiceV4RequestTest.php

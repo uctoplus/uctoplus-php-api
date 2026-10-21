@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getInvoiceCounters()**](InvoiceCountersApi.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | getInvoiceCounters |
+| [**getInvoiceCounters()**](InvoiceCountersApi.md#getInvoiceCounters) | **GET** /v2/dial/invoice-type/{invoiceType}/counters | Retrieve number counters by document type |
 
 
 ## `getInvoiceCounters()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getInvoiceCounters($invoice_type): \Uctoplus\API\Models\InvoiceCounter[]
 ```
 
-getInvoiceCounters
+Retrieve number counters by document type
 
-Return all InvoiceCounters in Company.
+Fetches all configured number sequence counters (numbering series) associated with a specific document/invoice type.
 
 ### Example
 

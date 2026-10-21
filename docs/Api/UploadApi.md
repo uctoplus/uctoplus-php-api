@@ -6,10 +6,11 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getUploadedFile()**](UploadApi.md#getUploadedFile) | **GET** /v4/upload/{elementType}/{elementId}/get | Returning UploadedFile |
-| [**getUploadedFilesList()**](UploadApi.md#getUploadedFilesList) | **GET** /v4/uploaded-files | getUploadedFilesList |
-| [**uploadFile()**](UploadApi.md#uploadFile) | **POST** /v3/upload/add | Uploading files over RestAPI |
-| [**uploadedFilesIndex()**](UploadApi.md#uploadedFilesIndex) | **GET** /v3/upload/index | uploadFile |
+| [**getUploadedFile()**](UploadApi.md#getUploadedFile) | **GET** /v4/upload/{elementType}/{elementId}/get | Retrieve specific uploaded file details |
+| [**getUploadedFilesList()**](UploadApi.md#getUploadedFilesList) | **GET** /v4/uploaded-files | Retrieve paginated list of uploaded files |
+| [**uploadFile()**](UploadApi.md#uploadFile) | **POST** /v3/upload/add | Upload file or multi-page documents |
+| [**uploadFileAttributes()**](UploadApi.md#uploadFileAttributes) | **POST** /v4/upload/data-attributes | List of possible data attributes for upload |
+| [**uploadedFilesIndex()**](UploadApi.md#uploadedFilesIndex) | **GET** /v3/upload/index | Retrieve uploaded files index (v3) |
 
 
 ## `getUploadedFile()`
@@ -18,9 +19,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getUploadedFile($element_type, $element_id, $except): \Uctoplus\API\Models\File
 ```
 
-Returning UploadedFile
+Retrieve specific uploaded file details
 
-Returns file.
+Fetches metadata, content, and system attributes for a specific uploaded file using its category element type and element UUID.
 
 ### Example
 
@@ -84,9 +85,9 @@ try {
 getUploadedFilesList($element_type, $except, $offset, $limit, $sort, $order): \Uctoplus\API\Models\GetUploadedFilesList200Response
 ```
 
-getUploadedFilesList
+Retrieve paginated list of uploaded files
 
-Get List of Uploaded Files by elementType
+Returns a paginated list of uploaded files filtered by document element type (e.g., incoming invoice, cash bill, contract).
 
 ### Example
 
@@ -156,9 +157,9 @@ try {
 uploadFile($except, $file, $element_type, $attributes, $pages): \Uctoplus\API\Models\UploadFile200Response
 ```
 
-Uploading files over RestAPI
+Upload file or multi-page documents
 
-Endpoint allows you to upload files either directly into specific category or to the list of files which needs to be sorted later.
+Uploads single files or multi-page document streams directly into specific document categories or an unassigned processing queue.
 
 ### Example
 
@@ -220,15 +221,77 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `uploadFileAttributes()`
+
+```php
+uploadFileAttributes($element_type): \Uctoplus\API\Models\DataAttributeV4[]
+```
+
+List of possible data attributes for upload
+
+This endpoint gives you list of all possible attributes for the specific Element Type which can be used to fill information while file upload
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-key
+$config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Uctoplus\API\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+
+$apiInstance = new Uctoplus\API\Api\UploadApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$element_type = new \Uctoplus\API\Models\\Uctoplus\API\Models\ElementType(); // \Uctoplus\API\Models\ElementType
+
+try {
+    $result = $apiInstance->uploadFileAttributes($element_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UploadApi->uploadFileAttributes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **element_type** | [**\Uctoplus\API\Models\ElementType**](../Model/.md)|  | |
+
+### Return type
+
+[**\Uctoplus\API\Models\DataAttributeV4[]**](../Model/DataAttributeV4.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `uploadedFilesIndex()`
 
 ```php
 uploadedFilesIndex($element_type, $from, $to, $except): \Uctoplus\API\Models\File[]
 ```
 
-uploadFile
+Retrieve uploaded files index (v3)
 
-Upload file.
+Legacy endpoint to fetch uploaded files filtered by element type and date range. Use /v4/uploaded-files for pagination support.
 
 ### Example
 

@@ -6,7 +6,7 @@ All URIs are relative to http://localhost/production, except if the operation de
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCurrencies()**](CurrenciesApi.md#getCurrencies) | **GET** /v2/dial/global/currencies | getCurrencies |
+| [**getCurrencies()**](CurrenciesApi.md#getCurrencies) | **GET** /v2/dial/global/currencies | Retrieve available currencies code list |
 
 
 ## `getCurrencies()`
@@ -15,9 +15,9 @@ All URIs are relative to http://localhost/production, except if the operation de
 getCurrencies(): \Uctoplus\API\Models\Currency[]
 ```
 
-getCurrencies
+Retrieve available currencies code list
 
-Return all Currencies in Company.
+Returns the full list of currencies supported by the system, formatted with ISO 4217 standard codes.
 
 ### Example
 
